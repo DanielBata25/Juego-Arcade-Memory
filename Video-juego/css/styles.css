@@ -4,7 +4,7 @@ body {
 	align-items: center;
 	background-size: cover;
 	background-attachment: fixed;
-	background-position: center center;
+	background-position:center;
 }
 
 .boton {
@@ -17,7 +17,7 @@ body {
 }
 
 .btn-1 {
-	margin-right: 40px;
+	margin-right: 55px;
 	border-radius: 20px;
 	background-color: rgb(25, 138, 231);
 	padding: 25px 35px;
@@ -53,4 +53,30 @@ body {
 
 .tamaño_imagen {
 	align-content: center;
+}
+.lola{
+	color: rgb(2, 255, 242);
+	align-content: center;
+}
+.pi{
+	color: aliceblue;
+	font-size: 1.5em;
+}
+.po{
+	color: aliceblue;
+	font-size: 1.5em;
+}
+.pu{
+	color: aliceblue;
+	font-size: 1.5em;
+}
+.numeros2 img{
+	float: right;
+	right: 0%;
+	margin: 20px 20px 20px 20px;
+}
+.fruta2{
+	float:left;
+	left: 30%;
+	margin: 20px 10px 5px 0px;
 }
