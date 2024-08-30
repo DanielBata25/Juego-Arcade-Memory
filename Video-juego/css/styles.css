@@ -1,0 +1,56 @@
+body {
+	background-image: url("../img/imagen1.jpeg");
+	background-repeat: no-repeat;
+	align-items: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+}
+
+.boton {
+	width: 500;
+	height: 500;
+	background: #0372b1;
+	border-radius: 45%;
+	position: relative;
+	transition-duration: 3s;
+}
+
+.btn-1 {
+	margin-right: 40px;
+	border-radius: 20px;
+	background-color: rgb(25, 138, 231);
+	padding: 25px 35px;
+	text-decoration: none;
+	color: white;
+	font-weight: 600;
+	font-size: 20px;
+	transition: .4s ease;
+}
+
+.btn-1:hover {
+	box-shadow: 0 0 10px blue,
+		        0 0 30px blue,
+		        0 0 30px blue,
+		        0 0 30px blue;
+
+}
+.logo{
+	border-radius: 25%;
+}
+
+.boton:hover {
+	width: 500;
+	height: 500;
+	background: purple;
+	box-shadow: 0 0 10px purple;
+}
+
+.icono {
+	color: rgb(31, 57, 186);
+	font-size: 6rem;
+}
+
+.tamaño_imagen {
+	align-content: center;
+}
