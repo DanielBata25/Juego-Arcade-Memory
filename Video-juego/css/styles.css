@@ -15,7 +15,13 @@ body {
 	position: relative;
 	transition-duration: 3s;
 }
-
+.conta{
+	background-color:transparent;
+    
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(24, 13, 175, 0.892);
+    
+}
 .btn-1 {
 	margin-right: 55px;
 	border-radius: 20px;
@@ -27,7 +33,17 @@ body {
 	font-size: 20px;
 	transition: .4s ease;
 }
-
+.btn-2 {
+	margin-right: 30px;
+	border-radius: 20px;
+	background-color: rgb(25, 138, 231);
+	padding: 25px 35px;
+	text-decoration: none;
+	color: white;
+	font-weight: 600;
+	font-size: 20px;
+	transition: .4s ease;
+}
 .btn-1:hover {
 	box-shadow: 0 0 10px blue,
 		        0 0 30px blue,
@@ -71,12 +87,9 @@ body {
 	font-size: 1.5em;
 }
 .numeros2 img{
-	float: right;
-	right: 0%;
+	
 	margin: 20px 20px 20px 20px;
 }
-.fruta2{
-	float:left;
-	left: 30%;
-	margin: 20px 10px 5px 0px;
+.pci{
+	margin-left: 25px;
 }
