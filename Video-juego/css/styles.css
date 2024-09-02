@@ -74,18 +74,6 @@ body {
 	color: rgb(2, 255, 242);
 	align-content: center;
 }
-.pi{
-	color: aliceblue;
-	font-size: 1.5em;
-}
-.po{
-	color: aliceblue;
-	font-size: 1.5em;
-}
-.pu{
-	color: aliceblue;
-	font-size: 1.5em;
-}
 .numeros2 img{
 	
 	margin: 20px 20px 20px 20px;
@@ -93,3 +81,29 @@ body {
 .pci{
 	margin-left: 25px;
 }
+
+.contenedor{
+	padding: 0 50px;
+	display: flex;
+	
+}
+.box-1 {
+	height: 200px;
+	width: 200px;
+	background-color: orange;
+
+	float: left;
+}
+
+.box-2 {
+	height: 200px;
+	width: 200px;
+	background-color: green;
+	float: right;
+}
+.tamañosoni{
+    height: 70px;
+    width: 70px;
+    margin-left: 30px;
+}
+

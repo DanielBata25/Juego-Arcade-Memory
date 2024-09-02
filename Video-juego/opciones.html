@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <br><br><br><br><br>
+   <br>
+    <img src="img/musica.png" class="tamañosoni" id="playPauseBTN" onclick="playPause()"> <br>
     <div class="container text-center conta ">   
         <h1 class="mt-5 text-center lola">ELIGE LAS PREFERENCIAS DE TUS CARTAS</h1>
         <div class="row">
@@ -32,11 +33,16 @@
           
         </div>
         <br><br><br>
-        
+        <audio id="audio">
+            <source src="audio/musica.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      
      
     
     </div>  
     <!-- Js Plugins -->
 </body>
 <script src="bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+<script src="js/sonido.js"></script>
 </html>
