@@ -18,8 +18,8 @@ body {
 .conta{
 	background-color:transparent;
     
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(24, 13, 175, 0.892);
+    border-radius: 9%;
+    box-shadow: 20px 20px 20px 20px rgba(54, 232, 83, 0.892);
     
 }
 .btn-1 {
@@ -107,4 +107,6 @@ body {
     width: 70px;
     margin-left: 30px;
 }
-
+.pro{
+	color: #26c4ef;
+}
