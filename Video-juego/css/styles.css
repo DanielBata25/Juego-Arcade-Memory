@@ -75,31 +75,32 @@ body {
 	align-content: center;
 	
 }
-.numeros2 img{
-	
-	margin: 50px 50px 50px 50px;
-}
+
 .pci{
 	margin-left: 25px;
 }
 
 .contenedor{
+	font-size: smaller;
 	padding: 0 50px;
-	display: flex;
+
 	
 }
 .box-1 {
-	height: 200px;
-	width: 200px;
-	background-color: orange;
+	border-radius: 100px;
+	height: 450px;
+	width: 450px;
+	background-color: grey;
 
 	float: left;
 }
 
 .box-2 {
-	height: 200px;
-	width: 200px;
-	background-color: green;
+	border-radius: 100px;
+	height: 450px;
+	width: 450px;
+	background-color: rgb(128, 128, 128);
+	
 	float: right;
 }
 .tamañosoni{
@@ -107,6 +108,75 @@ body {
     width: 70px;
     margin-left: 30px;
 }
+<<<<<<< HEAD
 .pro{
 	color: #26c4ef;
 }
+=======
+
+.cuadro1{
+	padding: 10px;
+	text-align: center;
+	width: 450px;
+	height: 60px;
+}
+
+.texto{
+	color: white;
+	font-size: 30px;
+}
+
+.cuadro2{
+	padding: 50px;
+	text-align: center;
+	width: 441px; 
+	height: 700px;
+}
+
+.texto1{	
+	font-size: 25px;
+}
+.img2{
+	padding-top: 10%;
+	width: 200px;
+	height: 200px;
+	border-radius: 10px 10px;
+}
+.img3{
+	padding-top: 20px;
+	width: 100px;
+	height: 100px;
+	margin-left: -110px;
+	position: absolute;
+}
+.img4{
+	padding-top: 20px;
+	width: 100px;
+	height: 100px;
+	margin-left: 1190px;
+	margin-top: -420px;
+}
+
+.img5{
+	padding-top: 20px;
+	width: 100px;
+	height: 100px;
+	margin-right: 10px;
+	margin-top: 100px;
+}
+
+.img6{
+	padding-top: 10px;
+	width: 250px;
+	height: 200px;
+	border-radius: 10px 10px;
+}
+
+.img7{
+	margin-top: 30px;
+	padding-top: 10px;
+	width: 250px;
+	height: 200px;
+	border-radius: 10px 10px;
+}
+>>>>>>> ed49de59424e7fd2397fa97026211b083b78219a
