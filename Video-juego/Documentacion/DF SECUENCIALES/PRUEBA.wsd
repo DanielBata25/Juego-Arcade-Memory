@@ -1,0 +1,82 @@
+@startuml PRUEBA
+actor Usuario
+participant "VIDEO-JUEGO" as JU
+participant "CREAR-SALA" as CS
+database BD
+participant "OPCIONES-DEL-JUEGO" as OJ
+participant "PUNTAJE-POSICION" as PP
+participant "TIPO DE JUEGOS" as TJ
+
+
+Usuario -[#Green]> JU: Solicitar Registro
+JU -[#Green]> Usuario: Formulario Registro
+Usuario -[#Orange]-> BD: Datos del usuario
+BD -[#Green]> Usuario: Registro con exito
+Usuario -[#Brown]->  BD: Inicio de sesion con exito
+Usuario -[#Purple]-> CS:Crear una sala
+BD -[#Yellow]->  Usuario: Edicion de la sala
+Usuario -[#Grey]-> CS: Privatizacion de la sala o publica
+
+alt#Gold #LightBlue MENSAJE
+    JU -> Usuario : Sala Creada Con Exito
+end
+
+
+
+Usuario -[#0000FF]> OJ: Mostrar Lista De Opciones del juego
+OJ -[#0000FF]> Usuario: Lista De Opciones
+alt#Gold #LightBlue  Lista De Opciones
+    OJ -> Usuario : 1-Sonido: X:Cancelar ☑: Permitir
+    OJ -> Usuario: 2- ☑Instrucciones
+    OJ -> Usuario: 3- ☑Reglas :)
+end
+Usuario -[#0000FF]> OJ: Salir de la Lista
+JU -[#Red]> Usuario : Fin Del Juego
+Usuario -[#0000FF]> PP: Solicitar Mi Puntaje en el Lobby
+alt#Gold #LightBlue  Puntaje y Posicion
+    PP -> Usuario:Posicion y Puntuacion Obtenidad En El Lobby
+end
+JU -[#0000FF]> Usuario: Cerrar Resultado
+Usuario -[#0000FF]> JU: Mostrar lista de Mas Juegos
+
+JU -[#0000FF]> Usuario: Salir del Juego Actual
+Usuario -[#0000FF]> JU: Mostrar Mas juegos Relacionados  
+JU -[#0000FF]> Usuario: Lista Previa De juegos Relacionados  
+
+JU -[#0000FF]> Usuario: Cargar Lista
+
+ Usuario -[#red]> JU : !Mostrar Lista¡
+
+
+    alt#Gold #LightBlue LISTA 
+    JU -> Usuario : Juegos de Animales
+else 
+TJ -> Usuario: 1-Juegos de Frutas ☑
+TJ -> Usuario: 2-Juegos de Numeros ☑
+TJ -> Usuario: 3-Juegos de Ecuaciones ☑
+TJ -> Usuario: 4-Juegos de Colores ☑
+end
+
+
+
+TJ -[#0000FF]> Usuario: Has Escogido Tu Juego
+autonumber 1 1 "<font color=red><b>Message 0  "
+JU -[#red]> Usuario: !DISFRUTALO¡
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml

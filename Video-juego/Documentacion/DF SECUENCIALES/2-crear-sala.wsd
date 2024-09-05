@@ -1,0 +1,30 @@
+@startuml crear-sala
+actor Usuario
+participant "SISTEMA" as SI
+participant "R.Admin" as RA
+participant "Generador de Codigo" as GC
+participant "Base Datos" as BD
+
+
+
+Usuario -> SI: Solicitar Registro Como Admin
+RA -> Usuario: Formulario De Registro Como Admin
+Usuario -> BD: Enviar Datos (Nombre y ID)
+BD -> SI: Datos Almacenados
+SI -> Usuario: Crear sala
+
+Usuario -> GC: Generar codigo Aleatorio
+ 
+
+autonumber 1 1 "<font color=red><b>Message 0  "
+alt#Gold #LightBlue 
+    GC -> Usuario : !Capacidad Hasta 20 Personas¡
+alt#Gold #LightBlue 
+    GC -> Usuario : !Codigo Generado Con Exito¡
+    alt#Gold #LightBlue Successful case
+    SI -> Usuario : Sala Creada Con Exito
+else 
+SI -> Usuario: Ya Puedes Empezar El Juego
+end
+
+@enduml 

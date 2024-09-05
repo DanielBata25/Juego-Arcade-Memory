@@ -1,0 +1,24 @@
+@startuml crear-sala
+actor Usuario
+participant "SISTEMA" as SI
+database BD
+
+
+
+SI -> Usuario: Fin Del Juego
+Usuario -> SI: Ver Puntuacion y Pocision ocupada En El Lobby
+
+SI -> BD: Cargar Datos
+hnote over Bonus : Si Te Encuentras En una Pocision Suerior a 3
+Usuario -> SI : !Mostrar¡
+
+alt#Gold #LightBlue SI
+    SI -> Usuario : Tienes buena Agilidad Mental :)
+else #pink NO
+    SI -> Usuario: Debes Mejorar :(
+end
+
+BD -> SI: Datos Cargados
+
+SI -> Usuario: Tu Pocision y Puntuacion ya han Sido Cargadas
+@enduml

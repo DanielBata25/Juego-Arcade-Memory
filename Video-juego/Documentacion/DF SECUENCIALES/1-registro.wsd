@@ -1,0 +1,14 @@
+@startuml Registro
+actor Usuario
+participant "SISTEMA" as SI
+participant "Base Datos" as BD
+
+Usuario -> SI: Solicitar Registro
+SI -> Usuario: Formulario de Registro
+Usuario -> BD: Enviar datosd (Nombre y ID)
+BD -> SI: Datos Almacenados
+
+autonumber 1 1 "<font color=red><b>Message 0  "
+SI -> Usuario : !Ya estas Registrado¡
+SI -> Usuario : Puedes Ingresar al Lobby
+@enduml 
