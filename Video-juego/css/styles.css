@@ -18,9 +18,8 @@ body {
 .conta{
 	background-color:transparent;
     
-    border-radius: 9%;
-    box-shadow: 20px 20px 20px 20px rgba(54, 232, 83, 0.892);
-    
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(24, 13, 175, 0.892);
 }
 .btn-1 {
 	margin-right: 55px;
@@ -73,11 +72,10 @@ body {
 .lola{
 	color: rgb(2, 255, 242);
 	align-content: center;
-	
 }
 .numeros2 img{
 	
-	margin: 30px 30px 30px 30px;
+	margin: 20px 20px 20px 20px;
 }
 .pci{
 	margin-left: 25px;
@@ -93,7 +91,7 @@ body {
 	border-radius: 100px;
 	height: 450px;
 	width: 450px;
-	background-color: rgb(74, 216, 169);
+	background-color: grey;
 
 	float: left;
 }
@@ -102,7 +100,7 @@ body {
 	border-radius: 100px;
 	height: 450px;
 	width: 450px;
-	background-color: rgb(128, 128, 128);
+	background-color: grey;
 	
 	float: right;
 }
@@ -111,11 +109,6 @@ body {
     width: 70px;
     margin-left: 30px;
 }
-<<<<<<< HEAD
-.pro{
-	color: #26c4ef;
-}
-=======
 
 .cuadro1{
 	padding: 10px;
@@ -126,7 +119,7 @@ body {
 
 .texto{
 	color: white;
-	font-size: 30px;
+	font-size: 25px;
 }
 
 .cuadro2{
@@ -156,8 +149,8 @@ body {
 	padding-top: 20px;
 	width: 100px;
 	height: 100px;
-	margin-left: 1190px;
-	margin-top: -420px;
+	margin-left: -120px;
+	margin-top: -400px;
 }
 
 .img5{
@@ -180,11 +173,45 @@ body {
 	padding-top: 10px;
 	width: 250px;
 	height: 200px;
-<<<<<<< HEAD
-	border-radius:10px;
+	border-radius: 10px 10px;
 }
-=======
-	border-radius: 10px 10px;
+
+.img8{
+	margin-top: 10px;
+	padding-top: 10px;
+	width: 250px;
+	height: 200px;
+	border-radius: 10px 10px;
 }
->>>>>>> ed49de59424e7fd2397fa97026211b083b78219a
->>>>>>> 018e2c1ed79e17be60bf7f0ec4cdd025d6ec79d0
+
+.img9{
+	margin-top: 10px;
+	padding-top: 10px;
+	width: 250px;
+	height: 200px;
+	border-radius: 10px 10px;
+}
+/*ESTLIOS OPERACIONES DE NUMEROS*/
+.numeros{
+	color: aqua;
+	margin-top: 42%;
+}
+.boton_numeros{
+	
+	border-radius: 20px;
+	background-color: rgb(25, 138, 231);
+	padding: 25px 35px;
+	text-decoration: none;
+	color: white;
+	font-weight: 30px;
+	font-size: 20px;
+	transition: .4s ease;
+}
+.boton_numeros:hover{
+	box-shadow: 0 0 10px blue,
+		        0 0 30px blue,
+		        0 0 30px blue,
+		        0 0 30px blue;
+
+}
+/*END ESTLIOS OPERACIONES DE NUMEROS*/
