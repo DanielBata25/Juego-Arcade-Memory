@@ -18,8 +18,8 @@ body {
 .conta{
 	background-color:transparent;
     
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(24, 13, 175, 0.892);
+    border-radius: 9%;
+    box-shadow: 20px 20px 20px 20px rgba(54, 232, 83, 0.892);
     
 }
 .btn-1 {
@@ -111,6 +111,11 @@ body {
     width: 70px;
     margin-left: 30px;
 }
+<<<<<<< HEAD
+.pro{
+	color: #26c4ef;
+}
+=======
 
 .cuadro1{
 	padding: 10px;
@@ -175,5 +180,11 @@ body {
 	padding-top: 10px;
 	width: 250px;
 	height: 200px;
+<<<<<<< HEAD
 	border-radius:10px;
 }
+=======
+	border-radius: 10px 10px;
+}
+>>>>>>> ed49de59424e7fd2397fa97026211b083b78219a
+>>>>>>> 018e2c1ed79e17be60bf7f0ec4cdd025d6ec79d0
