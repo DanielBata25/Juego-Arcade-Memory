@@ -1,0 +1,59 @@
+body {
+	background-image: url("../img/futurista.png");
+	background-repeat: no-repeat;
+	align-items: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+}
+.tamañosoni{
+    height: 70px;
+    width: 70px;
+    margin-left: 30px;
+}
+*{
+	padding: 0px;
+	margin: 0px;
+}
+.wow{
+	
+	background-color: aqua;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 27%;
+	height: 30%;	
+	border-radius: 7%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	border: 0px;
+	margin: 15% auto;
+}
+.contenedor{
+	text-align: center;
+}
+.waw .contenedor img {
+	position: relative;
+}
+.waw .contenedor:first-child img:nth-child(2),.waw .contenedor:nth-child(3) img:nth-child(2){
+	right: 35%;
+	top: 10%;
+}
+
+.waw,.wew{
+	
+	display: flex;
+	flex-direction: row;
+}
+
+.wew div img{
+	position: relative;
+}
+.wew div:nth-child(2) img{
+	position: relative;
+	right: 100%;
+	top: 20%;
+}
