@@ -20,7 +20,6 @@ body {
     
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(24, 13, 175, 0.892);
-    
 }
 .btn-1 {
 	margin-right: 55px;
@@ -83,22 +82,26 @@ body {
 }
 
 .contenedor{
+	font-size: smaller;
 	padding: 0 50px;
-	display: flex;
+
 	
 }
 .box-1 {
-	height: 200px;
-	width: 200px;
-	background-color: orange;
+	border-radius: 100px;
+	height: 450px;
+	width: 450px;
+	background-color: grey;
 
 	float: left;
 }
 
 .box-2 {
-	height: 200px;
-	width: 200px;
-	background-color: green;
+	border-radius: 100px;
+	height: 450px;
+	width: 450px;
+	background-color: grey;
+	
 	float: right;
 }
 .tamañosoni{
@@ -106,6 +109,115 @@ body {
     width: 70px;
     margin-left: 30px;
 }
+<<<<<<< HEAD
 .pro{
 	color: rgb(2, 255, 242);
 }
+=======
+
+.cuadro1{
+	padding: 10px;
+	text-align: center;
+	width: 450px;
+	height: 60px;
+}
+
+.texto{
+	color: white;
+	font-size: 25px;
+}
+
+.cuadro2{
+	padding: 50px;
+	text-align: center;
+	width: 441px; 
+	height: 700px;
+}
+
+.texto1{	
+	font-size: 25px;
+}
+.img2{
+	padding-top: 10%;
+	width: 200px;
+	height: 200px;
+	border-radius: 10px 10px;
+}
+.img3{
+	padding-top: 20px;
+	width: 100px;
+	height: 100px;
+	margin-left: -110px;
+	position: absolute;
+}
+.img4{
+	padding-top: 20px;
+	width: 100px;
+	height: 100px;
+	margin-left: -120px;
+	margin-top: -400px;
+}
+
+.img5{
+	padding-top: 20px;
+	width: 100px;
+	height: 100px;
+	margin-right: 10px;
+	margin-top: 100px;
+}
+
+.img6{
+	padding-top: 10px;
+	width: 250px;
+	height: 200px;
+	border-radius: 10px 10px;
+}
+
+.img7{
+	margin-top: 30px;
+	padding-top: 10px;
+	width: 250px;
+	height: 200px;
+	border-radius: 10px 10px;
+}
+
+.img8{
+	margin-top: 10px;
+	padding-top: 10px;
+	width: 250px;
+	height: 200px;
+	border-radius: 10px 10px;
+}
+
+.img9{
+	margin-top: 10px;
+	padding-top: 10px;
+	width: 250px;
+	height: 200px;
+	border-radius: 10px 10px;
+}
+/*ESTLIOS OPERACIONES DE NUMEROS*/
+.numeros{
+	color: aqua;
+	margin-top: 42%;
+}
+.boton_numeros{
+	
+	border-radius: 20px;
+	background-color: rgb(25, 138, 231);
+	padding: 25px 35px;
+	text-decoration: none;
+	color: white;
+	font-weight: 30px;
+	font-size: 20px;
+	transition: .4s ease;
+}
+.boton_numeros:hover{
+	box-shadow: 0 0 10px blue,
+		        0 0 30px blue,
+		        0 0 30px blue,
+		        0 0 30px blue;
+
+}
+/*END ESTLIOS OPERACIONES DE NUMEROS*/
+>>>>>>> 3b8b8e19059b16073836a48dadae41902a548163

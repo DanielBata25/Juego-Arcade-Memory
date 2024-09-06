@@ -1,0 +1,31 @@
+@startuml crear-sala
+actor Usuario
+participant "SISTEMA" as SI
+
+
+
+
+SI -> Usuario: Salir del Juego Actual
+Usuario -> SI: Mostrar Mas juegos Relacionados  
+SI -> Usuario: Lista Previa De juegos Relacionados  
+
+SI -> Usuario: Cargar Lista
+
+ Usuario -> SI : !Mostrar Lista¡
+
+
+    alt#Gold #LightBlue LISTA 
+    SI -> Usuario : Juegos de Animales
+else 
+SI -> Usuario: 1-Juegos de Frutas ☑
+SI -> Usuario: 2-Juegos de Numeros ☑
+SI -> Usuario: 3-Juegos de Ecuaciones ☑
+SI -> Usuario: 4-Juegos de Colores ☑
+end
+
+
+
+SI -> Usuario: Has Escogido Tu Juego
+autonumber 1 1 "<font color=red><b>Message 0  "
+SI -> Usuario: !DISFRUTALO¡
+@enduml 

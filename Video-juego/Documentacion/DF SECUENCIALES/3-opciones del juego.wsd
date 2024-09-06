@@ -1,0 +1,21 @@
+@startuml opciones del juego
+actor Usuario
+participant "SISTEMA" as SI
+
+
+
+
+Usuario -> SI: Solicitar Lista De Opciones del Juego
+SI -> Usuario: Lista De Opciones
+ Usuario -> SI  :-!Mostrar Lista¡-
+
+    alt#Gold #LightBlue Opciones
+        SI -> Usuario : 1-Sonido: X:Cancelar ☑: Permitir
+        SI -> Usuario: 2- ☑Instrucciones
+        SI -> Usuario: 3- ☑Reglas :)
+    end
+
+    SI-> Usuario: Cerrar Lista De Opciones
+
+
+    @enduml
