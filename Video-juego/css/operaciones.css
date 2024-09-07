@@ -15,45 +15,43 @@ body {
 	padding: 0px;
 	margin: 0px;
 }
-.wow{
-	
-	background-color: aqua;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 27%;
-	height: 30%;	
-	border-radius: 7%;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	border: 0px;
+
+.contenedor-1{
+	inset: 0px  ;
 	margin: 15% auto;
 }
-.contenedor{
-	text-align: center;
+.wow{
+
+	background-color: aqua;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
-.waw .contenedor img {
+.wow .git{
+	display: flex;
+
+}
+.wow .wew{
+	display: flex;
+}
+
+.contenedor-2  img:nth-child(2){
 	position: relative;
-}
-.waw .contenedor:first-child img:nth-child(2),.waw .contenedor:nth-child(3) img:nth-child(2){
-	right: 35%;
+	right: 37%;
 	top: 10%;
 }
-
-.waw,.wew{
-	
-	display: flex;
-	flex-direction: row;
-}
-
-.wew div img{
+.contenedor-3  img:first-child{
 	position: relative;
+	left: 37%;
+	top: 0%;
+}
+.contenedor-3  img:nth-child(2){
+	position: relative;
+	top: 10%;
 }
 .wew div:nth-child(2) img{
 	position: relative;
-	right: 100%;
 	top: 20%;
+	right: 100%;
 }
