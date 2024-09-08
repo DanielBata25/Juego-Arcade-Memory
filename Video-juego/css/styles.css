@@ -81,12 +81,6 @@ body {
 	margin-left: 25px;
 }
 
-.contenedor{
-	font-size: smaller;
-	padding: 0 50px;
-
-	
-}
 .box-1 {
 	border-radius: 100px;
 	height: 450px;
@@ -123,17 +117,6 @@ body {
 	height: 60px;
 }
 
-.texto{
-	color: white;
-	font-size: 25px;
-}
-
-.cuadro2{
-	padding: 50px;
-	text-align: center;
-	width: 441px; 
-	height: 700px;
-}
 
 .texto1{	
 	font-size: 25px;
@@ -197,6 +180,74 @@ body {
 	height: 200px;
 	border-radius: 10px 10px;
 }
+/*ESTLIOS BORDES MODO DE JUEGO*/
+.contenedor{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 100px;
+}
+.tarjeta-1{
+	height: 500px;
+	width: 450px;
+	/*height: 250px;
+	width: 200px;*/
+	background-color: rgb(62, 178, 189);
+	box-shadow: 16px 14px 20px #030ae48c;
+    border-radius: 10%;
+	position: relative;
+    overflow: hidden;
+	display: flex;
+	justify-content: center;
+	 
+	margin: 0 50px;
+
+	
+
+
+	
+}
+.tarjeta-1::before{
+	content: "";
+	position: absolute;
+	height: 550px;
+	width: 550px;
+	/*height: 300px;
+	width: 300px;*/
+	background-image: conic-gradient(rgb(198, 31, 25) 30deg, transparent 120deg);
+	animation: rotar 2s linear infinite;
+}
+@keyframes rotar{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(-360deg);
+	}
+}
+.tarjeta-1::after{
+	content:"";
+	position: absolute;
+	height: 490px;
+	width: 440px;
+	/*height: 240px;
+	width: 190px;*/
+	background-color: blue;
+	border-radius: 10%;
+	box-shadow: inset 16px 14px 20px #0da2d88c;
+	text-align: center;
+}
+
+.canal{
+	color:white;
+	/*font-size: 25px;*/
+	z-index: 2;
+	background-color: transparent;
+	text-align: center;
+	text-shadow: 5px 5px 5px black;
+}
+
+/*ESTLIOS BORDES MODO DE JUEGO*/
 /*ESTLIOS OPERACIONES DE NUMEROS*/
 .numeros{
 	color: aqua;
