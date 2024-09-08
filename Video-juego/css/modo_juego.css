@@ -1,0 +1,63 @@
+body {
+	background-image: url("../img/imagen1.jpeg");
+	background-repeat: no-repeat;
+	align-items: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position:center;
+}
+
+.contenedor{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 100px;
+}
+.tarjeta-1{
+	height: 340px;
+	width: 440px;
+	/*height: 250px;
+	width: 200px;*/
+	background-color: rgb(29, 192, 214);
+    border-radius: 10%;
+	position: relative;
+    overflow: hidden;
+	display: flex;
+	justify-content: center;
+	margin: 0 50px;
+	
+}
+
+.logo_tamaño{
+    height: 70px;
+    width: 70px;
+    margin-left: 30px;
+	transition: transform 0.3s;
+}
+.lola{
+	color: rgb(2, 255, 242);
+	align-content: center;
+	margin-top: 0%;
+}
+
+.boton{
+  
+	border-radius: 20px;
+	
+	padding: 5px 15px;
+	text-decoration: none;
+	color: white;
+	font-weight: 30px;
+	font-size: 20px;
+	transition: .4s ease;
+}
+.boton:hover{
+	box-shadow: 0 0 10px blue,
+		        0 0 30px blue,
+		        0 0 30px blue,
+		        0 0 30px blue;
+
+}
+.margin{
+    margin-top: 10px;
+}

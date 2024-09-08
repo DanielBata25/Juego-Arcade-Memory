@@ -32,17 +32,7 @@ body {
 	font-size: 20px;
 	transition: .4s ease;
 }
-.btn-2 {
-	margin-right: 30px;
-	border-radius: 20px;
-	background-color: rgb(25, 138, 231);
-	padding: 25px 35px;
-	text-decoration: none;
-	color: white;
-	font-weight: 600;
-	font-size: 20px;
-	transition: .4s ease;
-}
+
 .btn-1:hover {
 	box-shadow: 0 0 10px blue,
 		        0 0 30px blue,
@@ -72,6 +62,7 @@ body {
 .lola{
 	color: rgb(2, 255, 242);
 	align-content: center;
+	margin-top: 0%;
 }
 .numeros2 img{
 	
@@ -127,59 +118,24 @@ body {
 	height: 200px;
 	border-radius: 10px 10px;
 }
-.img3{
-	padding-top: 20px;
-	width: 100px;
-	height: 100px;
-	margin-left: -110px;
-	position: absolute;
-}
-.img4{
-	padding-top: 20px;
-	width: 100px;
-	height: 100px;
-	margin-left: -120px;
-	margin-top: -400px;
-}
-
-.img5{
-	padding-top: 20px;
-	width: 100px;
-	height: 100px;
-	margin-right: 10px;
-	margin-top: 100px;
-}
-
-.img6{
+.piano1{
 	padding-top: 10px;
-	width: 250px;
-	height: 200px;
+	width: 200px;
+	height: 150px;
 	border-radius: 10px 10px;
+
+	margin: 0 10px;
+}
+.num1{
+	padding-top: 10px;
+	width: 180px;
+	height: 130px;
+	border-radius: 10px 10px;
+
+	margin: 0 10px;
 }
 
-.img7{
-	margin-top: 30px;
-	padding-top: 10px;
-	width: 250px;
-	height: 200px;
-	border-radius: 10px 10px;
-}
 
-.img8{
-	margin-top: 10px;
-	padding-top: 10px;
-	width: 250px;
-	height: 200px;
-	border-radius: 10px 10px;
-}
-
-.img9{
-	margin-top: 10px;
-	padding-top: 10px;
-	width: 250px;
-	height: 200px;
-	border-radius: 10px 10px;
-}
 /*ESTLIOS BORDES MODO DE JUEGO*/
 .contenedor{
 	display: flex;
@@ -188,8 +144,8 @@ body {
 	margin-top: 100px;
 }
 .tarjeta-1{
-	height: 500px;
-	width: 450px;
+	height: 440px;
+	width: 440px;
 	/*height: 250px;
 	width: 200px;*/
 	background-color: rgb(62, 178, 189);
@@ -201,17 +157,13 @@ body {
 	justify-content: center;
 	 
 	margin: 0 50px;
-
-	
-
-
 	
 }
 .tarjeta-1::before{
 	content: "";
 	position: absolute;
-	height: 550px;
-	width: 550px;
+	height: 490px;
+	width: 540px;
 	/*height: 300px;
 	width: 300px;*/
 	background-image: conic-gradient(rgb(198, 31, 25) 30deg, transparent 120deg);
@@ -228,8 +180,8 @@ body {
 .tarjeta-1::after{
 	content:"";
 	position: absolute;
-	height: 490px;
-	width: 440px;
+	height: 435px;
+	width:  433px;
 	/*height: 240px;
 	width: 190px;*/
 	background-color: blue;
@@ -251,7 +203,7 @@ body {
 /*ESTLIOS OPERACIONES DE NUMEROS*/
 .numeros{
 	color: aqua;
-	margin-top: 42%;
+	margin-top:60px;
 }
 .boton_numeros{
 	
