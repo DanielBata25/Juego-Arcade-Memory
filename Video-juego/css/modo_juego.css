@@ -11,16 +11,22 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 100px;
+	
+}
+.house{
+    height: 20px;
+    width: 20px;
+    margin-left: 30px;
+	transition: transform 0.3s;
 }
 .tarjeta-1{
-	height: 340px;
-	width: 440px;
+	height: 420px;
+	width: 490px;
 	/*height: 250px;
 	width: 200px;*/
 	border-style: solid;
 	border-color: black;
-	background-color:rgba(218, 209, 217, 0.852);
+	background-color:gray;
     border-radius: 50px;
     box-shadow: 0 0 10px rgba(24, 13, 175, 0.892);
 
@@ -28,6 +34,7 @@ body {
   
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	margin: 0 50px;
 	
 }

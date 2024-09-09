@@ -106,9 +106,10 @@ body {
 background-color: #08dbfc;
 border-radius: 10%;
 border-color: #d7e9eb;
-margin-top: 20%;
-width: calc(125% - 10px);
-height: 25%;
+margin-top: 50%;
+/*
+width: calc(125% - 10px);*/
+height: 50%;
 }
 .table-responsive{
   margin-left: 60px;
