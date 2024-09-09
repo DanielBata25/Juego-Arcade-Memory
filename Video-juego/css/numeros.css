@@ -31,7 +31,9 @@ body {
   }
   
   .rounded-circle {
-    padding: 50px 50px;
+    padding: 40px 35px;
+    width: 130px;
+    height: 135px;
     font-size: 35px;
   }
   
@@ -82,7 +84,7 @@ body {
 
 }
 .container-2{
-  width: calc(42% - 10px);
+  width: calc(45% - 20px);
   margin: 10px; 
   padding: 20px 20px; border: 1px solid #08d5f0; 
   border-radius: 10px; 
@@ -91,7 +93,7 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  margin-right: 10px; 
+  margin-right: 5px; 
 }
 .headtable{
   color: #ffffff;
@@ -153,4 +155,14 @@ height: 50%;
 }
 .modal-header{
   background-color: #2496e2;
+}
+.ganador{
+ display: block;
+ margin: auto;
+}
+.house{
+  height: 100px;
+  width: 100px;
+  margin-right: px;
+transition: transform 0.3s;
 }

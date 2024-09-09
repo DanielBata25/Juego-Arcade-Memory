@@ -13,12 +13,6 @@ body {
 	justify-content: center;
 	
 }
-.house{
-    height: 20px;
-    width: 20px;
-    margin-left: 30px;
-	transition: transform 0.3s;
-}
 .tarjeta-1{
 	height: 420px;
 	width: 490px;
