@@ -111,3 +111,22 @@ height: 25%;
   margin-top: 20%;
   border-radius: 15%;
 }
+.modal-body{
+  background-color: #2496e2;
+  justify-content: center;
+}
+.fs-5{
+  background-color: #2496e2;
+}
+.btn-secondary{
+  background-color: #2496e2;
+}
+.modal-footer{
+  background-color: #2496e2;
+}
+.btn-close{
+  background-color: #2496e2;
+}
+.modal-header{
+  background-color: #2496e2;
+}
