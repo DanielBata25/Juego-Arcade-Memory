@@ -31,8 +31,8 @@ body {
   }
   
   .rounded-circle {
-    border-radius: 35%;
     padding: 50px 50px;
+    font-size: 35px;
   }
   
   /* Estilos de los colores para los botones */
