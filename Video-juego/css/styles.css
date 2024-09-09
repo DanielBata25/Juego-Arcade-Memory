@@ -16,16 +16,18 @@ body {
 	transition-duration: 3s;
 }
 .conta{
-	background-color:transparent;
-    
-    border-radius: 10px;
+	border-width: 10px;
+	border-style: solid;
+	border-color: black;
+	background-color:rgba(10, 10, 10, 0.911);
+    border-radius: 50px;
     box-shadow: 0 0 10px rgba(24, 13, 175, 0.892);
 }
 .btn-1 {
 	margin-right: 55px;
 	border-radius: 20px;
 	background-color: rgb(25, 138, 231);
-	padding: 25px 35px;
+	padding: 20px 30px;
 	text-decoration: none;
 	color: white;
 	font-weight: 600;
@@ -67,6 +69,8 @@ body {
 .numeros2 img{
 	
 	margin: 20px 20px 20px 20px;
+	height: 250px;
+	width: 250px;
 }
 .pci{
 	margin-left: 25px;
