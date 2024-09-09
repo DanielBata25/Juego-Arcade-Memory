@@ -62,6 +62,13 @@ body {
     background-color: #2496e2; 
     color: #ffffff; 
 }
+
+
+
+
+
+
+
 .container-2{
   width: 1000%; /* Ancho del contenedor */
   height: 400px; /* Alto del contenedor */
@@ -97,7 +104,7 @@ body {
 }
 .container-point{
 background-color: #08dbfc;
-border-radius: 6%;
+border-radius: 10%;
 border-color: #d7e9eb;
 margin-top: 20%;
 width: calc(125% - 10px);
@@ -106,6 +113,22 @@ height: 25%;
 .table-responsive{
   margin-left: 60px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .container-numeros{
   background-color: #9bdde52c;
   margin-top: 20%;
