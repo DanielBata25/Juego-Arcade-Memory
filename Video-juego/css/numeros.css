@@ -200,10 +200,67 @@ transition: transform 0.3s;
 }
 .jav{
   text-align: center;
-  margin-top: 80px;
+  margin-top: 80%;
   color: #ffffff;
 }
 .candado{
   height: 130px;
   width: 130px;
+}
+
+/* styles.css */
+.t-forma {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.boton {
+  margin: 10px;
+}
+
+
+/* styles.css */
+.t-forma {
+  position: relative;
+}
+
+.boton {
+  margin: 10px;
+  position: absolute;
+}
+
+/* styles.css */
+.t-forma {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.boton {
+  margin: 10px;
+}
+
+/* styles.css */
+.t-forma {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.boton {
+  grid-column: 1 / -1;
+}
+
+.btn-primary {
+  background-color: #2496e2;
+  color: #ffffff;
+}
+.container,.jav{
+  margin-top: 0%;
+}
+.numero-grande{
+  font-size: 45px;
+  color: #000000;
 }
