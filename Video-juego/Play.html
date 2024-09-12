@@ -11,45 +11,70 @@
 
   <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.css">
   <script src="bootstrap-5.1.3-dist/js/bootstrap.js"></script>
-
   <link rel="stylesheet" href="css/fondo_estrellado.css">
 
 </head>
 
 <body>
 
+  <div class="container">
+    <div class="space space-1"></div>
+    <div class="space space-2"></div>
+    <div class="space space-3"></div>
+  </div>
+
   <div class="mt-1">
     <img src="img/musica.png" class="tamañosoni" id="playPauseBTN" onclick="playPause()">
-</div>
+     <img src="img/pregunta.png" class="tamañosoni" data-bs-toggle="modal" data-bs-target="#Perdiste1" alt="">
+  </div>
+        
+  <div class="container text-center">
+    <br class="">
+    <img src="img/logo.png" height="450" width="450" class="logo" alt="">
+    <br><br>
+    <!--MUSICA-->
+    <audio id="audio">
+      <source src="audio/musica.mp3" type="audio/mpeg">
+    </audio>
+    <!--END MUSICA-->
 
-<div class="container">
-  <div class="space space-1"></div>
-  <div class="space space-2"></div>
-  <div class="space space-3"></div>
-</div>
-
-<div class="container text-center">
-  <br>
-  <img src="img/logo2.png" height="450" width="450" class="logo" alt="">
-  <br><br>
-
-
-<a href="Play2.html"><svg xmlns="http://www.w3.org/2000/svg" width="159" height="159" fill="currentColor"
-  class="bi bi-play-circle-fill" viewBox="0 0 16 16">
-  <path
-    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
-</svg></a>
-
-</div>
+    <a href="Play2.html"><svg xmlns="http://www.w3.org/2000/svg" width="159" height="159" fill="currentColor"
+        class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+        <path
+          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+      </svg></a>
+  </div>
 
 
-<audio id="audio">
-  <source src="audio/Headlands _musica.mp3" type="audio/mpeg">
-</audio>
+  <audio id="audio">
+    <source src="audio/musica.mp3" type="audio/mpeg">
+  </audio>
 
+  <div class="modal fade" id="Perdiste1" tabindex="-1" aria-labelledby="Perdiste1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"> Es un videojuego de memoria diseñado para todas las edades,
+             que combina diversión y desafío cognitivo. El videojuego estará dividido en dos partes, nivel solitario y el otro multijugador,
+              donde los dos tendrán tres minijuegos relacionados con memory, los cuales serían; “Memorizar la imagen, memorizar los sonidos y 
+              resolver la operación” todos estos tres se ejecutarán en el menor tiempo posible, mejorando así la memoria visual y la concentración
+               de los jugadores.
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/logo3.png" alt="" class="ganador">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Js Plugins -->
 </body>
 <script src="bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+<script src="js/sonido.js"></script>
 <script src="js/fondo_estrellado.js"></script>
 
 </html>
