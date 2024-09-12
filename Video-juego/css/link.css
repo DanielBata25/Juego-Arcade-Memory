@@ -1,5 +1,5 @@
 body {
-	background-image: url("../img/imagen1.jpeg");
+	background-image: url("../img/Planeta.png");
 	background-repeat: no-repeat;
 	align-items: center;
 	background-size: cover;
@@ -61,11 +61,7 @@ body {
 .tamaño_imagen {
 	align-content: center;
 }
-.lola{
-	color: rgb(2, 255, 242);
-	align-content: center;
-	margin-top: 0%;
-}
+
 .numeros2 img{
 	
 	margin: 20px 20px 20px 20px;
@@ -99,6 +95,7 @@ body {
     margin-left: 30px;
 	transition: transform 0.3s;
 }
+
 .pro{
 	color: rgb(2, 255, 242);
 }
@@ -139,7 +136,7 @@ body {
 }
 
 
-/*ESTLIOS BORDES MODO DE JUEGO*/
+
 .contenedor{
 	display: flex;
 	align-items: center;
@@ -147,8 +144,9 @@ body {
 	margin-top: 100px;
 }
 .tarjeta-1{
+	position: relative;
 	height: 440px;
-	width: 440px;
+	width: 840px;
 	/*height: 250px;
 	width: 200px;*/
 	background-color: rgb(62, 178, 189);
@@ -166,7 +164,7 @@ body {
 	content: "";
 	position: absolute;
 	height: 490px;
-	width: 540px;
+	width: 940px;
 	/*height: 300px;
 	width: 300px;*/
 	background-image: conic-gradient(rgb(198, 31, 25) 30deg, transparent 120deg);
@@ -184,39 +182,84 @@ body {
 	content:"";
 	position: absolute;
 	height: 435px;
-	width:  433px;
+	width:  833px;
 	/*height: 240px;
 	width: 190px;*/
-	background-color: blue;
+	background-color: rgb(0, 238, 255);
 	border-radius: 10%;
 	box-shadow: inset 16px 14px 20px #0da2d88c;
 	text-align: center;
+
 }
 
 .canal{
+	margin-top: 40px;
+	margin-right: 600px;
+	border-radius: 30px;
+	background-color: grey;
+	width: 150px;
+	height: 50px;
 	color:white;
-	/*font-size: 25px;*/
+	font-size: 25px;
 	z-index: 2;
-	background-color: transparent;
 	text-align: center;
 	text-shadow: 5px 5px 5px black;
 }
 
-/*ESTLIOS BORDES MODO DE JUEGO*/
-/*ESTLIOS OPERACIONES DE NUMEROS*/
+.canal1{
+	margin-top: 10px;
+	margin-left: 200px;
+	border-radius: 30px;
+	background-color: grey;
+	width: 150px;
+	height: 50px;
+	color:white;
+	font-size: 25px;
+	z-index: 2;
+	text-align: center;
+	text-shadow: 5px 5px 5px black;
+}
+
+.canal2{
+	margin-top: -50px;
+	margin-left: 400px;
+	border-radius: 30px;
+	background-color: grey;
+	width: 150px;
+	height: 50px;
+	color:white;
+	font-size: 25px;
+	z-index: 2;
+	text-align: center;
+	text-shadow: 5px 5px 5px black;
+}
+
+.canal3{
+	margin-left: 600px;
+	margin-top: -90% !important;
+	border-radius: 30px;
+	background-color: grey;
+	width: 150px;
+	height: 50px;
+	color:white;
+	font-size: 25px;
+	z-index: 2;
+	text-align: center;
+	text-shadow: 5px 5px 5px black;
+}
+
 .numeros{
 	color: aqua;
 	margin-top:60px;
 }
 .boton_numeros{
-	
 	border-radius: 20px;
 	background-color: rgb(25, 138, 231);
 	padding: 25px 35px;
 	text-decoration: none;
 	color: white;
 	font-weight: 30px;
-	font-size: 20px;
+	font-size: 40px;
 	transition: .4s ease;
 }
 .boton_numeros:hover{
@@ -226,4 +269,88 @@ body {
 		        0 0 30px blue;
 
 }
-/*END ESTLIOS OPERACIONES DE NUMEROS*/
+
+*{
+	margin: 0%;
+	padding: 0%;
+}
+
+div#general{
+	box-shadow: inset 5px 10px 15px black;
+	border-radius: 30px;
+	margin-top: 500px;
+	width: 350px;
+	height: 80px;
+	background-color: rgb(217, 18, 235);
+	color: #ffffff;
+
+}
+
+div#ofertas{
+	box-shadow: inset 5px 10px 15px black;
+	border-radius:30px;
+	margin-top: -80px;
+	margin-left: 800px;
+	width: 350px;
+	height: 80px;
+	background-color: rgb(217, 18, 235);
+	color: #fff;
+}
+
+div#ofertas:hover{
+	transform: scale(1.1);
+	color: #0372b1;
+	box-shadow: 0px 0px 20px #010450;
+}
+
+div#general:hover{
+	transform: scale(1.1);
+	color: #0372b1;
+	box-shadow: 0px 0px 20px #010450;
+}
+
+div#ofertas1{
+	box-shadow: inset 5px 10px 15px black;
+	border-radius:30px;
+	margin-top: -550px;
+	margin-left: 390px;
+	width: 350px;
+	height: 80px;
+	background-color: rgb(217, 18, 235);
+	color: #fff;
+}
+
+div#ofertas1:hover{
+	transform: scale(1.1);
+	color: #0372b1;
+	box-shadow: 0px 0px 20px #010450;
+}
+
+div#general1:hover{
+	transform: scale(1.1);
+	color: #0372b1;
+	box-shadow: 0px 0px 20px #010450;
+}
+
+.img{
+	height: 20px;
+	width: 10px;
+}
+
+h1{
+	margin-top: 10px;
+
+}
+
+h2{
+	margin-top: 20px;
+	text-align: center;
+}
+
+h3{
+	margin-top: 20px;
+	text-align: center;
+}
+.espacio{
+    margin-top: 110px;
+}
