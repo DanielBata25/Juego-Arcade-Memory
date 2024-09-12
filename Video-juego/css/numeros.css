@@ -116,7 +116,13 @@ height: 50%;
 .table-responsive{
   margin-left: 60px;
 }
-
+.house2{
+  height: 70px;
+  width: 70px;
+  margin-left: 30px;
+transition: transform 0.3s;
+margin-top: -10px;
+}
 
 
 
