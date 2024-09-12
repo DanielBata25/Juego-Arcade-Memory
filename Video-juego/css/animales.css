@@ -1,0 +1,15 @@
+/* Alinear los botones en forma de T */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.mt-2 {
+    margin-top: 10px;
+}
