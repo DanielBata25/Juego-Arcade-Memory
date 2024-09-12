@@ -4,7 +4,7 @@ body {
 	align-items: center;
 	background-size: cover;
 	background-attachment: fixed;
-	background-position:center;
+	background-position: center;
 }
 
 .boton {
@@ -15,14 +15,16 @@ body {
 	position: relative;
 	transition-duration: 3s;
 }
-.conta{
+
+.conta {
 	border-width: 10px;
 	border-style: solid;
 	border-color: black;
-	background-color:rgba(10, 10, 10, 0.911);
-    border-radius: 50px;
-    box-shadow: 0 0 10px rgba(24, 13, 175, 0.892);
+	background-color: rgba(10, 10, 10, 0.911);
+	border-radius: 50px;
+	box-shadow: 0 0 10px rgba(24, 13, 175, 0.892);
 }
+
 .btn-1 {
 	margin-right: 55px;
 	border-radius: 20px;
@@ -37,12 +39,13 @@ body {
 
 .btn-1:hover {
 	box-shadow: 0 0 10px blue,
-		        0 0 30px blue,
-		        0 0 30px blue,
-		        0 0 30px blue;
+		0 0 30px blue,
+		0 0 30px blue,
+		0 0 30px blue;
 
 }
-.logo{
+
+.logo {
 	border-radius: 25%;
 }
 
@@ -62,13 +65,14 @@ body {
 	align-content: center;
 }
 
-.numeros2 img{
-	
+.numeros2 img {
+
 	margin: 20px 20px 20px 20px;
 	height: 250px;
 	width: 250px;
 }
-.pci{
+
+.pci {
 	margin-left: 25px;
 }
 
@@ -86,22 +90,23 @@ body {
 	height: 450px;
 	width: 450px;
 	background-color: grey;
-	
+
 	float: right;
 }
-.tamañosoni{
-    height: 70px;
-    width: 70px;
-    margin-left: 30px;
+
+.tamañosoni {
+	height: 70px;
+	width: 70px;
+	margin-left: 30px;
 	transition: transform 0.3s;
 }
 
-.pro{
+.pro {
 	color: rgb(2, 255, 242);
 }
 
 
-.cuadro1{
+.cuadro1 {
 	padding: 10px;
 	text-align: center;
 	width: 450px;
@@ -109,16 +114,18 @@ body {
 }
 
 
-.texto1{	
+.texto1 {
 	font-size: 25px;
 }
-.img2{
+
+.img2 {
 	padding-top: 10%;
 	width: 200px;
 	height: 200px;
 	border-radius: 10px 10px;
 }
-.piano1{
+
+.piano1 {
 	padding-top: 10px;
 	width: 200px;
 	height: 150px;
@@ -126,7 +133,8 @@ body {
 
 	margin: 0 10px;
 }
-.num1{
+
+.num1 {
 	padding-top: 10px;
 	width: 180px;
 	height: 130px;
@@ -137,13 +145,14 @@ body {
 
 
 
-.contenedor{
+.contenedor {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-top: 100px;
 }
-.tarjeta-1{
+
+.tarjeta-1 {
 	position: relative;
 	height: 440px;
 	width: 840px;
@@ -151,16 +160,17 @@ body {
 	width: 200px;*/
 	background-color: rgb(62, 178, 189);
 	box-shadow: 16px 14px 20px #030ae48c;
-    border-radius: 10%;
+	border-radius: 10%;
 	position: relative;
-    overflow: hidden;
+	overflow: hidden;
 	display: flex;
 	justify-content: center;
-	 
+
 	margin: 0 50px;
-	
+
 }
-.tarjeta-1::before{
+
+.tarjeta-1::before {
 	content: "";
 	position: absolute;
 	height: 490px;
@@ -170,19 +180,22 @@ body {
 	background-image: conic-gradient(rgb(198, 31, 25) 30deg, transparent 120deg);
 	animation: rotar 2s linear infinite;
 }
-@keyframes rotar{
-	from{
+
+@keyframes rotar {
+	from {
 		transform: rotate(0deg);
 	}
-	to{
+
+	to {
 		transform: rotate(-360deg);
 	}
 }
-.tarjeta-1::after{
-	content:"";
+
+.tarjeta-1::after {
+	content: "";
 	position: absolute;
 	height: 435px;
-	width:  833px;
+	width: 833px;
 	/*height: 240px;
 	width: 190px;*/
 	background-color: rgb(47, 50, 58);
@@ -192,67 +205,68 @@ body {
 
 }
 
-.canal{
+.canal {
 	margin-top: 40px;
 	margin-right: 600px;
 	border-radius: 30px;
 	background-color: rgb(120, 135, 136);
 	width: 150px;
 	height: 50px;
-	color:white;
+	color: white;
 	font-size: 25px;
 	z-index: 2;
 	text-align: center;
 	text-shadow: 5px 5px 5px black;
 }
 
-.canal1{
+.canal1 {
 	margin-top: -50px;
 	margin-left: 200px;
 	border-radius: 30px;
 	background-color: rgb(120, 135, 136);
 	width: 150px;
 	height: 50px;
-	color:white;
+	color: white;
 	font-size: 25px;
 	z-index: 2;
 	text-align: center;
 	text-shadow: 5px 5px 5px black;
 }
 
-.canal2{
+.canal2 {
 	margin-top: -10px;
 	margin-left: 400px;
 	border-radius: 30px;
 	background-color: rgb(120, 135, 136);
 	width: 150px;
 	height: 50px;
-	color:white;
+	color: white;
 	font-size: 25px;
 	z-index: 2;
 	text-align: center;
 	text-shadow: 5px 5px 5px black;
 }
 
-.canal3{
+.canal3 {
 	margin-top: -130px;
 	margin-left: 600px;
 	border-radius: 30px;
-	background-color: rgb(120, 135, 136);	
+	background-color: rgb(120, 135, 136);
 	width: 150px;
 	height: 50px;
-	color:white;
+	color: white;
 	font-size: 25px;
 	z-index: 2;
 	text-align: center;
 	text-shadow: 5px 5px 5px black;
 }
 
-.numeros{
+.numeros {
 	color: aqua;
-	margin-top:60px;
+	margin-top: 60px;
 }
-.boton_numeros{	
+
+.boton_numeros {
 	border-radius: 20px;
 	background-color: rgb(192, 36, 240);
 	padding: 25px 35px;
@@ -262,34 +276,34 @@ body {
 	font-size: 20px;
 	transition: .4s ease;
 }
-.boton_numeros:hover{
+
+.boton_numeros:hover {
 	box-shadow: 0 0 10px blue,
-		        0 0 30px blue,
-		        0 0 30px blue,
-		        0 0 30px blue;
+		0 0 30px blue,
+		0 0 30px blue,
+		0 0 30px blue;
 
 }
 
-*{
+* {
 	margin: 0%;
 	padding: 0%;
 }
 
-div#general{
+div#general {
 	box-shadow: inset 5px 10px 15px black;
 	border-radius: 30px;
-	margin-top: 80px;
 	width: 150px;
 	height: 80px;
 	background-color: rgb(192, 36, 240);
 	color: #ffffff;
-
+	margin-top: -10px;
 }
 
-div#ofertas{
+div#ofertas {
 	box-shadow: inset 5px 10px 15px black;
-	border-radius:30px;
-	margin-top: -80px;
+	border-radius: 30px;
+	
 	margin-left: 1000px;
 	width: 150px;
 	height: 80px;
@@ -297,36 +311,38 @@ div#ofertas{
 	color: #fff;
 }
 
-div#ofertas:hover{
+div#ofertas:hover {
 	transform: scale(1.1);
 	color: #0372b1;
 	box-shadow: 0px 0px 20px #010450;
 }
 
-div#general:hover{
+div#general:hover {
 	transform: scale(1.1);
 	color: #0372b1;
 	box-shadow: 0px 0px 20px #010450;
 }
 
-img{
+img {
 	margin-top: -80px;
 	margin-right: 110px;
 	height: 40px;
 	width: 40px;
 }
-h2{
+
+h2 {
 	margin-right: -10px;
 	text-align: center;
 	margin-top: 20px;
 }
 
-h3{
+h3 {
 	margin-top: 20px;
 	text-align: center;
 
 }
-.img-mediana{
+
+.img-mediana {
 	border-radius: 20px;
 	margin-left: 270px;
 	margin-top: 10px;
