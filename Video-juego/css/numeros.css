@@ -278,3 +278,14 @@ transition: transform 0.3s;
   font-size: 45px;
   color: #000000;
 }
+
+.depende{
+  width: 120px;
+  height: 100px;
+  margin-left: 155%;
+  margin-top: -2%;
+  color: rgb(0, 0, 0);
+  background-color: #08d5f0;
+  font-size: 130%;
+  border-radius: 10%;
+}
