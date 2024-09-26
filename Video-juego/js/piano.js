@@ -3,6 +3,7 @@ const pianoKeys = document.querySelectorAll(".piano-keys .key"),
     keysCheckbox = document.querySelector(".keys-checkbox input");
 
 let allKeys = [],
+    pressedKeys = [], // Array para almacenar las teclas presionadas
     audio = new Audio("tunes/a.wav");
 
 const playTune = (key) => {
@@ -18,7 +19,11 @@ const playTune = (key) => {
 
 pianoKeys.forEach(key => {
     allKeys.push(key.dataset.key);
-    key.addEventListener("click", () => playTune(key.dataset.key));
+    key.addEventListener("click", () => {
+        playTune(key.dataset.key);
+        pressedKeys.push(key.dataset.key); // Almacenar la tecla presionada en el array
+        console.log(pressedKeys); // Mostrar las teclas presionadas
+    });
 });
 
 const handleVolume = (e) => {
@@ -30,12 +35,18 @@ const showHideKeys = () => {
 }
 
 const pressedKey = (e) => {
-    if (allKeys.includes(e.key)) playTune(e.key);
+    if (allKeys.includes(e.key)) {
+        playTune(e.key);
+        pressedKeys.push(e.key); // Almacenar la tecla presionada en el array
+        console.log(pressedKeys); // Mostrar las teclas presionadas
+    }
 }
 
 keysCheckbox.addEventListener("click", showHideKeys);
 volumeSlider.addEventListener("input", handleVolume);
 document.addEventListener("keydown", pressedKey);
+
+
 
 // Secuencia de notas predefinida
 const patron_musical = ["w","e","t","y","u","o","p",];
