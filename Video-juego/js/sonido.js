@@ -12,4 +12,4 @@ function playPause(){
         audio.pause();
         playPauseBTN.innerHTML = "&#9658;";
     }
-}
+} 
