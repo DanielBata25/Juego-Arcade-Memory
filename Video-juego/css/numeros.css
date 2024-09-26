@@ -137,8 +137,19 @@ height: 50%;
 .table-responsive{
   margin-left: 60px;
 }
+.house2{
+  height: 70px;
+  width: 70px;
+  margin-left: 30px;
+transition: transform 0.3s;
+margin-top: -10px;
+}
 
-
+.lola{
+	color: rgb(2, 255, 242);
+	align-content: center;
+	margin-top: 0%;
+}
 
 
 
@@ -266,4 +277,15 @@ transition: transform 0.3s;
 .numero-grande{
   font-size: 45px;
   color: #000000;
+}
+
+.depende{
+  width: 120px;
+  height: 100px;
+  margin-left: 155%;
+  margin-top: -2%;
+  color: rgb(0, 0, 0);
+  background-color: #08d5f0;
+  font-size: 130%;
+  border-radius: 10%;
 }
