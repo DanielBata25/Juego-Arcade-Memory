@@ -37,14 +37,31 @@ body {
     transform: translateY(-100vh);
   }
 }
-
+.volu{
+	color: white;
+	margin-left: 18px;
+}
+.pregunta{
+	margin-left: 1650px;
+}
 .tamañosoni {
   width: 5%;
   height: auto;
   margin-top: 20px;
   margin-left: 30px;
   min-width: 40px;
-  transition: transform 0.3s;
+
+}
+.tamañosoni2 {
+ 
+  min-width: 40px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+.posi{
+  margin-left: 800px;
+  margin-top: 10px;
+
 }
 
 .container-1 {
@@ -59,8 +76,8 @@ body {
 
 .logo {
   border-radius: 25%;
-  width: 100%;
-  height: auto;
+  width: 380px;
+  right: 380px;
   object-fit: cover;
 }
 

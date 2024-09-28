@@ -6,7 +6,18 @@ body {
       background-attachment: fixed;
       background-position:center;
   }
+  .volu{
+    color: white;
+    margin-left: 18px;
+  }
+  .tamañosoni {
+    width: 2%;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 30px;
+    min-width: 40px;
   
+  }
 .space {
     --size: 2px;
     --space-layer: 
@@ -48,7 +59,7 @@ body {
 
   }
   .espacio{
-    margin-top: 130px;
+    margin-top: 30px;
     border-color: #0FE2D5;   
     border-radius: 10%;
 

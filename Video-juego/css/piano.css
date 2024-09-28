@@ -184,3 +184,57 @@ header .column span {
 #start-random:hover {
     background-color: #2fa1c5;
 }
+
+.custom-alert {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+}
+
+.custom-alert-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+}
+
+.custom-alert-content p {
+    margin: 0;
+    font-size: 20px;
+}
+
+/* Estilos para el mensaje de éxito */
+.success {
+    color: green;
+    font-weight: bold;
+}
+
+/* Estilos para el mensaje de error */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.close-btn {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: #45a049;
+}

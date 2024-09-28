@@ -24,12 +24,22 @@
 
 
 
-    <br>
-    <img src="img/musica.png" class="logo_tamaño" id="playPauseBTN" onclick="playPause()"> <br>
+    
+    <div class="container-2">
+        <div class="volume-control mt-4">
+            <img src="img/sonido abierto.png" class="tamañosoni" id="playPauseBTN" onclick="playPause()">
+            <div class="volu">
+                <label for="volume">Volumen:</label>
+            </div>
+            <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
+        </div>
+    </div>
+   
+
 
     <div class="container text-center">
         <div class="lola">
-            <img src="img/modo_juego.png" height="200" width="200" alt="">
+            <img src="img/modo_juego.png" height="160" width="160" alt="">
         </div>
         <div class="contenedor">
             <div class="tarjeta-1">

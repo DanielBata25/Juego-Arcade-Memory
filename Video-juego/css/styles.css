@@ -1,12 +1,18 @@
 body {
-	background-image: url("../img/imagen1.jpeg");
-	background-repeat: no-repeat;
-	align-items: center;
+	background-image: linear-gradient(#051327, #000);
+	inset: 0;
+	position: fixed;
 	background-size: cover;
 	background-attachment: fixed;
-	background-position:center;
+	background-position: center;
+  }
+.volu{
+	color: white;
+	margin-left: 18px;
 }
-
+.pregunta{
+	margin-left: 1650px;
+}
 .boton {
 	width: 500;
 	height: 500;
@@ -93,12 +99,7 @@ body {
 	
 	float: right;
 }
-.tamañosoni{
-    height: 70px;
-    width: 70px;
-    margin-left: 30px;
-	transition: transform 0.3s;
-}
+
 .pro{
 	color: rgb(2, 255, 242);
 }
