@@ -101,4 +101,7 @@ sequenceButton.addEventListener("click", () => {
     }
 });
 
-
+// Iniciar la secuencia automáticamente al cargar la página
+window.addEventListener("DOMContentLoaded", () => {
+    iniciarModoSecuencia(); // Iniciar la secuencia cuando la página esté completamente cargada
+});

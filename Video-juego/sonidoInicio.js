@@ -12,9 +12,9 @@ volumeControl.addEventListener('input', () => {
 function playPause() {
     if (audio.paused) {
         audio.play();
-        document.getElementById('playPauseBTN').src = '../img/normal.png '; // Cambia a imagen de pausa
+        document.getElementById('playPauseBTN').src = 'img/normal.png '; // Cambia a imagen de pausa
     } else {
         audio.pause();
-        document.getElementById('playPauseBTN').src = '../img/mute.png'; // Cambia a imagen de play
+        document.getElementById('playPauseBTN').src = 'img/mute.png'; // Cambia a imagen de play
     }
 }

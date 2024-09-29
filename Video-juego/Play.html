@@ -23,7 +23,7 @@
   
   <img src="img/pregunta.png" class="tamañosoni2" data-bs-toggle="modal" data-bs-target="#Perdiste1" alt="">
   <div class="container-2">
-        <img src="img/sonido abierto.png" class="tamañosoni" id="playPauseBTN" onclick="playPause()">
+        <img src="img/normal.png" class="tamañosoni" id="playPauseBTN" onclick="playPause()">
         <div class="volu">
             <label for="volume">Volumen:</label>
         </div>
@@ -80,12 +80,12 @@
 
 
     </div>
-  <audio id="audio">
-    <source src="audio/Headlands _musica.mp3" type="audio/mpeg">
-  </audio>
+    <audio id="audio" autoplay>
+      <source src="audio/Headlands _musica.mp3" type="audio/mpeg">
+    </audio>
   <!-- Js Plugins -->
 </body>
 <script src="bootstrap-5.1.3-dist/js/bootstrap.js"></script>
-<script src="js/sonido.js"></script>
+<script src="sonidoInicio.js"></script>
 <script src="js/fondo_estrellado.js"></script>
 </html>
