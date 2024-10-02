@@ -135,8 +135,7 @@ body {
 	width: 180px;
 	height: 130px;
 	border-radius: 10px 10px;
-
-	margin: 0 10px;
+	margin:10px;
 }
 
 
@@ -238,3 +237,20 @@ body {
 	font-size: 130%;
 	border-radius: 10%;
   }
+  .numeros1 img{
+	height: 250px;
+	width: 250px;
+}
+.numeros2 img{
+	height: 250px;
+	width: 250px;
+	margin-left: 100px;
+	margin-right: 110px;
+}
+.numeros3 img{
+	height: 250px;
+	width: 250px;
+	margin-top: 100px;
+	margin-right: 220px;
+	margin-left: 160px;
+}
