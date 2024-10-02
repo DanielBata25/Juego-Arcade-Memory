@@ -297,18 +297,20 @@ div#general {
 	height: 80px;
 	background-color: rgb(192, 36, 240);
 	color: #ffffff;
-	margin-top: -10px;
+	margin-top: 80px;
 }
 
 div#ofertas {
 	box-shadow: inset 5px 10px 15px black;
 	border-radius: 30px;
 	
-	margin-left: 1000px;
+	
 	width: 150px;
 	height: 80px;
 	background-color: aqua;
 	color: #fff;
+	margin-top: 80px;
+	margin-left: 1000px;
 }
 
 div#ofertas:hover {
