@@ -1,3 +1,5 @@
+
+
 const pianoKeys = document.querySelectorAll(".piano-keys .key"),
     volumeSlider = document.querySelector(".volume-slider input"),
     keysCheckbox = document.querySelector(".keys-checkbox input");
@@ -39,14 +41,15 @@ const showHideKeys = () => {
 const compareKeys = () => {
     if (pressedKeys.length === patron_musical.length) {
         if (pressedKeys.every(element => patron_musical.includes(element))) {
-            alert("¡😊FELCIDADES !EL PATRON COINCIDE ");
+            modalMsg("¡😔LA PROXIMA SERA 😔!EL PATRON NO COINCIDE")
             flagActiveGame = false;
         } else {
-            alert("¡😔LA PROXIMA SERA 😔!EL PATRON NO COINCIDE");
+            modalMsg("¡😔LA PROXIMA SERA 😔!EL PATRON NO COINCIDE");
             pressedKeys = [];
         }
     }
 }
+
 
 const pressedKey = (e) => {
     if (allKeys.includes(e.key) && flagActiveGame) {
@@ -63,7 +66,7 @@ volumeSlider.addEventListener("input", handleVolume);
 document.addEventListener("keydown", pressedKey);
 
 // Secuencia de notas predefinida
-const patron_musical = ["w", "e", "t", "y", "u", "o", "p"];
+const patron_musical = ["w", "s", "e", "d", "t",]; //"g", "e",  "d", "t", "g","k", "j", "d","g", "j","u"];
 
 // Variables para la secuencia
 let patronMusicalIndex = 0;
@@ -105,3 +108,13 @@ sequenceButton.addEventListener("click", () => {
 window.addEventListener("DOMContentLoaded", () => {
     iniciarModoSecuencia(); // Iniciar la secuencia cuando la página esté completamente cargada
 });
+
+function modalMsg(textMsg){
+    let modal= new bootstrap.Modal(document.getElementById('alert'));
+    let msg= document.querySelector('.modal-body');
+    
+    msg.innerHTML=textMsg;
+
+    modal.show()
+
+}
