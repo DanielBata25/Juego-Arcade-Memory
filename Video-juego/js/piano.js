@@ -66,7 +66,7 @@ volumeSlider.addEventListener("input", handleVolume);
 document.addEventListener("keydown", pressedKey);
 
 // Secuencia de notas predefinida
-const patron_musical = ["w", "s", "e", "d", "t",]; //"g", "e",  "d", "t", "g","k", "j", "d","g", "j","u"];
+const patron_musical = ["w", "s", "e", "d", "t","g", "e", "d", "t", "g","k", "j", "d","g", "j","u"];
 
 // Variables para la secuencia
 let patronMusicalIndex = 0;
