@@ -238,3 +238,9 @@ header .column span {
 .close-btn:hover {
     background-color: #45a049;
 }
+
+.tamaño{
+    width: 130px;
+    height: 180px;
+    margin-left: 1450px;
+}
