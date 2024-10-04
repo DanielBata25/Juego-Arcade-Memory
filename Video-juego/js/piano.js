@@ -41,11 +41,12 @@ const showHideKeys = () => {
 const compareKeys = () => {
     if (pressedKeys.length === patron_musical.length) {
         if (pressedKeys.every(element => patron_musical.includes(element))) {
-            modalMsg("¡😔LA PROXIMA SERA 😔!EL PATRON NO COINCIDE")
+            modalMsg("¡EL PATRON MUSICAL COINCIDE!")
             flagActiveGame = false;
         } else {
-            modalMsg("¡😔LA PROXIMA SERA 😔!EL PATRON NO COINCIDE");
-            pressedKeys = [];
+            modalMsg2("¡😔LA PROXIMA SERA 😔!EL PATRON NO COINCIDE")
+            //pressedKeys = [];
+            
         }
     }
 }
@@ -66,7 +67,11 @@ volumeSlider.addEventListener("input", handleVolume);
 document.addEventListener("keydown", pressedKey);
 
 // Secuencia de notas predefinida
+<<<<<<< HEAD
 const patron_musical = ["w", "s"]//, "e", "d", "t","g", "e", "d", "t", "g","k", "j", "d","g", "j","u"];
+=======
+const patron_musical = ["w", "s", "e",];// "d", "t","g", "e", "d", "t", "g","k", "j", "d","g", "j","u"];
+>>>>>>> 885adb8c087c2af7fb1f1c55cf3356f71f09d628
 
 // Variables para la secuencia
 let patronMusicalIndex = 0;
@@ -92,25 +97,25 @@ const pararModoSecuencia = () => {
     patronMusicalIndex = 0; // Resetear índice cuando se detiene
 }
 
-// Seleccionar el botón de secuencia
-const sequenceButton = document.querySelector("#start-sequence");
-sequenceButton.addEventListener("click", () => {
-    if (patronMusicalInterval) {
-        pararModoSecuencia();
-        sequenceButton.textContent = "Iniciar Secuencia";
-    } else {
-        iniciarModoSecuencia();
-        sequenceButton.textContent = "Detener Secuencia";
-    }
-});
 
 // Iniciar la secuencia automáticamente al cargar la página
 window.addEventListener("DOMContentLoaded", () => {
     iniciarModoSecuencia(); // Iniciar la secuencia cuando la página esté completamente cargada
 });
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function modalMsg(textMsg){
     let modal= new bootstrap.Modal(document.getElementById('alert'));
+    let msg= document.querySelector('.modal-body');
+    
+    msg.innerHTML=textMsg;
+
+    modal.show()
+
+}
+
+function modalMsg2(textMsg){
+    let modal= new bootstrap.Modal(document.getElementById('alert2'));
     let msg= document.querySelector('.modal-body');
     
     msg.innerHTML=textMsg;
