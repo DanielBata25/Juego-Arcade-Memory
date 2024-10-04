@@ -13,7 +13,18 @@ body {
     padding: 0 10px;
     background: white;
 }
-
+.titulo_Modal{
+    background-color: #30a7c5;
+}
+.hola {
+   margin-top: 300px;
+   border-radius: 100px;
+}
+.imagen{
+    width: 200px;
+    height: 200px;
+   margin-left: 130px;
+}
 header h2 {
     font-size: 1.6rem;
 }
