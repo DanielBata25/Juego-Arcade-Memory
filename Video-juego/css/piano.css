@@ -13,17 +13,46 @@ body {
     padding: 0 10px;
     background: white;
 }
-.titulo_Modal{
-    background-color: #30a7c5;
+#alert2 .modal-header{
+    border-radius: 10px;
+    background-image: url(../img/teclas2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    width: 500px;
+    height: auto;
+    min-height: 200px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
 }
-.hola {
-   margin-top: 300px;
+#alert .modal-header{
+    border-radius: 10px;
+    background-image: url(../img/teclas2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    width: 500px;
+    height: auto;
+    min-height: 200px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+.espacio {
+   margin-top: 150px;
    border-radius: 100px;
 }
 .imagen{
-    width: 200px;
-    height: 200px;
-   margin-left: 130px;
+    width: 250px;
+    height: 250px;
+   margin-left: 25px;
+}
+.letra{
+   justify-content: center;
 }
 header h2 {
     font-size: 1.6rem;
