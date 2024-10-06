@@ -283,4 +283,11 @@ header .column span {
     width: 130px;
     height: 180px;
     margin-left: 1450px;
+    margin-top: 220px;
+}
+.modal-body-3{
+    font-size: 40px;
+    background-color: chartreuse;
+    color: #000;
+    border-radius: 5px;
 }
