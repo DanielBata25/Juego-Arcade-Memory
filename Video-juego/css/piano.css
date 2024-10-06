@@ -12,6 +12,7 @@ body {
     min-height: 100vh;
     padding: 0 10px;
     background: white;
+    position:fixed
 }
 #alert2 .modal-header{
     border-radius: 10px;
@@ -280,14 +281,14 @@ header .column span {
 }
 
 .tamaño{
-    width: 130px;
-    height: 180px;
-    margin-left: 1450px;
-    margin-top: 220px;
+    width: 12%;
+    height: 20%;
+    margin-left: 95%;
+    margin-top: 1%;
 }
 .modal-body-3{
     font-size: 40px;
-    background-color: chartreuse;
+    background-color: cornflowerblue;
     color: #000;
     border-radius: 5px;
 }
