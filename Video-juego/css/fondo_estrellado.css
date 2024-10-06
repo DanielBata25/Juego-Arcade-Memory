@@ -39,17 +39,19 @@ body {
 }
 .volu{
 	color: white;
-	margin-left: 18px;
+	margin-left: 35px;
 }
 .pregunta{
 	margin-left: 1650px;
 }
 .tamañosoni {
-  width: 5%;
+  width: 30%;
   height: auto;
+  min-width: 40px;
   margin-top: 5px;
   margin-left: 30px;
-  min-width: 40px;
+  height: auto;
+  object-fit: cover;
 
 }
 .tamañosoni3 {
@@ -58,55 +60,69 @@ body {
   margin-top: 20px;
   margin-left: 10px;
   min-width: 10px;
-
+  height: auto;
+  object-fit: cover;
 }
 .tamañosoni2 {
- 
+  width: 3%;
   min-width: 40px;
   margin-top: 10px;
   margin-left: 30px;
+  height: auto;
+  object-fit: cover;
 }
 .posi{
   margin-left: 800px;
   margin-top: 10px;
-
 }
-
 .container-1 {
   width: 100%;
   max-width: 500px;
 }
-
 .container-2 {
-  width: 50%;
+  width: 25%;
   max-width: 200px;
 }
-
 .logo {
   border-radius: 25%;
-  width: 380px;
-  right: 380px;
+  width: 70%;
+  height: auto;
   object-fit: cover;
+  min-width: 100px;
+  min-height: 100px;
 }
-
+.container-top{
+  margin-top: -6% ;
+  justify-content: center;
+}
+@media (max-width: 620px) {
+  .container-top {
+    margin-top: 5% ;
+  }
+}
 .play-button {
-  width: 85%;
+  width: 70%;
   height: auto;
   object-fit: cover;
 }
 
 .btn-games {
  /* margin-left: calc((100vw - 250px) / 2);*/
-  width: 105%;
-  min-width: 417.3px;
-  display: flex;
+  width: 50%;
+  margin: auto;
+  margin-left: 26.5%;
   height: auto;
-  object-fit: cover;
+  display: flex;
   justify-content: center;
+  object-fit: cover;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
   /* Espacio entre botones */
 
+}
+.btn-1{
+  width: 150px;
+  padding: 10px 20px;
 }
 
 .fondo-modal {

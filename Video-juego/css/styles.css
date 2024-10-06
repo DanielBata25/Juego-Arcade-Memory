@@ -5,14 +5,23 @@ body {
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center;
-  }
-.volu{
-	color: white;
-	margin-left: 18px;
+	background-color: #ffffff;
 }
-.pregunta{
+
+.volu {
+	color: white;
+	margin-left: 100px;
+	font-size: 25px;
+}
+
+.volume-control {
+	width: 70%;
+}
+
+.pregunta {
 	margin-left: 1650px;
 }
+
 .boton {
 	width: 500;
 	height: 500;
@@ -21,13 +30,15 @@ body {
 	position: relative;
 	transition-duration: 3s;
 }
-.conta{
+
+.conta {
+ 	height: auto;
 	border-width: 55px;
 	border-style: solid;
 	border-color: rgb(0, 0, 0);
-	background-color:rgba(0, 0, 0, 0.911);
-    border-radius: 30px;
-    box-shadow: 0 0 10px rgba(251, 251, 255, 0.892);
+	background-color: rgba(0, 0, 0, 0.911);
+	border-radius: 30px;
+	box-shadow: 0 0 10px rgba(251, 251, 255, 0.892);
 
 }
 .btn-1 {
@@ -36,20 +47,45 @@ body {
 	background-color: rgb(25, 138, 231);
 	padding: 15px 25px;
 	text-decoration: none;
+	text-align: center;
 	color: white;
-	font-weight: 600;
-	font-size: 20px;
+	white-space: nowrap;
+	font-size: 1.2rem; 
 	transition: .4s ease;
 }
 
+@media (max-width: 1000px) {
+	.container-2 {
+		margin-right: 26%;
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		padding: 10px;
+	}
+
+	.volume-control {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.volu {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+}
+
+
 .btn-1:hover {
 	box-shadow: 0 0 10px blue,
-		        0 0 30px blue,
-		        0 0 30px blue,
-		        0 0 30px blue;
+		0 0 30px blue,
+		0 0 30px blue,
+		0 0 30px blue;
 
 }
-.logo{
+
+.logo {
 	border-radius: 25%;
 }
 
@@ -68,18 +104,21 @@ body {
 .tamaño_imagen {
 	align-content: center;
 }
-.lola{
+
+.lola {
 	color: rgb(2, 255, 242);
 	align-content: center;
 	margin-top: -10px;
 }
-.numeros2 img{
-	
+
+.numeros2 img {
+
 	margin: 20px 20px 20px 20px;
 	height: 250px;
 	width: 250px;
 }
-.pci{
+
+.pci {
 	margin-left: 25px;
 }
 
@@ -97,16 +136,16 @@ body {
 	height: 450px;
 	width: 450px;
 	background-color: grey;
-	
+
 	float: right;
 }
 
-.pro{
+.pro {
 	color: rgb(2, 255, 242);
 }
 
 
-.cuadro1{
+.cuadro1 {
 	padding: 10px;
 	text-align: center;
 	width: 450px;
@@ -114,16 +153,18 @@ body {
 }
 
 
-.texto1{	
+.texto1 {
 	font-size: 25px;
 }
-.img2{
+
+.img2 {
 	padding-top: 10%;
 	width: 200px;
 	height: 200px;
 	border-radius: 10px 10px;
 }
-.piano1{
+
+.piano1 {
 	padding-top: 10px;
 	width: 200px;
 	height: 150px;
@@ -131,39 +172,42 @@ body {
 
 	margin: 0 10px;
 }
-.num1{
+
+.num1 {
 	padding-top: 10px;
 	width: 180px;
 	height: 130px;
 	border-radius: 10px 10px;
-	margin:10px;
+	margin: 10px;
 }
 
 
 /*ESTLIOS BORDES MODO DE JUEGO*/
-.contenedor{
+.contenedor {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-top: 100px;
 }
-.tarjeta-1{
+
+.tarjeta-1 {
 	height: 440px;
 	width: 440px;
 	/*height: 250px;
 	width: 200px;*/
 	background-color: rgb(62, 178, 189);
 	box-shadow: 16px 14px 20px #030ae48c;
-    border-radius: 10%;
+	border-radius: 10%;
 	position: relative;
-    overflow: hidden;
 	display: flex;
+	overflow: hidden;
 	justify-content: center;
-	 
+
 	margin: 0 50px;
-	
+
 }
-.tarjeta-1::before{
+
+.tarjeta-1::before {
 	content: "";
 	position: absolute;
 	height: 490px;
@@ -173,19 +217,22 @@ body {
 	background-image: conic-gradient(rgb(198, 31, 25) 30deg, transparent 120deg);
 	animation: rotar 2s linear infinite;
 }
-@keyframes rotar{
-	from{
+
+@keyframes rotar {
+	from {
 		transform: rotate(0deg);
 	}
-	to{
+
+	to {
 		transform: rotate(-360deg);
 	}
 }
-.tarjeta-1::after{
-	content:"";
+
+.tarjeta-1::after {
+	content: "";
 	position: absolute;
 	height: 435px;
-	width:  433px;
+	width: 433px;
 	/*height: 240px;
 	width: 190px;*/
 	background-color: blue;
@@ -194,8 +241,8 @@ body {
 	text-align: center;
 }
 
-.canal{
-	color:white;
+.canal {
+	color: white;
 	/*font-size: 25px;*/
 	z-index: 2;
 	background-color: transparent;
@@ -205,12 +252,13 @@ body {
 
 /*ESTLIOS BORDES MODO DE JUEGO*/
 /*ESTLIOS OPERACIONES DE NUMEROS*/
-.numeros{
+.numeros {
 	color: aqua;
-	margin-top:60px;
+	margin-top: 60px;
 }
-.boton_numeros{
-	
+
+.boton_numeros {
+
 	border-radius: 20px;
 	background-color: rgb(25, 138, 231);
 	padding: 25px 35px;
@@ -220,15 +268,17 @@ body {
 	font-size: 20px;
 	transition: .4s ease;
 }
-.boton_numeros:hover{
+
+.boton_numeros:hover {
 	box-shadow: 0 0 10px blue,
-		        0 0 30px blue,
-		        0 0 30px blue,
-		        0 0 30px blue;
+		0 0 30px blue,
+		0 0 30px blue,
+		0 0 30px blue;
 
 }
+
 /*END ESTLIOS OPERACIONES DE NUMEROS*/
-.depende{
+.depende {
 	width: 120px;
 	height: 100px;
 	margin-left: 155%;
@@ -237,28 +287,50 @@ body {
 	background-color: #08d5f0;
 	font-size: 130%;
 	border-radius: 10%;
-  }
-  .numeros1 img{
+}
+
+.numeros1 img {
 	height: 220px;
 	width: 220px;
 }
-.numeros2 img{
+
+.numeros2 img {
+	
 	height: 220px;
 	width: 220px;
-	margin-left: 100px;
-	margin-right: 110px;
+	margin-left: 5%;
+	margin-right: 5%;
 }
-.numeros3 img{
+
+.numeros3 img {
 	height: 220px;
 	width: 220px;
 	margin-top: -0.5px;
-	margin-right: 220px;
-	margin-left: 160px;
+	margin-right: 5%;
+	margin-left: 5%;
 }
-.developer{
-	height: 60px;
-	width: 60px;
+
+.developer {
+	width: 50%;
+	min-width: 40px;
+	height: auto;
 	margin-left: 25px;
 	margin-top: 2px;
 
+}
+
+.volumen {
+	width: 50%;
+	min-width: 40px;
+	margin-left: 40px;
+	height: auto;
+}
+
+@media (max-width: 450px) {
+	.volu {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
 }

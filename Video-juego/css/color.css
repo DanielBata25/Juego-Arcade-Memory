@@ -7,7 +7,15 @@ body {
 	background-position: center center;
 }
 .lola{
-	text-align: center;
+    display: grid;
+    margin: auto;
+    place-items: center;
+    width: 20px;
+    margin-left: 45%;
+}
+.lol2 {
+    margin-left: 47%;
+    width: 30px;
 }
 .color{
     color: rgb(0, 255, 238);
