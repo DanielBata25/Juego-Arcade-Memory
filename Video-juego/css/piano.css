@@ -13,7 +13,47 @@ body {
     padding: 0 10px;
     background: white;
 }
+#alert2 .modal-header{
+    border-radius: 10px;
+    background-image: url(../img/teclas2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    width: 500px;
+    height: auto;
+    min-height: 200px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+}
+#alert .modal-header{
+    border-radius: 10px;
+    background-image: url(../img/teclas2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    width: 500px;
+    height: auto;
+    min-height: 200px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+}
 
+.espacio {
+   margin-top: 150px;
+   border-radius: 100px;
+}
+.imagen{
+    width: 250px;
+    height: 250px;
+   margin-left: 25px;
+}
+.letra{
+   justify-content: center;
+}
 header h2 {
     font-size: 1.6rem;
 }
@@ -237,4 +277,17 @@ header .column span {
 
 .close-btn:hover {
     background-color: #45a049;
+}
+
+.tamaño{
+    width: 130px;
+    height: 180px;
+    margin-left: 1450px;
+    margin-top: 220px;
+}
+.modal-body-3{
+    font-size: 40px;
+    background-color: chartreuse;
+    color: #000;
+    border-radius: 5px;
 }
