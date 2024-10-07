@@ -15,13 +15,13 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/fondo_estrellado.css">
 </head>
+
 <body>
     <div class="container">
         <div class="space space-1"></div>
         <div class="space space-2"></div>
         <div class="space space-3"></div>
     </div>
-
 
 
     <div class="container-2">
@@ -33,7 +33,18 @@
             <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
         </div>
     </div>
-   
+
+    <div class=" container container-3">
+        <button class="btn btn1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+            aria-controls="offcanvasExample">
+            <img src="img/profile.png" class="perfilll" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                alt="">
+        </button>
+    </div>
+    <div class="perfill">
+        <label for="perfill">Perfil</label>
+    </div>
+
 
 
 
@@ -50,12 +61,32 @@
             <a class="btn-1" href="Registro.html" role="button">Registrarse</a>
         </div>
     </div>
+    <!--canva del perfil-->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Nombre del Usuario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-tittle">usuario@correo.com</div>
+        <div class="offcanvas-body">
+            <h2 class="offcanvas-titttle">Tu avatar actual:</h2>
+            <img src="img/avatarraper.png" class="avatarraper" alt="">
+            <div class="dropdown mt-3">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas">
+                    Guardar Avatar
+                </button>
+                <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas">
+                    Cerrar Sesion
+                </button>
+            </div>
+        </div>
+    </div>
 
 
     <!--MUSICA-->
     <audio id="audio" loop>
         <source src="audio/Headlands _musica.mp3" type="audio/mpeg">
-       
+
     </audio>
     <!--END MUSICA-->
 

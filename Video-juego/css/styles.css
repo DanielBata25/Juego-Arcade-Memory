@@ -238,7 +238,7 @@ body {
 	border-radius: 10%;
   }
   .numeros1 img{
-	height: 250px;
+	height: 290px;
 	width: 250px;
 }
 .numeros2 img{
@@ -253,4 +253,62 @@ body {
 	margin-top: 100px;
 	margin-right: 220px;
 	margin-left: 160px;
+}
+.container-3{
+	margin-top: -90px;
+	width: 250px;
+	margin-left: 1280px;
+}
+.perfill{
+	color: white;
+	margin-left: 1310px;
+}
+.perfilll{
+	text-align: center;
+	display: flex;
+	margin: -15%;
+}
+.btn-primary{
+	padding: 0%;
+	margin: 0%
+}
+.offcanvas-start{
+	margin-bottom: 15%;
+	text-align: center;
+}
+.offcanvas-title{
+	text-align: center;
+	width: 70%;
+	margin-left: 15%;
+}
+.offcanvas-tittle{
+	font-size: medium;
+	height: auto;
+	text-align: center;
+	width: 70%;
+	margin: auto;
+}
+.offcanvas-body{
+	margin: auto;
+}
+.btn-secondary{
+	width: 100%;
+	margin-top: 10%;
+}
+.btn-primary{
+	margin-top: 20%;
+	width: 100%;
+}
+.offcanvas-titttle{
+	width: 100%;
+}
+.imgnoche{
+	text-align: center;
+	display: flex;
+	margin: -10%;
+	width: 100px;
+	height: 100px
+}
+.avatarraper{
+	margin-top: 1%;
 }
