@@ -161,7 +161,6 @@ body {
 	background-color: rgb(62, 178, 189);
 	box-shadow: 16px 14px 20px #030ae48c;
 	border-radius: 10%;
-	position: relative;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;

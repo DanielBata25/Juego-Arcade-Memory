@@ -12,8 +12,86 @@ body {
     min-height: 100vh;
     padding: 0 10px;
     background: white;
+    position:fixed
+}
+.container2 {
+    display: flex; /* Usamos flexbox para alinear los elementos */
+    justify-content: flex-end; /* Alineamos ambos elementos al lado derecho */
+    align-items: center; /* Alineamos verticalmente */
+    gap: 10px; /* Ajustamos el espacio entre el mensaje y la imagen */
+    margin-right: 50px; /* Mueve el contenedor más hacia la derecha */
+}
+.mensaje-container2 {
+ 
+    border: 3px solid aqua; 
+    padding: 30px;
+    background-color: gray; 
+    border-radius: 17px;
+    width: 75px;
+    margin: 0; 
+    display: flex; 
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    font-weight: bold; 
+    height: 85px; /* Ajusta el alto del contenedor si es necesario */
+
 }
 
+.tamaño_betoven2 {
+    max-width: 50%; /* Mantiene la imagen a la mitad de su tamaño original */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    height: auto; /* Mantiene la relación de aspecto */
+    margin-left:20px;
+
+}
+
+.claro{
+    background-image: url(../img/teclas2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+#alert2 .modal-header{
+    
+    background-image: url(../img/teclas2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: transparent!important;
+    width: 500px;
+    height: auto;
+    min-height: 200px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+}
+#alert .modal-header{
+    
+    background-image: url(../img/teclas2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    width: 500px;
+    height: auto;
+    min-height: 200px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+.espacio {
+   margin-top: 150px;
+   border-radius: 100px;
+}
+.imagen{
+    width: 250px;
+    height: 250px;
+   margin-left: 25px;
+}
+.letra{
+   justify-content: center;
+}
 header h2 {
     font-size: 1.6rem;
 }
@@ -237,4 +315,11 @@ header .column span {
 
 .close-btn:hover {
     background-color: #45a049;
+}
+
+.modal-body-3{
+    font-size: 40px;
+    background-color: cornflowerblue;
+    color: #000;
+    border-radius: 5px;
 }

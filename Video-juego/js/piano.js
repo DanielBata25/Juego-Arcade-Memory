@@ -1,12 +1,13 @@
-
-
 const pianoKeys = document.querySelectorAll(".piano-keys .key"),
     volumeSlider = document.querySelector(".volume-slider input"),
     keysCheckbox = document.querySelector(".keys-checkbox input");
 
 let allKeys = [],
-    pressedKeys = [], // Array para almacenar las teclas presionadas
-    audio = new Audio("tunes/a.wav");
+    pressedKeys = [], 
+    audio = new Audio("tunes/a.wav"),
+    flagActiveGame = true; // Controla si el usuario puede seguir tocando
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const playTune = (key) => {
     audio.src = `tunes/${key}.wav`;
@@ -18,16 +19,22 @@ const playTune = (key) => {
         clickedKey.classList.remove("active");
     }, 150);
 }
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 pianoKeys.forEach(key => {
     allKeys.push(key.dataset.key);
     key.addEventListener("click", () => {
-        playTune(key.dataset.key);
-        pressedKeys.push(key.dataset.key); // Almacenar la tecla presionada en el array
-        console.log(pressedKeys); // Mostrar las teclas presionadas
-        compareKeys(); // Llama a la función para comparar teclas
+        if (flagActiveGame) { 
+            playTune(key.dataset.key);
+            pressedKeys.push(key.dataset.key); // Almacenar la tecla presionada en el array
+            console.log(pressedKeys);
+            compareKeys(); 
+        } else {
+            console.log("El piano ya no se puede tocar."); // Mensaje cuando está bloqueado
+        }
     });
 });
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 const handleVolume = (e) => {
     audio.volume = e.target.value;
@@ -36,37 +43,39 @@ const handleVolume = (e) => {
 const showHideKeys = () => {
     pianoKeys.forEach(key => key.classList.toggle("hide"));
 }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const compareKeys = () => {
-    if (pressedKeys.length === patron_musical.length) {
-        if (pressedKeys.every(element => patron_musical.includes(element))) {
-            modalMsg("¡😔LA PROXIMA SERA 😔!EL PATRON NO COINCIDE")
-            flagActiveGame = false;
-        } else {
-            modalMsg("¡😔LA PROXIMA SERA 😔!EL PATRON NO COINCIDE");
-            pressedKeys = [];
-        }
-    }
-}
-
-
 const pressedKey = (e) => {
-    if (allKeys.includes(e.key) && flagActiveGame) {
+    if (allKeys.includes(e.key) && flagActiveGame) { 
         playTune(e.key);
         pressedKeys.push(e.key); // Almacenar la tecla presionada en el array
-        console.log(pressedKeys); // Mostrar las teclas presionadas
-        compareKeys(); // Llama a la función para comparar teclas
-
+        console.log(pressedKeys); 
+        compareKeys(); 
+    } else {
+        console.log("El piano ya no se puede tocar."); // Mensaje cuando está bloqueado
     }
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+const compareKeys = () => {
+    if (pressedKeys.length === patron_musical.length) {
+        if (pressedKeys.every((element, index) => element === patron_musical[index])) {
+            modalMsg("");  
+        } else {
+            modalMsg2("");
+        }
+        flagActiveGame = false;  // Desactivar el piano después de comprobar el patrón
+    }
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 keysCheckbox.addEventListener("click", showHideKeys);
 volumeSlider.addEventListener("input", handleVolume);
 document.addEventListener("keydown", pressedKey);
 
 // Secuencia de notas predefinida
-const patron_musical = ["w", "s", "e", "d", "t",]; //"g", "e",  "d", "t", "g","k", "j", "d","g", "j","u"];
+const patron_musical = ["w", "s"]; // const patron_musical = ["w", "s", "e", "d", "t","g", "e", "d", "t", "g","k", "j", "d","g", "j","u"];
 
 // Variables para la secuencia
 let patronMusicalIndex = 0;
@@ -82,6 +91,7 @@ const playSecuencia = () => {
     playTune(patron_musical[patronMusicalIndex]);
     patronMusicalIndex++;
 }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const iniciarModoSecuencia = () => {
     patronMusicalInterval = setInterval(playSecuencia, 500); // Intervalo de 500 ms entre notas
@@ -92,29 +102,22 @@ const pararModoSecuencia = () => {
     patronMusicalIndex = 0; // Resetear índice cuando se detiene
 }
 
-// Seleccionar el botón de secuencia
-const sequenceButton = document.querySelector("#start-sequence");
-sequenceButton.addEventListener("click", () => {
-    if (patronMusicalInterval) {
-        pararModoSecuencia();
-        sequenceButton.textContent = "Iniciar Secuencia";
-    } else {
-        iniciarModoSecuencia();
-        sequenceButton.textContent = "Detener Secuencia";
-    }
-});
-
 // Iniciar la secuencia automáticamente al cargar la página
 window.addEventListener("DOMContentLoaded", () => {
     iniciarModoSecuencia(); // Iniciar la secuencia cuando la página esté completamente cargada
 });
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function modalMsg(textMsg){
-    let modal= new bootstrap.Modal(document.getElementById('alert'));
-    let msg= document.querySelector('.modal-body');
-    
-    msg.innerHTML=textMsg;
+    let modal = new bootstrap.Modal(document.getElementById('alert'));
+    let msg = document.querySelector('#alert .modal-body'); // Sección del modal en HTML
+    msg.innerHTML = textMsg; // Cambiar el texto del modal
+    modal.show(); // Mostrar el modal
+}
 
-    modal.show()
-
+function modalMsg2(textMsg2){
+    let modal = new bootstrap.Modal(document.getElementById('alert2'));
+    let msg = document.querySelector('#alert2 .modal-body'); // Sección del modal en HTML
+    msg.innerHTML = textMsg2; // Cambiar el texto del modal
+    modal.show(); // Mostrar el modal
 }
