@@ -287,20 +287,19 @@ body {
 	background-color: #08d5f0;
 	font-size: 130%;
 	border-radius: 10%;
-<<<<<<< HEAD
+
   }
   .numeros1 img{
 	height: 290px;
 	width: 250px;
-=======
->>>>>>> aa5ca479992c036441c31d50e91c75bc412565e9
+
 }
 
 .numeros1 img {
 	height: 220px;
 	width: 220px;
 }
-<<<<<<< HEAD
+
 .numeros3 img{
 	height: 250px;
 	width: 250px;
@@ -365,7 +364,7 @@ body {
 }
 .avatarraper{
 	margin-top: 1%;
-=======
+}
 
 .numeros2 img {
 	
@@ -406,5 +405,5 @@ body {
 		align-items: center;
 		gap: 10px;
 	}
->>>>>>> aa5ca479992c036441c31d50e91c75bc412565e9
+
 }

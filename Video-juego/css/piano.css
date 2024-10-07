@@ -60,10 +60,10 @@ body {
     color: transparent!important;
     width: 500px;
     height: auto;
-    min-height: 200px;
+    min-height: 100px;
     overflow: hidden;
     position: relative;
-    padding: 20px;
+    padding: 10px;
 }
 #alert .modal-header{
     
@@ -74,15 +74,15 @@ body {
     color: #fff;
     width: 500px;
     height: auto;
-    min-height: 200px;
+    min-height: 100px;
     overflow: hidden;
     position: relative;
-    padding: 20px;
+    padding: 10px;
 }
 
 .espacio {
-   margin-top: 150px;
-   border-radius: 100px;
+   margin-top: 70px;
+   border-radius: 150px;
 }
 .imagen{
     width: 250px;
