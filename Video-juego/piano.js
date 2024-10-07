@@ -1,16 +1,18 @@
 const mensajesMotivadores = [
-  { mensaje: "La perseverancia es la clave del éxito" },
-  { mensaje: "No te rindas, sigue adelante" },
-  { mensaje: "La motivación es la fuerza que te impulsa a alcanzar tus metas" },
-  { mensaje: "Cree en ti mismo y en tus habilidades" },
-  { mensaje: "El éxito es el resultado de la dedicación y el esfuerzo" }
+  { mensaje: "¡Vamoss!" },
+  { mensaje: "Cree en ti mismo" },
+  { mensaje: "¡Tu puedes!" },
 ];
 
-const modal = document.getElementById('Mensajes');
+// Selecciona el contenedor para el mensaje
+const mensajeContenedor = document.getElementById('mensaje-motivador');
 
-modal.addEventListener('show.bs.modal', function (event) {
-
+// Función para mostrar un mensaje aleatorio
+function mostrarMensajeAleatorio() {
   const mensajeAleatorio = mensajesMotivadores[Math.floor(Math.random() * mensajesMotivadores.length)];
+  mensajeContenedor.innerHTML = mensajeAleatorio.mensaje;
+}
 
-  document.getElementById('mensaje-motivador').innerHTML = mensajeAleatorio.mensaje;
-});
+// Muestra un mensaje inmediatamente y luego cada 5 segundos
+mostrarMensajeAleatorio(); // Mostrar un mensaje al cargar la página
+setInterval(mostrarMensajeAleatorio, 900); // Cambiar mensaje cada 5 segundos

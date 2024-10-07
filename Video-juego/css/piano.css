@@ -14,13 +14,50 @@ body {
     background: white;
     position:fixed
 }
+.container2 {
+    display: flex; /* Usamos flexbox para alinear los elementos */
+    justify-content: flex-end; /* Alineamos ambos elementos al lado derecho */
+    align-items: center; /* Alineamos verticalmente */
+    gap: 10px; /* Ajustamos el espacio entre el mensaje y la imagen */
+    margin-right: 50px; /* Mueve el contenedor más hacia la derecha */
+}
+.mensaje-container2 {
+ 
+    border: 3px solid aqua; 
+    padding: 30px;
+    background-color: gray; 
+    border-radius: 17px;
+    width: 75px;
+    margin: 0; 
+    display: flex; 
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    font-weight: bold; 
+    height: 85px; /* Ajusta el alto del contenedor si es necesario */
+
+}
+
+.tamaño_betoven2 {
+    max-width: 50%; /* Mantiene la imagen a la mitad de su tamaño original */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    height: auto; /* Mantiene la relación de aspecto */
+    margin-left:20px;
+
+}
+
+.claro{
+    background-image: url(../img/teclas2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
 #alert2 .modal-header{
-    border-radius: 10px;
+    
     background-image: url(../img/teclas2.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    color: #fff;
+    color: transparent!important;
     width: 500px;
     height: auto;
     min-height: 200px;
@@ -29,7 +66,7 @@ body {
     padding: 20px;
 }
 #alert .modal-header{
-    border-radius: 10px;
+    
     background-image: url(../img/teclas2.jpeg);
     background-repeat: no-repeat;
     background-position: center;
@@ -280,12 +317,6 @@ header .column span {
     background-color: #45a049;
 }
 
-.tamaño{
-    width: 12%;
-    height: 20%;
-    margin-left: 95%;
-    margin-top: 1%;
-}
 .modal-body-3{
     font-size: 40px;
     background-color: cornflowerblue;
