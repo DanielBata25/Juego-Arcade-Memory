@@ -6,6 +6,7 @@
 }
 
 body {
+    background-image:url('../img/nota.jpeg');
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,6 +14,7 @@ body {
     padding: 0 10px;
     background: white;
     position:fixed
+    
 }
 .container2 {
     display: flex; /* Usamos flexbox para alinear los elementos */
@@ -46,10 +48,12 @@ body {
 }
 
 .claro{
-    background-image: url(../img/teclas2.jpeg);
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: transparent!important;
     
+}
+.modal-content{
+    background-color: transparent!important;
+    background-position: center;
 }
 #alert2 .modal-header{
     
@@ -58,12 +62,13 @@ body {
     background-position: center;
     background-size: cover;
     color: transparent!important;
-    width: 500px;
+    width: 400px;
     height: auto;
-    min-height: 200px;
+    min-height: 100px;
     overflow: hidden;
     position: relative;
-    padding: 20px;
+    padding: 10px;
+
 }
 #alert .modal-header{
     
@@ -72,21 +77,21 @@ body {
     background-position: center;
     background-size: cover;
     color: #fff;
-    width: 500px;
+    width: 400px;
     height: auto;
-    min-height: 200px;
+    min-height: 100px;
     overflow: hidden;
     position: relative;
-    padding: 20px;
+    padding: 10px;
 }
 
 .espacio {
-   margin-top: 150px;
-   border-radius: 100px;
+   margin-top: 70px;
+   border-radius: 1150px;
 }
 .imagen{
-    width: 250px;
-    height: 250px;
+    width: 40%;
+    height: 40%;
    margin-left: 25px;
 }
 .letra{

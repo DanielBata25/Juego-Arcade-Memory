@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Sala de Juego</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Crear una nueva Sala de Juego</h1>
+        <form action="/create-room" method="POST" class="bg-white p-4 rounded shadow">
+            <div class="form-group">
+                <label for="roomName">Nombre de la Sala:</label>
+                <input type="text" class="form-control" id="roomName" name="roomName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="videoGame">Seleccionar Videojuego:</label>
+                <select class="form-control" id="videoGame" name="videoGame" required>
+                    <option value="juego1">Juego 1</option>
+                    <option value="juego2">Juego 2</option>
+                    <option value="juego3">Juego 3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="difficulty">Nivel de Dificultad:</label>
+                <select class="form-control" id="difficulty" name="difficulty" required>
+                    <option value="facil">Fácil</option>
+                    <option value="medio">Medio</option>
+                    <option value="dificil">Difícil</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Duración del Juego (en minutos):</label>
+                <input type="number" class="form-control" id="duration" name="duration" min="1" required>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block">Crear Sala</button>
+        </form>
+    </div>
+
+    <!-- Enlace a Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

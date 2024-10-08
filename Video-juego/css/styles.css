@@ -287,6 +287,10 @@ body {
 	background-color: #08d5f0;
 	font-size: 130%;
 	border-radius: 10%;
+}
+  .numeros1 img{
+	height: 290px;
+	width: 250px;
 
 }
 
@@ -410,7 +414,9 @@ body {
 		gap: 10px;
 	}
 
+
 }
 .offcanvas{
 	background-image: url("../img/offcanva.png");
+
 }
