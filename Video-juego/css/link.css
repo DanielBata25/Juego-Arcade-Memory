@@ -1,38 +1,49 @@
 body {
-	background-image: url("../img/Planeta.png");
+	background-image: url("../img/imagen1.jpeg");
 	background-repeat: no-repeat;
 	align-items: center;
 	background-size: cover;
 	background-attachment: fixed;
-	background-position:center;
+	background-position: center center;
+}
+.espacio {
+	margin-top: 200px;
+	border-radius: 150px;
+ }
+.container {
+    background-color:transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(18, 1, 255, 0.892);
+    width: 300px;
+}
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3204ec;
+}
+.container input[type="text"]{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #0509e9b7;
+    border-radius: 5px;
 }
 
-.boton {
-	width: 500;
-	height: 500;
-	background: #0372b1;
-	border-radius: 45%;
-	position: relative;
-	transition-duration: 3s;
-}
 
-
-.numeros{
-	color: aqua;
-	margin-top:60px;
-}
-.boton_numeros{
+.btn-1 {
+	align-content: center;
 	border-radius: 20px;
 	background-color: rgb(25, 138, 231);
-	padding: 25px 35px;
+	padding:5px 15px;
 	text-decoration: none;
 	color: white;
-	font-weight: 30px;
-	font-size: 40px;
+	font-weight: 600;
+	font-size: 20px;
 	transition: .4s ease;
-
+    
 }
-.boton_numeros:hover{
+.btn-1:hover {
 	box-shadow: 0 0 10px blue,
 		        0 0 30px blue,
 		        0 0 30px blue,
@@ -40,8 +51,4 @@ body {
 
 }
 
-
-.espacio{
-    margin-top: 210px;
-text-align: center;
-}
+    
