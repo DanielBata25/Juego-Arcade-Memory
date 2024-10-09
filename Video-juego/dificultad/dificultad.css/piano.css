@@ -1,0 +1,306 @@
+body {
+	background-image: linear-gradient(#051327, #000);
+	inset: 0;
+	position: fixed;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-color: #ffffff;
+}
+
+.volu {
+	color: white;
+	margin-left: 100px;
+	font-size: 25px;
+}
+
+.volume-control {
+	width: 70%;
+}
+
+.pregunta {
+	margin-left: 1650px;
+}
+
+.boton {
+	width: 500;
+	height: 500;
+	background: #0372b1;
+	border-radius: 45%;
+	position: relative;
+	transition-duration: 3s;
+}
+
+.conta {
+ 	height: auto;
+	border-width: 55px;
+	border-style: solid;
+	border-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.911);
+	border-radius: 30px;
+	box-shadow: 0 0 10px rgba(251, 251, 255, 0.892);
+
+}
+.btn-1 {
+	margin-right: 35px;
+	border-radius: 20px;
+	background-color: rgb(25, 138, 231);
+	padding: 15px 25px;
+	text-decoration: none;
+	text-align: center;
+	color: white;
+	white-space: nowrap;
+	font-size: 1.2rem; 
+	transition: .4s ease;
+}
+
+@media (max-width: 1000px) {
+	.container-2 {
+		margin-right: 26%;
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		padding: 10px;
+	}
+
+	.volume-control {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.volu {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+}
+
+
+.btn-1:hover {
+	box-shadow: 0 0 10px blue,
+		0 0 30px blue,
+		0 0 30px blue,
+		0 0 30px blue;
+
+}
+
+.logo {
+	border-radius: 25%;
+}
+
+.boton:hover {
+	width: 500;
+	height: 500;
+	background: purple;
+	box-shadow: 0 0 10px purple;
+}
+
+.icono {
+	color: rgb(31, 57, 186);
+	font-size: 6rem;
+}
+
+.tamaño_imagen {
+	align-content: center;
+}
+
+.lola {
+	color: rgb(2, 255, 242);
+	align-content: center;
+	margin-top: -10px;
+}
+
+
+.pci {
+	margin-left: 25px;
+}
+
+.box-1 {
+	border-radius: 100px;
+	height: 450px;
+	width: 450px;
+	background-color: grey;
+
+	float: left;
+}
+
+.box-2 {
+	border-radius: 100px;
+	height: 450px;
+	width: 450px;
+	background-color: grey;
+
+	float: right;
+}
+
+.pro {
+	color: rgb(2, 255, 242);
+}
+
+
+.cuadro1 {
+	padding: 10px;
+	text-align: center;
+	width: 450px;
+	height: 60px;
+}
+
+
+.texto1 {
+	font-size: 25px;
+}
+
+
+.num1 {
+	padding-top: 10px;
+	width: 180px;
+	height: 130px;
+	border-radius: 10px 10px;
+	margin: 10px;
+}
+
+
+/*ESTLIOS BORDES MODO DE JUEGO*/
+.contenedor {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 100px;
+}
+
+.tarjeta-1 {
+	height: 440px;
+	width: 440px;
+	/*height: 250px;
+	width: 200px;*/
+	background-color: rgb(62, 178, 189);
+	box-shadow: 16px 14px 20px #030ae48c;
+	border-radius: 10%;
+	position: relative;
+	display: flex;
+	overflow: hidden;
+	justify-content: center;
+
+	margin: 0 50px;
+
+}
+
+.tarjeta-1::before {
+	content: "";
+	position: absolute;
+	height: 490px;
+	width: 540px;
+	/*height: 300px;
+	width: 300px;*/
+	background-image: conic-gradient(rgb(198, 31, 25) 30deg, transparent 120deg);
+	animation: rotar 2s linear infinite;
+}
+
+@keyframes rotar {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(-360deg);
+	}
+}
+/*ESTLIOS BORDES MODO DE JUEGO*/
+/*ESTLIOS OPERACIONES DE NUMEROS*/
+.numeros {
+	color: aqua;
+	margin-top: 60px;
+}
+
+.boton_numeros {
+
+	border-radius: 20px;
+	background-color: rgb(25, 138, 231);
+	padding: 25px 35px;
+	text-decoration: none;
+	color: white;
+	font-weight: 30px;
+	font-size: 20px;
+	transition: .4s ease;
+}
+
+.boton_numeros:hover {
+	box-shadow: 0 0 10px blue,
+		0 0 30px blue,
+		0 0 30px blue,
+		0 0 30px blue;
+
+}
+
+/*END ESTLIOS OPERACIONES DE NUMEROS*/
+.depende {
+	width: 120px;
+	height: 100px;
+	margin-left: 155%;
+	margin-top: -2%;
+	color: rgb(0, 0, 0);
+	background-color: #08d5f0;
+	font-size: 130%;
+	border-radius: 10%;
+}
+  
+.numeros1 img {
+	height: 60%;
+	width: 60%;
+}
+.numeros2 img {
+	
+	height: 55%;
+	width: 55%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.numeros3 img {
+	height: 60%;
+	width: 60%;
+	margin-top: -0.5px;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+.numeros31 img {
+	height: 70%;
+	width: 70%;
+	margin-top: -0.5px;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+
+
+
+.developer {
+	width: 50%;
+	min-width: 40px;
+	height: auto;
+	margin-left: 25px;
+	margin-top: 2px;
+
+}
+
+.volumen {
+	width: 50%;
+	min-width: 40px;
+	margin-left: 40px;
+	height: auto;
+}
+
+@media (max-width: 450px) {
+	.volu {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
+
+
+}
+.offcanvas{
+	background-image: url("../img/offcanva.png");
+
+}
