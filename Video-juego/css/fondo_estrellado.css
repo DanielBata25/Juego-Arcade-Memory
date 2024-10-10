@@ -6,7 +6,20 @@ body {
   background-attachment: fixed;
   background-position: center;
 }
+.play-button {
+  animation: zoom 2s infinite alternate ease-in-out;
+  width: 40%; 
+  height: 40%;
+}
 
+@keyframes zoom {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.1);
+  }
+}
 .space {
   --size: 2px;
   --space-layer:
@@ -90,6 +103,7 @@ body {
   object-fit: cover;
   min-width: 100px;
   min-height: 100px;
+  background-color: transparent!important;
 }
 .container-top{
   margin-top: -6% ;
