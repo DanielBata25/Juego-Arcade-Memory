@@ -1,6 +1,6 @@
 
   body {
-    background-image: linear-gradient(#051327, #000);
+    background-image: url(../img/verde.gif);
     inset: 0;
     position: fixed;
     background-size: cover;
