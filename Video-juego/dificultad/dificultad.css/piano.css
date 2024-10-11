@@ -31,16 +31,6 @@ body {
 	transition-duration: 3s;
 }
 
-.conta {
- 	height: auto;
-	border-width: 55px;
-	border-style: solid;
-	border-color: rgb(0, 0, 0);
-	background-color: rgba(0, 0, 0, 0.911);
-	border-radius: 30px;
-	box-shadow: 0 0 10px rgba(251, 251, 255, 0.892);
-
-}
 .btn-1 {
 	margin-right: 35px;
 	border-radius: 20px;
