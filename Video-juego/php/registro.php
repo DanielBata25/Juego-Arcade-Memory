@@ -1,32 +1,29 @@
 <?php
-  $servername = "your_server_name";
-  $username = "your_username";
-  $password = "your_password";
-  $dbname = "your_database_name";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obtener el contenido del cuerpo de la solicitud POST
+    $data = file_get_contents('php://input');
+    $usuario = json_decode($data, true);
 
-  $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($usuario) {
+        // Leer el archivo de usuarios JSON existente
+        $archivo = 'usuarios.json';
+        $usuariosExistentes = [];
 
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+        if (file_exists($archivo)) {
+            $usuariosExistentes = json_decode(file_get_contents($archivo), true);
+        }
 
-  $datos = json_decode(file_get_contents('php://input'), true);
+        // Agregar el nuevo usuario al arreglo de usuarios existentes
+        $usuariosExistentes[] = $usuario;
 
-  $nombre = $datos['nombre'];
-  $correo = $datos['correo'];
-  $contraseña = $datos['contraseña'];
+        // Guardar todos los usuarios en el archivo JSON
+        file_put_contents($archivo, json_encode($usuariosExistentes, JSON_PRETTY_PRINT));
 
-  $hashed_password = password_hash($contraseña, PASSWORD_DEFAULT);
-
-  $sql = "INSERT INTO usuarios (nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$hashed_password')";
-  $conn->query($sql);
-
-  $asunto = 'Confirmación de registro';
-  $mensaje = 'Hola ' . $nombre . ', gracias por registrarte.';
-  $cabeceras = 'From: tu-correo-electronico@example.com';
-  mail($correo, $asunto, $mensaje, $cabeceras);
-
-  $conn->close();
-
-  echo json_encode(array('message' => 'Registro exitoso'));
+        echo json_encode(['status' => 'success', 'message' => 'Usuario registrado correctamente']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Datos de usuario no válidos']);
+    }
+} else {
+    echo json_encode(['status' => 'error', 'message' => 'Método no permitido']);
+}
 ?>
