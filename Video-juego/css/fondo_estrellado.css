@@ -88,13 +88,25 @@ body {
   margin-left: 800px;
   margin-top: 10px;
 }
+.container-play{
+  margin-top: -5%;
+}
 .container-1 {
   width: 100%;
   max-width: 500px;
 }
 .container-2 {
-  width: 25%;
+  width: 10%;
   max-width: 200px;
+}
+.container-button{
+  width: 15%;
+  min-width: 100px;
+}
+.bar-volumen{
+  position: relative;
+  transform: scale(0.8);
+  right: 20px;
 }
 .logo {
   border-radius: 25%;
