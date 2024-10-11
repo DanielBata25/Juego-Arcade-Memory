@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="description" content="Anime Template">
-    <meta name="keywords" content="Anime, unica, creative, html">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Play</title>
@@ -24,7 +24,6 @@
         <div class="space space-3"></div>
     </div>
 
-
     <div class="container-2">
         <div class="volume-control mt-4">
             <img src="img/normal.png" class="tamañosoni" id="playPauseBTN" onclick="playPause()">
@@ -35,11 +34,10 @@
         </div>
     </div>
 
-
     <div class=" container container-3">
         <button class="btn btn1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
             aria-controls="offcanvasExample">
-            <img src="img/profile.png" class="perfilll" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+            <img src="img/profile.png" id="avatar" class="perfilll" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
                 alt="">
         </button>
     </div>
@@ -47,9 +45,6 @@
     <div class="perfill">
         <label for="perfill">Perfil</label>
     </div>
-
-
-
    
     <div class="container-top text-center">
         <div class="container container-1">
@@ -58,12 +53,14 @@
         
         <br><br>
         <div class="btn-games">
+            <a class="btn-1" href="Inicio Sesion.html" role="button">Jugar</a>
+
             <!--<a class="btn-1" href="tabla posiciones.html" role="button">Puntuacion Alta</a>-->
-            <a class="btn-1" href="compartir_links/link_Musica.html" role="button">Jugar</a>
             <a class="btn-1" href="Registro.html" role="button">Registrarse</a>
             <a class="btn-1" href="Jugar_multi.html" role="button">Admin</a>
         </div>
     </div>
+    
     <!--canva del perfil-->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
@@ -73,35 +70,39 @@
         <div class="offcanvas-tittle">usuario@correo.com</div>
         <div class="offcanvas-body">
             <h5 class="offcanvas-titttle">Tu avatar actual:</h5>
-            <img src="img/avatarraper.png" class="avatarraper" alt="">
+            <img id="selected-avatar" src="img/avatarraper.png" class="avatarraper" alt="">
             <h5 class="offcanvas-titttle">Elige un nuevo avatar:</h5>
-            <button class="btn btn-2" type="button" data-bs-toggle="offcanvas"><img src="img/avatarmujer.png" class="avatarraper" alt=""></button>
-            <button class="btn btn-2" type="button" data-bs-toggle="offcanvas"><img src="img/avatarraper.png" class="avatarraper" alt=""></button>
-            <button class="btn btn-2" type="button" data-bs-toggle="offcanvas"><img src="img/avatarpelirojo.png" class="avatarraper" alt=""></button>
+            <button class="btn btn-2" type="button" onclick="selectAvatar('img/avatarmujer.png')">
+                <img src="img/avatarmujer.png" class="avatarraper" alt="">
+            </button>
+            <button class="btn btn-2" type="button" onclick="selectAvatar('img/avatarraper.png')">
+                <img src="img/avatarraper.png" class="avatarraper" alt="">
+            </button>
+            <button class="btn btn-2" type="button" onclick="selectAvatar('img/avatarpelirojo.png')">
+                <img src="img/avatarpelirojo.png" class="avatarraper" alt="">
+            </button>
             <div class="dropdown mt-3">
-                <button class="btn btn-3" type="button" data-bs-toggle="offcanvas">
+                <button class="btn btn-3" onclick="saveAvatar()" type="button">
                     Guardar Avatar
                 </button>
-                <button class="btn btn-4" type="button" data-bs-toggle="offcanvas">
+                <button class="btn btn-4" type="button">
                     Cerrar Sesion
                 </button>
             </div>
         </div>
     </div>
 
-
     <!--MUSICA-->
     <audio id="audio" loop>
         <source src="audio/Headlands _musica.mp3" type="audio/mpeg">
-
     </audio>
     <!--END MUSICA-->
 
-
     <!-- Js Plugins -->
+     <script src="js/perfil.js"></script>
+    <script src="bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+    <script src="sonidoInicio.js"></script>
+    <script src="js/fondo_estrellado.js"></script>
 </body>
-<script src="bootstrap-5.1.3-dist/js/bootstrap.js"></script>
-<script src="sonidoInicio.js"></script>
-<script src="js/fondo_estrellado.js"></script>
 
 </html>
