@@ -1,9 +1,9 @@
 body {
 	background-image: linear-gradient(#051327, #000);
 	inset: 0;
-	position: fixed;
 	background-size: cover;
 	background-attachment: fixed;
+	position: fixed;
 	background-position: center;
 	background-color: #ffffff;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 .conta {
- 	height: auto;
+	height: auto;
 	border-width: 55px;
 	border-style: solid;
 	border-color: rgb(0, 0, 0);
@@ -41,6 +41,7 @@ body {
 	box-shadow: 0 0 10px rgba(251, 251, 255, 0.892);
 
 }
+
 .btn-1 {
 	margin-right: 35px;
 	border-radius: 20px;
@@ -50,7 +51,7 @@ body {
 	text-align: center;
 	color: white;
 	white-space: nowrap;
-	font-size: 1.2rem; 
+	font-size: 1.2rem;
 	transition: .4s ease;
 }
 
@@ -190,9 +191,27 @@ body {
 	margin-top: 100px;
 }
 
+.contenedor-g {
+	margin-top: -7%;
+}
+
+@media (max-width: 800px) {
+	.contenedor {
+		flex-direction: column;
+		gap: 10px;
+	}
+}
+
+
+@media  (max-width : 800px){
+	body{
+		position: static
+	}
+}
+
 .tarjeta-1 {
-	height: 440px;
-	width: 440px;
+	width: 50%;
+	height: 400px;
 	/*height: 250px;
 	width: 200px;*/
 	background-color: rgb(62, 178, 189);
@@ -202,16 +221,16 @@ body {
 	display: flex;
 	overflow: hidden;
 	justify-content: center;
-
 	margin: 0 50px;
+	min-width: 250px;
 
 }
 
 .tarjeta-1::before {
 	content: "";
 	position: absolute;
-	height: 490px;
-	width: 540px;
+	height: 97%;
+	width: 97%;
 	/*height: 300px;
 	width: 300px;*/
 	background-image: conic-gradient(rgb(198, 31, 25) 30deg, transparent 120deg);
@@ -231,8 +250,8 @@ body {
 .tarjeta-1::after {
 	content: "";
 	position: absolute;
-	height: 435px;
-	width: 433px;
+	height: 97%;
+	width: 97%;
 	/*height: 240px;
 	width: 190px;*/
 	background-color: blue;
@@ -269,6 +288,10 @@ body {
 	transition: .4s ease;
 }
 
+.btn-omit {
+	padding: 15px 25px;
+}
+
 .boton_numeros:hover {
 	box-shadow: 0 0 10px blue,
 		0 0 30px blue,
@@ -288,7 +311,8 @@ body {
 	font-size: 130%;
 	border-radius: 10%;
 }
-  .numeros1 img{
+
+.numeros1 img {
 	height: 290px;
 	width: 250px;
 
@@ -299,42 +323,51 @@ body {
 	width: 220px;
 }
 
-.numeros3 img{
+.numeros3 img {
 	height: 250px;
 	width: 250px;
 	margin-top: 100px;
 	margin-right: 220px;
 	margin-left: 160px;
 }
-.container-3{
+
+
+
+.container-3 {
 	margin-top: -90px;
 	width: 250px;
 	margin-left: 1280px;
 }
-.perfill{
+
+.perfill {
 	color: white;
 	margin-left: 1310px;
 }
-.perfilll{
+
+.perfilll {
 	text-align: center;
 	display: flex;
 	margin: -15%;
 }
-.btn-primary{
+
+.btn-primary {
 	padding: 0%;
 	margin: 0%
 }
-.offcanvas-start{
+
+.offcanvas-start {
 	margin-bottom: 10%;
 	text-align: center;
 }
-.offcanvas-title{
+
+.offcanvas-title {
 	color: #ffffff;
 	text-align: center;
 	width: 70%;
 	margin-left: 15%;
 }
-.offcanvas-tittle{
+
+.offcanvas-tittle {
 	color: #ffffff;
 	font-size: medium;
 	height: auto;
@@ -342,40 +375,46 @@ body {
 	width: 70%;
 	margin: auto;
 }
-.offcanvas-body{
+
+.offcanvas-body {
 	margin: auto;
 }
-.btn-3{
+
+.btn-3 {
 	background-color: aquamarine;
 	color: black;
 	border-color: #000;
 	width: 100%;
 	margin-top: 5%;
 }
-.btn-4{
+
+.btn-4 {
 	background-color: rgb(255, 0, 0);
 	color: black;
 	border-color: #000;
 	margin-top: 5%;
 	width: 100%;
 }
-.offcanvas-titttle{
+
+.offcanvas-titttle {
 	color: #ffffff;
 	width: 100%;
 }
-.imgnoche{
+
+.imgnoche {
 	text-align: center;
 	display: flex;
 	margin: -10%;
 	width: 100px;
 	height: 100px
 }
-.avatarraper{
+
+.avatarraper {
 	margin-top: 1%;
 }
 
 .numeros2 img {
-	
+
 	height: 220px;
 	width: 220px;
 	margin-left: 5%;
@@ -416,7 +455,8 @@ body {
 
 
 }
-.offcanvas{
+
+.offcanvas {
 	background-image: url("../img/offcanva.png");
 
 }

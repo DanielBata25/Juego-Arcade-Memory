@@ -1,66 +1,114 @@
 body {
 	background-image: url("../img/fondoespaciopinterest.gif");
 	background-repeat: no-repeat;
-	align-items: center;
+	position: fixed;
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center center;
 }
-.volu{
-    color: white;
-    margin-left: 18px;
-  }
-  .tamañosoni {
-    width: 2%;
-    height: auto;
-    margin-top: 20px;
-    margin-left: 30px;
-    min-width: 40px;
-  
-  }
-*{
+
+.container-general {
+	position: relative;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.volu {
+	color: white;
+	margin-left: 18px;
+}
+
+.tamañosoni {
+	width: 2%;
+	height: auto;
+	margin-top: 20px;
+	margin-left: 30px;
+	min-width: 40px;
+
+}
+
+* {
 	padding: 0px;
 	margin: 0px;
 }
 
-.contenedor-1{
-	inset: 0px  ;
-	margin: 15% auto;
-}
-.wow{
-	
-	width: calc(105% - 90px);
-  	margin: 50px; 
-  	padding: 50px 50px; border: 1px solid #08d5f0; 
-  	border-radius: 10px; 
+.container-2 {
+	position: relative;
 	display: flex;
+	flex-direction: column;
+	width: 10%;
+}
+
+.volume-control {
+	position: absolute;
+	top: -20px;
+	left: 10px;
+}
+
+.contenedor-1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 35%;
+}
+@media (min-height: 600px) {
+	.contenedor-1{
+		position: absolute;
+	top: 25%;
+	left: 25%;
+	transform: translate(-25%, -25%);
+	width: 35%;
+	}
+}
+
+.wow {
+
+	width: calc(100% - 100px);
+	margin: 50px;
+	padding: 50px 50px;
+	border: 1px solid #08d5f0;
+	border-radius: 10px;
+	display: flex;
+	position: relative; /* Necesario para que el position: absolute de la imagen funcione */
+    overflow: visible;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-}
-.wow .git{
-	display: flex;
-
-}
-.wow .wew{
-	display: flex;
+	min-width: 200px;
 }
 
-.contenedor-2  img:nth-child(2){
+.git {
+	display: flex;
+	width: 110%;
+
+}
+
+.wew {
+	display: flex;
+	width: 100%;
+}
+
+.contenedor-2 img:nth-child(2) {
 	position: relative;
 	right: 37%;
 	top: 10%;
 }
-.contenedor-3  img:first-child{
+
+.contenedor-3 img:first-child {
 	position: relative;
 	left: 37%;
 	top: 0%;
 }
-.contenedor-3  img:nth-child(2){
+
+.contenedor-3 img:nth-child(2) {
 	position: relative;
 	top: 10%;
 }
-.wew div:nth-child(2) img{
+
+.wew div:nth-child(2) img {
 	position: relative;
 	top: 20%;
 	right: 100%;

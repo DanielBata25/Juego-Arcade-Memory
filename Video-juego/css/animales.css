@@ -1,80 +1,144 @@
+body {
+  background-image: linear-gradient(#051327, #000);
+  inset: 0;
+  position: fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
 
-  body {
-    background-image: linear-gradient(#051327, #000);
-    inset: 0;
-    position: fixed;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+.volu {
+  color: white;
+  margin-left: 18px;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+
+@media (max-width: 500px) {
+  .volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-  .volu{
-    color: white;
-    margin-left: 18px;
+
+  .volu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-  .tamañosoni {
-    width: 2%;
-    height: auto;
-    margin-top: 20px;
-    margin-left: 30px;
-    min-width: 40px;
-  
+  .container-elements {
+    position: relative;
+    top: 40px;
   }
+}
+
+.tamañosoni {
+  width: 2%;
+  height: auto;
+  margin-top: 20px;
+  margin-left: 30px;
+  min-width: 40px;
+
+}
+
 .space {
-    --size: 2px;
-    --space-layer: 
-      4vw 50vh 0 #fff,
-      18vw 88vh 0 #fff,
-      73vw 14vh 0 #fff;
-    
-    width: var(--size);
-    height: var(--size);
-    background: white;
-    box-shadow: var(--space-layer);
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.75;
-  }
-  
-  .space {
-     animation: move var(--duration) linear infinite;
-  }
-  
-  @keyframes move {
-    from { transform: translateY(0); }
-    to { transform: translateY(-100vh); }
-  }
-  .square {
-    width: 420px; /* ancho del cuadrado */
-    height: 320px; /* alto del cuadrado */
-    background-color: #0FE2D5; 
-    margin: 0 auto; /* centrar el cuadrado horizontalmente */
-  }
- 
+  --size: 2px;
+  --space-layer:
+    4vw 50vh 0 #fff,
+    18vw 88vh 0 #fff,
+    73vw 14vh 0 #fff;
 
-  
+  width: var(--size);
+  height: var(--size);
+  background: white;
+  box-shadow: var(--space-layer);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.75;
+}
+
+.space {
+  animation: move var(--duration) linear infinite;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+.square {
+  border-radius: 10px;
+  background-color: #0FE2D5;
+  margin: 0 auto;
+  /* centrar el cuadrado horizontalmente */
+}
+
+
+
 /*codigo aparte*/
-  .piramide{
-    margin-top: 18px;
-    margin-left: 60px;
+.piramide {
+  margin-left: 25%;
+  object-fit: cover;
 
-  }
-  .espacio{
-    margin-top: 30px;
-    border-color: #0FE2D5;   
-    border-radius: 10%;
+}
 
+@media (max-width: 1100px) {
+  .piramide {
+    margin: auto;
+    object-fit: cover;
   }
-.bataron{
-    color: rgb(0, 0, 0);
-	align-content: center;
-	margin-top: 50px;
-    border-color: aqua;
-    background-color: aqua;
-    width: 350px;
-    width: 220px;
-    border-radius: 5px;
-    font-size: 25px;
+}
+
+.espacio {
+  margin-top: 30px;
+  width: auto;
+  height: auto;
+}
+
+.custom-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bataron {
+  color: rgb(0, 0, 0);
+  align-content: center;
+  margin-top: 3%;
+  border-color: aqua;
+  background-color: #0FE2D5;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  font-size: 30px;
+}
+
+.container-elements {
+  margin: auto;
+  margin-top: -3%;
+  width: 30%;
+  height: 10%;
+  min-width: 250px;
+  height: 50%;
+}
+
+@media (max-width: 1100px) and (max-height: 600px) {
+  .container-elements {
+    margin-top: -8%;
+  }
 }
 
 .cuadro {
@@ -83,37 +147,46 @@
   background-color: #0FE2D5;
   border: 1px solid #000;
   margin-left: 40px;
-  margin-top:100px ;
+  margin-top: 100px;
   border-radius: 10%;
 }
-.piramide-1{
+
+.piramide-1 {
+  margin-left: 100px;
+  margin-top: 16px;
+}
+
+.piramide-2 {
   margin-left: 88px;
   margin-top: 16px;
 }
-.piramide-2{
-  margin-left: 88px;
-  margin-top: 16px;
-}
-.ganaste-1{
+
+.ganaste-1 {
   margin-left: 130px;
 }
-.btn-secondary{
+
+.btn-secondary {
   color: hsl(0, 0%, 100%);
   background-color: rgb(33, 33, 205);
 }
-.fs-5{
+
+.fs-5 {
   margin-left: 200px;
   color: rgb(0, 0, 0);
 }
-.modal-body{
+
+.modal-body {
   background-color: royalblue;
 }
-.btn-close{
+
+.btn-close {
   background-color: rgb(0, 26, 255);
 }
-.modal-footer{
+
+.modal-footer {
   background-color: rgb(0, 128, 255);
 }
-.modal-header{
+
+.modal-header {
   background-color: dodgerblue;
 }
