@@ -11,7 +11,7 @@ body {
 .volu {
 	color: white;
 	margin-left: 100px;
-	font-size: 25px;
+	font-size: 16px;
 }
 
 .volume-control {
@@ -32,8 +32,11 @@ body {
 }
 
 .conta {
+	width: 75%;
 	height: auto;
-	border-width: 55px;
+	margin-right: 10%;
+	margin-top: -4%;
+	border-width: 30px;
 	border-style: solid;
 	border-color: rgb(0, 0, 0);
 	background-color: rgba(0, 0, 0, 0.911);
@@ -75,6 +78,10 @@ body {
 		align-items: center;
 		gap: 10px;
 	}
+	.conta{
+		margin-top: 1%;
+	}
+	
 }
 
 
@@ -312,27 +319,28 @@ body {
 	border-radius: 10%;
 }
 
-.numeros1 img {
-	height: 290px;
-	width: 250px;
 
+.numeros1 img {
+	height: 50%;
+	width: 50%;
 }
 
-.numeros1 img {
-	height: 220px;
-	width: 220px;
+
+.numeros2 img {
+	height: 50%;
+	width: 50%;
+	margin-top: -0.5px;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 .numeros3 img {
-	height: 250px;
-	width: 250px;
-	margin-top: 100px;
-	margin-right: 220px;
-	margin-left: 160px;
+	height: 50%;
+	width: 50%;
+	margin-top: -0.5px;
+	margin-right: 5%;
+	margin-left: 5%;
 }
-
-
-
 .container-3 {
 	margin-top: -90px;
 	width: 250px;
@@ -413,21 +421,7 @@ body {
 	margin-top: 1%;
 }
 
-.numeros2 img {
 
-	height: 220px;
-	width: 220px;
-	margin-left: 5%;
-	margin-right: 5%;
-}
-
-.numeros3 img {
-	height: 220px;
-	width: 220px;
-	margin-top: -0.5px;
-	margin-right: 5%;
-	margin-left: 5%;
-}
 
 .developer {
 	width: 50%;
