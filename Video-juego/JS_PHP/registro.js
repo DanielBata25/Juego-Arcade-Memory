@@ -1,12 +1,10 @@
 document.getElementById('registro-form').addEventListener('submit', function (e) {
-    e.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+    e.preventDefault(); 
 
-    // Obtener los valores de los campos
     const nombre = document.getElementById('nombre').value;
     const correo = document.getElementById('correo').value;
     const contraseña = document.getElementById('contraseña').value;
 
-    // Crear el objeto usuario
     const usuario = {
         nombre: nombre,
         correo: correo,
