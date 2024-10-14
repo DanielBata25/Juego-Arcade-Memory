@@ -1,3 +1,8 @@
 body{
     background-image: url("../img/multi.jpeg");
 }
+.btn-secondary{
+background-color: skyblue;
+color: black;
+font-size: 115%;
+}
