@@ -9,7 +9,7 @@ let cambiarAvatar =  document.getElementById('avatar');
 
         function saveAvatar() {
             const selectedAvatar = document.getElementById('selected-avatar');
-            // Solo actualiza el avatar mostrado si se ha guardado
+            //actualiza el avatar mostrado si se ha guardado
             selectedAvatar.src = currentAvatar; // Guarda el avatar actual
             cambiarAvatar.src = currentAvatar; // Muestra el avatar guardado
         }
