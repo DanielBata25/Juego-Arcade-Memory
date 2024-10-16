@@ -7,11 +7,11 @@ let allKeys = [],
     audio = new Audio(),
     flagActiveGame = true;
 
-let patronesMusicales = [], // Todos los patrones
-    patronActual = [], // Patrón en curso
+let patronesMusicales = [], 
+    patronActual = [], 
     patronIndex = 0; // Índice del patrón actual
 
-// Reproducir la nota y animar la tecla
+
 const playTune = (key) => {
     audio.src = `tunes/${key}.wav`;
     audio.play().catch((error) => console.error('Error al reproducir audio:', error));
@@ -36,7 +36,7 @@ pianoKeys.forEach((key) => {
     });
 });
 
-// Comparar teclas presionadas con el patrón musical actual
+
 const compareKeys = () => {
     if (pressedKeys.length === patronActual.length) {
         const isCorrect = pressedKeys.every((key, index) => key === patronActual[index]);
@@ -48,18 +48,18 @@ const compareKeys = () => {
     }
 };
 
-// Mostrar modal según el resultado
+
 const mostrarModal = (isCorrect) => {
-    const modalId = isCorrect ? "alert" : "alert2"; // Selecciona el modal correspondiente
+    const modalId = isCorrect ? "alert" : "alert2"; 
     let modal = new bootstrap.Modal(document.getElementById(modalId));
     let msg = document.querySelector(`#${modalId} .modal-body`);
-    msg.innerHTML = isCorrect ? "¡Correcto! Patrón completado." : "¡Incorrecto! Continuando al siguiente patrón...";
+    msg.innerHTML = isCorrect ? "" : "";
     modal.show();
 
     setTimeout(() => {
         modal.hide(); 
         avanzarPatron(isCorrect); // Avanzar al siguiente patrón después de cerrar el modal
-    }, 2000); // Ocultar modal después de 2 segundos
+    }, 3000); 
 };
 
 // Avanzar al siguiente patrón musical
@@ -70,14 +70,14 @@ const avanzarPatron = (isCorrect) => {
         setTimeout(() => {
             patronActual = patronesMusicales[patronIndex];
             console.log(`Siguiente patrón: ${patronActual}`);
-            playSecuencia(); // Reproducir automáticamente el nuevo patrón
-        }, 1000); // Esperar 1 segundo antes de avanzar
+            playSecuencia(); 
+        }, 2000); 
     } else {
         mostrarModalFinal(); // Mostrar modal final
     }
 };
 
-// Mostrar modal final y redirigir
+
 const mostrarModalFinal = () => {
     let modal = new bootstrap.Modal(document.getElementById("alert"));
     let msg = document.querySelector("#alert .modal-body");
@@ -86,12 +86,11 @@ const mostrarModalFinal = () => {
 
     setTimeout(() => {
         modal.hide(); 
-        // Redirigir a la página exterior después de 2 segundos
+        
         window.location.href = "http://localhost/Video-juego/Admin/tables.html"; 
-    }, 2000); // Espera 2 segundos antes de redirigir
+    }, 3000); 
 };
 
-// Cargar los patrones musicales desde JSON
 const cargarPatronMusical = () => {
     fetch("./datos.json")
         .then((response) => {
@@ -111,14 +110,14 @@ const cargarPatronMusical = () => {
         .catch((error) => console.error("Error al cargar el patrón musical:", error));
 };
 
-// Reproducir la secuencia de notas de un patrón
+
 const playSecuencia = () => {
     let index = 0;
     const playNextNote = () => {
         if (index < patronActual.length) {
             playTune(patronActual[index]);
             index++;
-            setTimeout(playNextNote, 500); // Espera 500 ms entre notas
+            setTimeout(playNextNote, 500);
         }
     };
     playNextNote();
@@ -143,5 +142,5 @@ volumeSlider.addEventListener("input", (e) => {
 });
 document.addEventListener("keydown", pressedKey);
 
-// Cargar los patrones al cargar la página
+
 window.addEventListener("DOMContentLoaded", cargarPatronMusical);

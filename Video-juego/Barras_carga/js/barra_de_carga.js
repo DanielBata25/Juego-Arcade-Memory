@@ -7,9 +7,9 @@ const interval = setInterval(() => {
     if (progreso >= 100) {
         clearInterval(interval);
         // Redirigir a otra página
-        window.location.href = 'Play2.html'; // Cambia esto si es necesario
+        window.location.href = '../Play2.html'; // Cambia esto si es necesario
     } else {
         progreso++;
         progressBar.style.width = progreso + '%';
     }
-}, 41); // Ajusta el tiempo aquí para acelerar o desacelerar la carga
+}, 41); // Ajusta el tiempo aquí para acelerar o desacelerar la carga
