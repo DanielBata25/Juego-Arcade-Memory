@@ -6,6 +6,30 @@ background-color: skyblue;
 color: black;
 font-size: 115%;
 }
-.modal-body{
+.modal-body-a{
+    margin-top: 60%;
+    border-radius: 5%;
     font-size: 120%;
+    color: rgb(255, 0, 238);
+    background-image:url(../img/notas\ musicales.jpg)
+}
+.modal-header-a{
+    background-image:url(../img/notas\ musicales.jpg)
+}
+.modal-body-b{
+    margin-top: 60%;
+    border-radius: 5%;
+    font-size: 120%;
+    color: rgb(221, 77, 6);
+    background-image:url(../img/fondo\ matematico.jpg)
+}
+.modal-header-b{
+    background-image:url(../img/fondo\ matematico.jpg)
+}
+.modal-body-c{
+    margin-top: 60%;
+    border-radius: 5%;
+    font-size: 120% ;
+    color: aqua;
+    background-image:url(../img/fondo\ cartas.jpg)
 }

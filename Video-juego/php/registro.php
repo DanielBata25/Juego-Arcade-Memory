@@ -1,29 +1,43 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Obtiene el contenido del cuerpo de la solicitud POST
-    $data = file_get_contents('php://input');
-    $usuario = json_decode($data, true);
+// Configuration
+$db_host = 'localhost';
+$db_username = 'your_username';
+$db_password = 'your_password';
+$db_name = 'your_database';
 
-    if ($usuario) {
-        // Lee el archivo de usuarios JSON existente
-        $archivo = 'usuarios.json';
-        $usuariosExistentes = [];
 
-        if (file_exists($archivo)) {
-            $usuariosExistentes = json_decode(file_get_contents($archivo), true);
-        }
+$conn = new mysqli($db_host, $db_username, $db_password, $db_name);
 
-        // Agregar el nuevo usuario al arreglo de usuarios existentes
-        $usuariosExistentes[] = $usuario;
 
-        // Guardar todos los usuarios en el archivo JSON
-        file_put_contents($archivo, json_encode($usuariosExistentes, JSON_PRETTY_PRINT));
-
-        echo json_encode(['status' => 'success', 'message' => 'Usuario registrado correctamente']);
-    } else {
-        echo json_encode(['status' => 'error', 'message' => 'Datos de usuario no válidos']);
-    }
-} else {
-    echo json_encode(['status' => 'error', 'message' => 'Método no permitido']);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+
+$data = json_decode(file_get_contents('php://input'), true);
+
+
+if (!isset($data['nombre']) || !isset($data['correo']) || !isset($data['contraseña'])) {
+    echo json_encode(array('status' => 'error', 'message' => 'Invalid data'));
+    exit;
+}
+
+
+$nombre = $conn->real_escape_string($data['nombre']);
+$correo = $conn->real_escape_string($data['correo']);
+$contraseña = $conn->real_escape_string($data['contraseña']);
+
+
+$hashed_contraseña = password_hash($contraseña, PASSWORD_DEFAULT);
+
+
+$query = "INSERT INTO usuarios (nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$hashed_contraseña')";
+if ($conn->query($query) === TRUE) {
+    echo json_encode(array('status' => 'success', 'message' => 'Usuario registrado correctamente'));
+} else {
+    echo json_encode(array('status' => 'error', 'message' => 'Error al registrar el usuario'));
+}
+
+
+$conn->close();
 ?>
