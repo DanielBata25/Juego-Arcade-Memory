@@ -1,11 +1,11 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Obtener el contenido del cuerpo de la solicitud POST
+    // Obtiene el contenido del cuerpo de la solicitud POST
     $data = file_get_contents('php://input');
     $usuario = json_decode($data, true);
 
     if ($usuario) {
-        // Leer el archivo de usuarios JSON existente
+        // Lee el archivo de usuarios JSON existente
         $archivo = 'usuarios.json';
         $usuariosExistentes = [];
 
