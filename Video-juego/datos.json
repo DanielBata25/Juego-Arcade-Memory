@@ -1,4 +1,7 @@
 {
-    "patronMusical": ["d", "d", "e", "f", "g"],
-    "teclasPresionadas": []
+    "patronesMusicales": [
+        ["a", "s", "w"], 
+        ["w", "s", "a"],
+        ["s", "w", "a"]
+    ]
 }

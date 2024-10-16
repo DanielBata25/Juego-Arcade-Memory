@@ -1,29 +1,27 @@
 <?php
-header('Content-Type: application/json');
+// Archivo donde se guardarán los resultados
+$archivo = 'resultados.json';
 
-// Leer la entrada JSON
-$data = json_decode(file_get_contents('php://input'), true);
+// Obtener los datos recibidos desde JavaScript
+$contenido = file_get_contents('php://input');
+$data = json_decode($contenido, true);
 
-// Verificar que se recibieron los datos necesarios
-if (isset($data['patronMusical']) && isset($data['teclasPresionadas'])) {
-    $filePath = './datos.json';
+if ($data) {
+    // Si el archivo ya existe, cargar su contenido
+    $resultados = file_exists($archivo) 
+        ? json_decode(file_get_contents($archivo), true) 
+        : [];
 
-    // Leer el contenido actual del archivo JSON
-    if (file_exists($filePath)) {
-        $currentData = json_decode(file_get_contents($filePath), true);
-    } else {
-        $currentData = [];
-    }
+    // Añadir el nuevo registro al array de resultados
+    $resultados[] = $data;
 
-    // Actualizar los datos
-    $currentData['patronMusical'] = $data['patronMusical'];
-    $currentData['teclasPresionadas'] = array_values(array_unique($data['teclasPresionadas'])); // Asegurando que las teclas sean únicas
+    // Guardar el array actualizado en el archivo JSON
+    file_put_contents($archivo, json_encode($resultados, JSON_PRETTY_PRINT));
 
-    // Guardar los datos en el archivo JSON
-    file_put_contents($filePath, json_encode($currentData, JSON_PRETTY_PRINT));
-
-    echo json_encode(['status' => 'success', 'message' => 'Datos guardados correctamente.']);
+    // Responder con éxito al cliente
+    echo json_encode(['mensaje' => 'Datos guardados con éxito']);
 } else {
-    echo json_encode(['status' => 'error', 'message' => 'Datos no válidos.']);
+    // Enviar error si no se recibieron datos válidos
+    echo json_encode(['error' => 'No se recibieron datos válidos']);
 }
 ?>
