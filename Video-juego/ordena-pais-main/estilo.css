@@ -6,7 +6,7 @@
     font-family: 'Mulish';
 }
 body{
-    background: url(img/fondo.jpg);
+    background-image:url(../img/musica\ piano.png) ;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -37,8 +37,10 @@ section{
 
 /* PANTALLA INICIO */
 #pantalla-inicio h2{
-    font-size: 60px;
-    text-shadow: 3px 3px 10px #000;
+    font-size: 40px;
+    margin-top: -60;
+    text-shadow: 3px 3px 10px #D2A18C;
+    color: #e45d24;
 
 }
 #pantalla-inicio h2 span{
@@ -51,11 +53,11 @@ section{
     padding: 10px 30px;
     margin-top: 30px;
     cursor: pointer;
-    background:#1cff03;
-    color:#000;
+    background:#cca526c4;
+    color:#ffffff;
 }
 #pantalla-inicio button:hover{
-    background-color:#ffff0d;
+    background-color:#a58b16e3;
 }
 
 /* PANTALLA JUEGO */
@@ -94,17 +96,17 @@ section{
     background: transparent;
     outline: none;
     border: none;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #ff0000;
     margin-top: 40px;
     text-align: center;
-    color: #fff;
+    color: #000000;
     letter-spacing: 4PX;
 }
 #myProgress {
     width: 300px;
     margin: auto;
-    background:#1cff03;
-    border: 2px solid #fff;
+    background:#d3b014;
+    border: 2px solid #e68619;
     border-radius: 5px;
     margin-top: 50px;
 }
@@ -112,12 +114,12 @@ section{
 #myBar {
     width: 1%;
     height: 30px;
-    background-color:#176aff;
+    background-color:#d8bb6cf1;
 }
 
 #pantalla-juego .acertadas{
     margin-top: 30px;
-    color: #fff;
+    color: hsl(290, 31%, 18%);
     font-size: 50px;
     font-weight: bold;
 }
@@ -136,7 +138,7 @@ section{
 #pantalla-final h3 span{
     display: block;
     font-size: 70px;
-    color: #1cff03;
+    color: #000000;
 }
 #pantalla-final button{
     width: fit-content;
@@ -147,12 +149,12 @@ section{
     padding: 10px 30px;
     margin-top: 30px;
     cursor: pointer;
-    background:#1cff03;
+    background:#db9f1d;
     color:#000;
 }
 #pantalla-final button:hover{
     cursor: pointer;
-    background:#ffff0d;
+    background:#c9ab28;
 
 }
 @media screen and (max-width:1000px) {
