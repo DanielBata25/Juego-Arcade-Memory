@@ -15,7 +15,7 @@ if ($data) {
     
     $resultados[] = $data;
 
-    // Guardar el array actualizado en el archivo JSON
+
     file_put_contents($archivo, json_encode($resultados, JSON_PRETTY_PRINT));
 
    

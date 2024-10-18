@@ -1,43 +1,67 @@
 <?php
-// Configuration
-$db_host = 'localhost';
-$db_username = 'your_username';
-$db_password = 'your_password';
-$db_name = 'your_database';
+$host = "localhost"; 
+$usuario = "usuario"; // Usuario de la base de datos
+$contraseña = "contraseña"; // Contraseña del usuario
+$nombre_base_datos = "personas"; // Nombre de la base de datos
 
+// Conectar a la base de datos
+$conn = mysqli_connect($host, $usuario, $contraseña, $nombre_base_datos);
 
-$conn = new mysqli($db_host, $db_username, $db_password, $db_name);
-
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+// Verificar la conexión
+if (!$conn) {
+    die("Conexión fallida: " . mysqli_connect_error());
 }
 
+// Procesar los datos del formulario
+header('Content-Type: application/json');
 
-$data = json_decode(file_get_contents('php://input'), true);
+$data = json_decode(file_get_contents("php://input"), true);
 
+if ($data) {
+    // Obtener los datos del formulario
+    $nombre = trim($data["nombre"]);
+    $apellido = trim($data["apellido"]);
+    $email = trim($data["email"]);
+    $telefono = trim($data["telefono"]);
 
-if (!isset($data['nombre']) || !isset($data['correo']) || !isset($data['contraseña'])) {
-    echo json_encode(array('status' => 'error', 'message' => 'Invalid data'));
-    exit;
-}
+    // Validaciones
+    $errores = [];
 
+    // Validar que los campos no estén vacíos
+    if (empty($nombre)) {
+        $errores[] = "El nombre es obligatorio.";
+    }
+    if (empty($apellido)) {
+        $errores[] = "El apellido es obligatorio.";
+    }
+    if (empty($email)) {
+        $errores[] = "El correo electrónico es obligatorio.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errores[] = "El formato del correo electrónico no es válido.";
+    }
+    if (empty($telefono)) {
+        $errores[] = "El teléfono es obligatorio.";
+    }
 
-$nombre = $conn->real_escape_string($data['nombre']);
-$correo = $conn->real_escape_string($data['correo']);
-$contraseña = $conn->real_escape_string($data['contraseña']);
+    // Si hay errores, devolverlos
+    if (!empty($errores)) {
+        echo json_encode(["message" => "Errores de validación", "errores" => $errores]);
+        exit;
+    }
 
-
-$hashed_contraseña = password_hash($contraseña, PASSWORD_DEFAULT);
-
-
-$query = "INSERT INTO usuarios (nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$hashed_contraseña')";
-if ($conn->query($query) === TRUE) {
-    echo json_encode(array('status' => 'success', 'message' => 'Usuario registrado correctamente'));
+    // Insertar los datos en la base de datos
+    // Nota: Para mayor seguridad, considera usar sentencias preparadas
+    $sql = "INSERT INTO personas (nombre, apellido, email, telefono) VALUES ('$nombre', '$apellido', '$email', '$telefono')";
+    
+    if (mysqli_query($conn, $sql)) {
+        echo json_encode(["message" => "Registro exitoso!"]);
+    } else {
+        echo json_encode(["message" => "Error al registrar: " . mysqli_error($conn)]);
+    }
 } else {
-    echo json_encode(array('status' => 'error', 'message' => 'Error al registrar el usuario'));
+    echo json_encode(["message" => "Datos no válidos."]);
 }
 
-
-$conn->close();
+// Cerrar la conexión
+mysqli_close($conn);
 ?>
