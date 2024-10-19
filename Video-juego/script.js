@@ -1,6 +1,6 @@
 let paises = [];
 //arreglo que guarda los paises para jugar
-paises = ["ARGENTINA", "BRAZIL", "ITALIA", "RUSIA", "CHILE", "POLONIA", "GUATEMALA", "MEXICO", "COLOMBIA", "INGLATERRA","SUIZA","BELGICA","PORTUGAL","TURQUIA"];
+paises = ["GUITARRA", "TROMPETA", "ACORDEON", "VIOLIN", "PIANO", "FLAUTA", "CLARINETE", "MARACAS", "ARPA", "BATERIA"];
 //arreglo donde se guradaran los paises desordenados
 let paisesDesordenados=[];
 //variable que guarda la posicion actual

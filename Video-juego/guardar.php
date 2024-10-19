@@ -38,5 +38,5 @@ echo json_encode(['mensaje' => 'Resultados guardados correctamente.']);
     
     echo json_encode(['error' => 'No se recibieron datos válidos']);
 }
->>>>>>> 8e87fd1756229e5c68d2dc624fe89b9948c9febb
+
 ?>
