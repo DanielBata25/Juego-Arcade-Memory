@@ -77,8 +77,10 @@ const enviarResultados = (isCorrect) => {
     const data = {
         patron: patronActual,
         teclasPresionadas: pressedKeys,
-        resultado: isCorrect,
-        puntuacion: score  // Enviar la puntuación actual al servidor
+        puntuacion: {
+            correctas: isCorrect ? pressedKeys.length : 0,
+            incorrectas: isCorrect ? 0 : pressedKeys.length
+        }
     };
 
     fetch('guardar.php', {
@@ -88,7 +90,15 @@ const enviarResultados = (isCorrect) => {
         },
         body: JSON.stringify(data),
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            return response.text().then(text => {
+                console.error('Error en la respuesta del servidor:', text);
+                throw new Error('Respuesta no válida del servidor');
+            });
+        }
+        return response.json();
+    })
     .then(responseData => console.log(responseData.mensaje || responseData.error))
     .catch(error => console.error('Error al enviar datos:', error));
 };
