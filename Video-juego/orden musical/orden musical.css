@@ -11,7 +11,7 @@ body{
     background-position: center center;
     background-attachment: fixed;
     color: #fff;
-    height: 100vh;
+
 }
 section{
    max-width: 90%;
@@ -82,7 +82,7 @@ section{
     border-radius: 10px;
     width: 100%;
     color: #000;
-    background-color: #fff;
+    background-color: #ff0000;
     font-size: 50px;
     margin: 2px;
     text-align: center;
@@ -93,13 +93,14 @@ section{
 #pantalla-juego input{
     display: inline-block;
     font-size: 50px;
-    background: transparent;
+    background: #ddc65ec7;
     outline: none;
     border: none;
-    border-bottom: 2px solid #ff0000;
+    border-bottom: 2px solid #ddc65ec7;
+    border-radius: 5%;
     margin-top: 40px;
     text-align: center;
-    color: #000000;
+    color: #000000c7;
     letter-spacing: 4PX;
 }
 #myProgress {
