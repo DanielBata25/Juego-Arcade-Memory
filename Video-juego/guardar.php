@@ -18,6 +18,25 @@ $jsonData['resultados'][] = [
 // Guardar de nuevo el archivo JSON
 file_put_contents($jsonFilePath, json_encode($jsonData, JSON_PRETTY_PRINT));
 
+<<<<<<< HEAD
 // Responder con un mensaje
 echo json_encode(['mensaje' => 'Resultados guardados correctamente.']);
+=======
+    $resultados = file_exists($archivo) 
+        ? json_decode(file_get_contents($archivo), true) 
+        : [];
+
+    
+    $resultados[] = $data;
+
+
+    file_put_contents($archivo, json_encode($resultados, JSON_PRETTY_PRINT));
+
+   
+    echo json_encode(['mensaje' => 'Datos guardados con éxito']);
+} else {
+    
+    echo json_encode(['error' => 'No se recibieron datos válidos']);
+}
+>>>>>>> 8e87fd1756229e5c68d2dc624fe89b9948c9febb
 ?>

@@ -1,37 +1,25 @@
-document.getElementById('registro-form').addEventListener('submit', function (e) {
-    e.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
-  
-    // Obtener los valores de los campos
-    const nombre = document.getElementById('nombre').value;
-    const correo = document.getElementById('correo').value;
-    const contraseña = document.getElementById('contraseña').value;
-  
-    // Crear el objeto usuario
-    const usuario = {
-        nombre: nombre,
-        correo: correo,
-        contraseña: contraseña
+document.getElementById('registroForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar el envío del formulario
+
+    const formData = {
+        nombre: document.getElementById('nombre').value,
+        apellido: document.getElementById('apellido').value,
+        email: document.getElementById('email').value,
+        telefono: document.getElementById('telefono').value
     };
-  
-    // Enviar los datos al servidor utilizando fetch
-    fetch('php/registro.php', {
+
+    fetch('registro.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(usuario)
+        body: JSON.stringify(formData)
     })
     .then(response => response.json())
     .then(data => {
-        if (data.status === 'success') {
-            alert('Usuario ' + usuario.nombre + ' registrado correctamente');
-            document.getElementById('registro-form').innerHTML = '<p>Usuario ' + usuario.nombre + ' registrado correctamente</p>';
-        } else {
-            alert('Error al registrar el usuario: ' + data.message);
-        }
+        document.getElementById('resultado').innerText = data.message;
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('Hubo un error al registrar el usuario');
     });
-  });
+});
