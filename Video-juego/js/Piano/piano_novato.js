@@ -5,12 +5,13 @@ const pianoKeys = document.querySelectorAll(".piano-keys .key"),
 let allKeys = [],
     pressedKeys = [],
     audio = new Audio(),
-    flagActiveGame = true;
+    flagActiveGame = true,
+    teclasHabilitadas = true,
+    score = 0;  // Puntuación inicial
 
 let patronesMusicales = [], 
     patronActual = [], 
-    patronIndex = 0; // Índice del patrón actual
-
+    patronIndex = 0;
 
 const playTune = (key) => {
     audio.src = `tunes/${key}.wav`;
@@ -23,72 +24,99 @@ const playTune = (key) => {
     }
 };
 
-// Asignar eventos a las teclas del piano
 pianoKeys.forEach((key) => {
     allKeys.push(key.dataset.key);
     key.addEventListener("click", () => {
-        if (flagActiveGame) {
+        if (flagActiveGame && teclasHabilitadas) {
             playTune(key.dataset.key);
-            pressedKeys.push(key.dataset.key);
-            console.log(pressedKeys);
-            compareKeys();
+            agregarTecla(key.dataset.key);
         }
     });
 });
 
+const agregarTecla = (key) => {
+    pressedKeys.push(key);
+    console.log(`Teclas presionadas: ${pressedKeys}`);
+    compareKeys();
+};
 
 const compareKeys = () => {
     if (pressedKeys.length === patronActual.length) {
         const isCorrect = pressedKeys.every((key, index) => key === patronActual[index]);
 
-        mostrarModal(isCorrect);
-        
-        // Reiniciar teclas presionadas
-        pressedKeys = []; 
+        if (isCorrect) score += pressedKeys.length;  // Incrementar la puntuación
+
+        teclasHabilitadas = false;
+        enviarResultados(isCorrect);
+        mostrarModal(isCorrect, () => {
+            if (patronIndex === patronesMusicales.length - 1) {
+                mostrarModalFinal();
+            } else {
+                avanzarPatron();
+            }
+        });
+
+        pressedKeys = [];
     }
 };
 
-
-const mostrarModal = (isCorrect) => {
-    const modalId = isCorrect ? "alert" : "alert2"; 
+const mostrarModal = (isCorrect, callback) => {
+    const modalId = isCorrect ? "alert" : "alert2";
     let modal = new bootstrap.Modal(document.getElementById(modalId));
     let msg = document.querySelector(`#${modalId} .modal-body`);
-    msg.innerHTML = isCorrect ? "" : "";
+    msg.innerHTML = isCorrect ? "¡Correcto!" : "¡Incorrecto!";
     modal.show();
 
     setTimeout(() => {
-        modal.hide(); 
-        avanzarPatron(isCorrect); // Avanzar al siguiente patrón después de cerrar el modal
-    }, 3000); 
+        modal.hide();
+        callback();
+    }, 3000);
 };
 
-// Avanzar al siguiente patrón musical
-const avanzarPatron = (isCorrect) => {
+const enviarResultados = (isCorrect) => {
+    const data = {
+        patron: patronActual,
+        teclasPresionadas: pressedKeys,
+        resultado: isCorrect,
+        puntuacion: score  // Enviar la puntuación actual al servidor
+    };
+
+    fetch('guardar.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(responseData => console.log(responseData.mensaje || responseData.error))
+    .catch(error => console.error('Error al enviar datos:', error));
+};
+
+const avanzarPatron = () => {
     patronIndex++;
-
-    if (patronIndex < patronesMusicales.length) {
-        setTimeout(() => {
-            patronActual = patronesMusicales[patronIndex];
-            console.log(`Siguiente patrón: ${patronActual}`);
-            playSecuencia(); 
-        }, 2000); 
-    } else {
-        mostrarModalFinal(); // Mostrar modal final
-    }
+    setTimeout(() => {
+        patronActual = patronesMusicales[patronIndex];
+        console.log(`Siguiente patrón: ${patronActual}`);
+        teclasHabilitadas = true;
+        playSecuencia();
+    }, 2000);
 };
-
 
 const mostrarModalFinal = () => {
     let modal = new bootstrap.Modal(document.getElementById("alert"));
     let msg = document.querySelector("#alert .modal-body");
-    msg.innerHTML = "¡Felicidades! Has completado todos los patrones.";
+    msg.innerHTML = `¡Felicidades! Has completado todos los patrones. Puntuación final: ${score} puntos.`;
     modal.show();
 
     setTimeout(() => {
-        modal.hide(); 
-        
-        window.location.href = "http://localhost/Video-juego/Admin/tables.html"; 
-    }, 3000); 
+        modal.hide();
+        redirigirPagina();
+    }, 3000);
+};
+
+const redirigirPagina = () => {
+    window.location.href = "http://localhost/Video-juego/Admin/tables.html";
 };
 
 const cargarPatronMusical = () => {
@@ -102,14 +130,13 @@ const cargarPatronMusical = () => {
             if (patronesMusicales.length > 0) {
                 patronActual = patronesMusicales[0];
                 console.log(`Patrón inicial: ${patronActual}`);
-                playSecuencia(); // Iniciar reproducción del primer patrón
+                playSecuencia();
             } else {
                 console.error("No hay patrones musicales disponibles.");
             }
         })
         .catch((error) => console.error("Error al cargar el patrón musical:", error));
 };
-
 
 const playSecuencia = () => {
     let index = 0;
@@ -123,24 +150,21 @@ const playSecuencia = () => {
     playNextNote();
 };
 
-// Detectar teclas desde el teclado físico
 const pressedKey = (e) => {
-    if (allKeys.includes(e.key) && flagActiveGame) {
+    if (allKeys.includes(e.key) && flagActiveGame && teclasHabilitadas) {
         playTune(e.key);
-        pressedKeys.push(e.key);
-        console.log(pressedKeys);
-        compareKeys();
+        agregarTecla(e.key);
     }
 };
 
-// Manejar eventos
 keysCheckbox.addEventListener("click", () => {
     pianoKeys.forEach((key) => key.classList.toggle("hide"));
 });
+
 volumeSlider.addEventListener("input", (e) => {
     audio.volume = e.target.value;
 });
-document.addEventListener("keydown", pressedKey);
 
+document.addEventListener("keydown", pressedKey);
 
 window.addEventListener("DOMContentLoaded", cargarPatronMusical);
