@@ -45,12 +45,32 @@ body{
     animation:  loading 4s forwards cubic-bezier(0,0,0,0);
 }
 
-@keyframes loading{
-    0%{
-        width: 0%;
+.text {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+}
+
+.cargando {
+    display: flex; /* Permite alinear las pelotas en fila */
+    margin-left: 10px; /* Espacio entre el texto y las pelotas */
+}
+
+.pelotas {
+    width: 10px; /* Ajusta el tamaño según lo que necesites */
+    height: 10px; /* Ajusta el tamaño según lo que necesites */
+    border-radius: 50%; /* Hace que las pelotas sean redondas */
+    background-color: #000; /* Color de las pelotas */
+    margin: 0 5px; /* Espacio entre pelotas */
+    animation: bounce 0.5s infinite alternate;
+}
+
+/* Animación para las pelotas */
+@keyframes bounce {
+    from {
+        transform: translateY(0);
     }
-    100%{
-        width: 100%;
+    to {
+        transform: translateY(-10px);
     }
 }
 
@@ -61,4 +81,16 @@ body{
 
 .line-box {
     background-color: #ccc; /* Color de fondo de la barra */
+}
+.numero-cargar{
+    position: absolute;
+    bottom: 8.5%;
+    right: 50%;
+    z-index: 10;
+    color: black ;
+    
+}
+.numero-cargar{
+    animation: numero-carga 5s ease initial;
+    content: '';
 }
