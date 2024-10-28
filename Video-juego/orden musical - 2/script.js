@@ -1,6 +1,6 @@
 let paises = [];
-
-paises = ["GUITARRA", "TROMPETA", "ACORDEON", "VIOLIN", "PIANO", "FLAUTA", "CLARINETE", "MARACAS", "ARPA", "BATERIA"];
+//arreglo que guarda los paises para jugar
+paises = ["PLATILLOS", "XILOFONO", "SAXOFON", "TAMBOR", "TROMPETA", "PANDERETA", "TRIANGULO", "TUBA", "CASTAÑUELAS"];
 //arreglo donde se guradaran los paises desordenados
 let paisesDesordenados=[];
 //variable que guarda la posicion actual
@@ -88,7 +88,7 @@ function move() {
     x= 1;
     let elem = document.getElementById("myBar");
     let width = 1;
-    idInterval = setInterval(frame, 100);
+    idInterval = setInterval(frame, 50);
     function frame() {
       if (width >= 100) {
         clearInterval(idInterval);
