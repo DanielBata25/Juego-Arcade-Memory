@@ -1,21 +1,21 @@
 <?php
-    include('../conexion.conexion.php');
-    include('persona.php')
+include('../conexion/conexion.php');
+include('persona.php');
 
-    class Registar extends Persona{
-        public function registro(){
-            $conexion=new Conexion();
-            $this->sqInsert="INSERT INTO public.persona(nombre_persona, email_persona)
-                             VALUES (:nombre, :email);";
-            $valores=[
-                ':nombre' => $this->getNombrePersona
-                ':email' => $this->getEmailPersona
-            ];
+class Registrar extends Persona {
+    private $sqlInsert;
 
-            $conexion->ejecutar($this->sqlInsert, $valores);
-            return $this->sqlInsert;
+    public function registro() {
+        $conexion = new Conexion();
+        $this->sqlInsert = "INSERT INTO persona_registro (nombre, email, contrasena) 
+                            VALUES (:nombre, :email, :password)";
+        $valores = [
+            ':nombre'   => $this->getNombrePersona(),
+            ':email'    => $this->getEmailPersona(),
+            ':password' => $this->getPasswordPersona(),
+        ];
 
-        }
+        $conexion->ejecutar($this->sqlInsert, $valores);
     }
-
+}
 ?>
