@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1); // Mostrar errores en la salida
@@ -39,4 +38,4 @@ if (file_put_contents($archivo, json_encode($datosJuego, JSON_PRETTY_PRINT))) {
     echo json_encode(["error" => "No se pudo guardar el archivo JSON."]);
 }
 ?>
->>>>>>> 0786092ecb0e2b985d21c8942438b4ba25852ffc
+

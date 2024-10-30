@@ -55,7 +55,7 @@
         <br>
         <input type="submit" value="Registrar">
       </form>
-      <p class="color">¿Ya tienes una cuenta? <a href="../Inicio Sesion.html">Inicia sesión</a></p>
+      <p class="color">¿Ya tienes una cuenta? <a href="login.php">Inicia sesión</a></p>
     </div>
   </div>
     <!--MUSICA-->

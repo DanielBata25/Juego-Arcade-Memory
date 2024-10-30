@@ -21,8 +21,8 @@ class Persona {
     }
 
     public function setPasswordPersona($passwordPersona) {
-        // Hash de la contraseña antes de guardarla
-        $this->passwordPersona = password_hash($passwordPersona, PASSWORD_DEFAULT);
+        // Almacenando la contraseña sin cifrar (solo para pruebas)
+        $this->passwordPersona = $passwordPersona;
     }
 
     public function getPasswordPersona() {

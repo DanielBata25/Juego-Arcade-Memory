@@ -12,7 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $persona->setPasswordPersona($password);
     $persona->registro();
 
-    echo "Registro exitoso.";
+    // Redirigir al usuario al formulario de inicio de sesión
+    header('Location: ../../login.php');
+    exit(); // Asegura que se detenga la ejecución después de redirigir
 } else {
     echo "Método no permitido.";
 }
