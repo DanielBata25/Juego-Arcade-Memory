@@ -61,9 +61,6 @@ function mostrarPantallaFinal(){
     document.getElementById("acertadas").innerHTML = cantidadAcertados;
 }
 
-
-
-
 //Funcion que compara el pais ingresado con el pais correcto
 function comparar(){
     var paisOrdanedo = paises[posJuegoActual];
@@ -104,8 +101,8 @@ function move() {
   }
 }
 
-function comenzarJuego(){
-    paisesDesordenados=[];
+function comenzarJuego() {
+    paisesDesordenados = [];
     posJuegoActual = 0;
     cantidadAcertados = 0;
     desordenarPaises();
@@ -115,5 +112,7 @@ function comenzarJuego(){
     mostrarNuevoPais();
     document.getElementById("contador").innerHTML = 0;
     document.getElementById("paisIngresado").focus();
-}
+    
 
+    alert("ESTAS SERAN LAS SIGUIENTES PALABRAS QUE APARECERAN GUITARRA, TROMPETA, ACORDEON, VIOLIN, PIANO, FLAUTA, CLARINETE, MARACAS, ARPA, BATERIA");
+}
