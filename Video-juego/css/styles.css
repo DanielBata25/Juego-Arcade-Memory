@@ -1,17 +1,76 @@
 body {
-	background-image: linear-gradient(#051327, #000);
+	/*background-image:*/
 	inset: 0;
 	background-size: cover;
 	background-attachment: fixed;
-	position: fixed;
 	background-position: center;
-	background-color: #ffffff;
-}
-
+	animation: puffIn 1s ease-in-out;  
+  }
+  
+@keyframes puffIn {
+	0% {
+		opacity: 0;
+		transform: scale(2);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+  }
+  /**IMAGEN CON ZOOM*/
+  .play-button {
+	animation: zoom 2s infinite alternate ease-in-out;
+	width: 40%; 
+	height: 40%;
+  }
+  
+  @keyframes zoom {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.1);
+	}
+  }
+    /* END IMAGEN CON ZOOM*/
+  /*FONDO ESTRELLADO*/
+  .space {
+	--size: 2px;
+	--space-layer:
+	  4vw 50vh 0 #fff,
+	  18vw 88vh 0 #fff,
+	  73vw 14vh 0 #fff;
+  
+	width: var(--size);
+	height: var(--size);
+	background: white;
+	box-shadow: var(--space-layer);
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.75;
+  }
+  
+  .space {
+	animation: move var(--duration) linear infinite;
+  }
+  
+  @keyframes move {
+	from {
+	  transform: translateY(0);
+	}
+  
+	to {
+	  transform: translateY(-100vh);
+	}
+  }
+    /*END FONDO ESTRELLADO*/
 .volu {
 	color: white;
 	margin-left: 100px;
 	font-size: 16px;
+	color: white;
+	margin-left: 35px;
 }
 
 .volume-control {
@@ -21,6 +80,15 @@ body {
 .pregunta {
 	margin-left: 1650px;
 }
+.tamañosoni {
+	width: 30%;
+	height: auto;
+	min-width: 40px;
+	margin-top: 5px;
+	margin-left: 30px;
+	height: auto;
+	object-fit: cover;
+  }
 
 .boton {
 	width: 500;
@@ -57,7 +125,7 @@ body {
 	font-size: 1.2rem;
 	transition: .4s ease;
 }
-
+/*RESPONSIVE CONTAINER 2*/
 @media (max-width: 1000px) {
 	.container-2 {
 		margin-right: 26%;
@@ -83,16 +151,62 @@ body {
 	}
 	
 }
+/*END RESPONSIVE CONTAINER 2*/
 
-
-.btn-1:hover {
-	box-shadow: 0 0 10px blue,
-		0 0 30px blue,
-		0 0 30px blue,
-		0 0 30px blue;
-
+ /* ESPACIO ENTRE BOTONES*/
+ .btn-games {
+	width: 50%;
+	margin: auto;
+	margin-left: 26.5%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	object-fit: cover;
+	flex-wrap: wrap;
+	gap: 20px;
+  
+  }
+  .btn-1{
+	width: 150px;
+	padding: 10px 20px;
+	animation: moveRight 2s infinite alternate ease-in-out;
+  }
+  
+  .btn-games a:nth-child(1) {
+	animation-delay: 0s; 
+  }
+  
+  .btn-games a:nth-child(2) {
+	animation-delay: 0.3s; 
+  }
+  
+  .btn-games a:nth-child(3) {
+	animation-delay: 1s; 
+  }
+  
+  @keyframes moveRight {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(20px); 
+	}
+  }
+  /*------------------------------ END ESPACIO ENTRE BOTONES PLAY2------------------------------------------- */
+/* -------------------------------------PERFIL DEL AVATAR --------------------------------------------*/
+.perfilll{
+	text-align: center;
+	display: flex;
+	margin: -15%;
 }
-
+.perfill{
+	color: white;
+	margin-left: 1310px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+}
+/* -------------------------------------FIN DE PERFIL DE AVATAR --------------------------------------------*/
 .logo {
 	border-radius: 25%;
 }
@@ -147,11 +261,6 @@ body {
 
 	float: right;
 }
-
-.pro {
-	color: rgb(2, 255, 242);
-}
-
 
 .cuadro1 {
 	padding: 10px;
@@ -286,37 +395,7 @@ body {
 }
 
 /*ESTLIOS BORDES MODO DE JUEGO*/
-/*ESTLIOS OPERACIONES DE NUMEROS*/
-.numeros {
-	color: aqua;
-	margin-top: 60px;
-}
 
-.boton_numeros {
-
-	border-radius: 20px;
-	background-color: rgb(25, 138, 231);
-	padding: 25px 35px;
-	text-decoration: none;
-	color: white;
-	font-weight: 30px;
-	font-size: 20px;
-	transition: .4s ease;
-}
-
-.btn-omit {
-	padding: 15px 25px;
-}
-
-.boton_numeros:hover {
-	box-shadow: 0 0 10px blue,
-		0 0 30px blue,
-		0 0 30px blue,
-		0 0 30px blue;
-
-}
-
-/*END ESTLIOS OPERACIONES DE NUMEROS*/
 .depende {
 	width: 120px;
 	height: 100px;
@@ -343,58 +422,10 @@ body {
 	margin-right: 5%;
 }
 
-.numeros3 img {
-	height: 50%;
-	width: 50%;
-	margin-top: -0.5px;
-	margin-right: 5%;
-	margin-left: 5%;
-}
-.container-3 {
-	margin-top: -90px;
-	width: 250px;
-	margin-left: 1280px;
-}
-
-.perfill {
-	color: white;
-	margin-left: 1310px;
-}
-
-.perfilll {
-	text-align: center;
-	display: flex;
-	margin: -15%;
-}
 
 .btn-primary {
 	padding: 0%;
 	margin: 0%
-}
-
-.offcanvas-start {
-	margin-bottom: 10%;
-	text-align: center;
-}
-
-.offcanvas-title {
-	color: #ffffff;
-	text-align: center;
-	width: 70%;
-	margin-left: 15%;
-}
-
-.offcanvas-tittle {
-	color: #ffffff;
-	font-size: medium;
-	height: auto;
-	text-align: center;
-	width: 70%;
-	margin: auto;
-}
-
-.offcanvas-body {
-	margin: auto;
 }
 
 .btn-3 {
@@ -413,10 +444,6 @@ body {
 	width: 100%;
 }
 
-.offcanvas-titttle {
-	color: #ffffff;
-	width: 100%;
-}
 
 .imgnoche {
 	text-align: center;
@@ -425,12 +452,6 @@ body {
 	width: 100px;
 	height: 100px
 }
-
-.avatarraper {
-	margin-top: 1%;
-}
-
-
 
 .developer {
 	width: 50%;
@@ -459,7 +480,108 @@ body {
 
 }
 
-.offcanvas {
-	background-image: url("../img/offcanva.png");
+/*MODALES DLE JUEGO*/
+/* Clase que se añadirá al hacer clic para aplicar el zoom */
+.zoom {
+	transform: scale(1.2);
+  }
+   
+  .fondo-modal {
+	height: 20;
+	width: 20;
+  }
+  
+  .modal-body {
+	background-color: #2496e2;
+	justify-content: center;
+  }
+  
+  .fs-5 {
+	background-color: #2496e2;
+  }
+  
+  .btn-secondary {
+	background-color: #2496e2;
+  }
+  
+  .modal-footer {
+	background-color: #2496e2;
+  }
+  
+  .btn-close {
+	background-color: #2496e2;
+  }
+  
+  .modal-header {
+	background-color: #2496e2;
+  }
+/*ENDMODALES DLE JUEGO*/
 
+
+/*ESTILOS DE FNDO ESTRELLADO Y NOSE DONDE ESTAN VINCULADOS*/
+
+.volu{
+	color: white;
+	margin-left: 35px;
 }
+.pregunta{
+	margin-left: 1650px;
+}
+.tamañosoni {
+  width: 30%;
+  height: auto;
+  min-width: 40px;
+  margin-top: 5px;
+  margin-left: 30px;
+  height: auto;
+  object-fit: cover;
+}
+.posi{
+  margin-left: 800px;
+  margin-top: 10px;
+}
+.container-play{
+  margin-top: -5%;
+}
+.container-1 {
+  width: 100%;
+  max-width: 500px;
+}
+.container-2 {
+  width: 10%;
+  max-width: 200px;
+}
+.container-button{
+  width: 15%;
+  min-width: 100px;
+}
+.bar-volumen{
+  position: relative;
+  transform: scale(0.8);
+  right: 20px;
+}
+.logo {
+  border-radius: 25%;
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+  min-width: 100px;
+  min-height: 100px;
+  background-color: transparent!important;
+}
+.container-top{
+  margin-top: -6% ;
+  justify-content: center;
+}
+@media (max-width: 620px) {
+  .container-top {
+    margin-top: 5% ;
+  }
+}
+.play-button {
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+}
+
+/*END ESTILOS DE FNDO ESTRELLADO Y NOSE DONDE ESTAN VINCULADOS*/

@@ -28,7 +28,17 @@
             "k",
             "j"
         ]
-    ]
-
-
+    ],
+    "teclas_presionadas": [
+        "t",
+        "g",
+        "d",
+        "d",
+        "f",
+        "g"
+    ],
+    "puntuacion": {
+        "correctas": 4,
+        "incorrectas": 42
+    }
 }

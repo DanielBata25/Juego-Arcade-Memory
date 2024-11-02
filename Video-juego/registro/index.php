@@ -12,9 +12,9 @@
   <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/bootstrap.css">
   <script src="../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
   <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/">
-  <link rel="stylesheet" href="../css/color.css">
+  <link rel="stylesheet" href="../css/registro.css">
   <link rel="stylesheet" href="../css/fondo_estrellado.css">
-  <link rel="stylesheet" href="../css/fondodeloffcanv.css">
+
 
 
   <link href='../https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -38,9 +38,9 @@
     </div>
 </div>
   <div class="container-top">
-    <div class="lola">
-      <img src="../img/image1.png" class="logo" alt="">
-    </div>
+  <div class="lola">
+    <img src="../img/image1.png" height="200" width="200" alt="">
+  </div>
     <div class="container">
     
     <form method="post" action="proceso/persona/registrarPersona.php">

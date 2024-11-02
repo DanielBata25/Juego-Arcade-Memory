@@ -1,3 +1,29 @@
-body{
-    background-image: url("../img/notas musicales melas.gif");
+.offcanvas {
+	background-image: url("../img/offcanva.png");
+
+}
+
+.offcanvas-start {
+	margin-bottom: 10%;
+	text-align: center;
+}
+
+.offcanvas-title {
+	color: #ffffff;
+	text-align: center;
+	width: 70%;
+	margin-left: 15%;
+}
+
+.offcanvas-tittle {
+	color: #ffffff;
+	font-size: medium;
+	height: auto;
+	text-align: center;
+	width: 70%;
+	margin: auto;
+}
+
+.offcanvas-body {
+	margin: auto;
 }

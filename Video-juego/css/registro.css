@@ -1,11 +1,4 @@
-body {
-	background-image: url("../img/imagen1.jpeg");
-	background-repeat: no-repeat;
-	align-items: center;
-	background-size: cover;
-	background-attachment: fixed;
-	background-position: center center;
-}
+
 .lola{
     display: grid;
     margin: auto;

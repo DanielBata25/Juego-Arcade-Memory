@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/bootstrap.css">
   <script src="../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
   <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/">
-  <link rel="stylesheet" href="../css/color.css">
+  <link rel="stylesheet" href="../css/registro.css">
   <link rel="stylesheet" href="../css/fondo_estrellado.css">
 
 
