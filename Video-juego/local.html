@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de localStorage sin ocurrencias</title>
+</head>
+<body>
+    <h1>Almacenar Datos en localStorage sin Duplicados</h1>
+    <input type="text" id="dataInput" placeholder="Ingresa un dato" />
+    <button onclick="addData()">Agregar al localStorage</button>
+    <p id="message"></p>
+
+    <script>
+        function addData() {
+            const input = document.getElementById('dataInput').value;
+            if (input.trim() === "") {
+                document.getElementById('message').innerText = "Por favor, ingresa un dato.";
+                return;
+            }
+
+            // Recuperar los datos actuales de localStorage
+            let storedData = JSON.parse(localStorage.getItem('myDataList')) || [];
+
+            // Verificar si el dato ya existe en localStorage
+            if (!storedData.includes(input)) {
+                // Si no existe, agregar el dato al array y actualizar localStorage
+                storedData.push(input);
+                localStorage.setItem('myDataList', JSON.stringify(storedData));
+                document.getElementById('message').innerText = "Dato agregado sin duplicados.";
+            } else {
+                // Si ya existe, mostrar un mensaje
+                document.getElementById('message').innerText = "El dato ya existe en localStorage.";
+            }
+
+            // Limpiar el campo de entrada
+            document.getElementById('dataInput').value = "";
+        }
+    </script>
+</body>
+</html>

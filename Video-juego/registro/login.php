@@ -30,7 +30,17 @@
   </div>
 
   <br>
-  <img src="../img/musica.png" class="tamañosoni" id="playPauseBTN" onclick="playPause()">
+ 
+  <div class="container-2">
+    <div class="volume-control mt-4">
+        <img src="../img/normal.png" class="tamañosoni" id="playPauseBTN" onclick="playPause()">
+        <div class="volu">
+            <label for="volume">Volumen:</label>
+        </div>
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
+    </div>
+</div>
+
   <div class="lola">
     <img src="../img/image2.png" height="200" width="200" alt="">
   </div>
@@ -47,10 +57,12 @@
     <div class="container text-center ">
 
     <form action="validar.php" method="POST">
-        <label for="email">Correo:</label><br>
+    
+    <label for="email">Correo Electrónico:</label>
         <input type="email" id="email" name="email" required><br><br>
 
-        <label for="password">Contraseña:</label><br>
+
+        <label for="password">Contraseña:</label>
         <input type="password" id="contrasena" name="contrasena" required><br><br>
 
         <input type="submit" value="Ingresar">
