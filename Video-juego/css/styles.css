@@ -181,6 +181,15 @@ body {
 	margin: 0 10px;
 }
 
+.piano2 {
+	padding-top: 10px;
+	width: 200px;
+	height: 150px;
+	border-radius: 10px 10px;
+
+	margin: 0 10px;
+}
+
 .num1 {
 	padding-top: 10px;
 	width: 180px;
@@ -218,7 +227,7 @@ body {
 
 .tarjeta-1 {
 	width: 50%;
-	height: 400px;
+	height: 414px;
 	/*height: 250px;
 	width: 200px;*/
 	background-color: rgb(62, 178, 189);
