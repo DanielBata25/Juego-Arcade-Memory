@@ -195,7 +195,6 @@ const guardarIntento = (patron, teclasPresionadas, esCorrecto) => {
     }
 };
 
-
 const pressedKey = (e) => {
     if (allKeys.includes(e.key) && flagActiveGame && teclasHabilitadas) {
         playTune(e.key);
