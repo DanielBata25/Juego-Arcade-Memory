@@ -211,6 +211,11 @@ body {
 	border-radius: 25%;
 }
 
+.logo31 {
+	border-radius: 25%;
+	width: 40vh;
+	height: 40vh;
+}
 .boton:hover {
 	width: 500;
 	height: 500;

@@ -3,14 +3,14 @@ const pianoKeys = document.querySelectorAll(".piano-keys .key"),
     keysCheckbox = document.querySelector(".keys-checkbox input");
 
 let allKeys = [],
-    pressedKeys = [], 
+    pressedKeys = [],
     audio = new Audio(),
     flagActiveGame = true,
     teclasHabilitadas = true,
-    score = 0;  
+    score = 0;
 
-let patronesMusicales = [], 
-    patronActual = [], 
+let patronesMusicales = [],
+    patronActual = [],
     patronIndex = 0;
 
 // Inicializar el historial en localStorage si no existe
@@ -18,18 +18,15 @@ if (!localStorage.getItem("historialTeclas")) {
     localStorage.setItem("historialTeclas", JSON.stringify([]));
 }
 
-
 const desbloquearAudio = () => {
     audio.play().catch(() => {}); 
     document.removeEventListener("click", desbloquearAudio); // Remueve el evento una vez desbloqueado
 };
 
-// Escucha un primer clic en el documento para desbloquear el audio
 document.addEventListener("click", desbloquearAudio);
 
-
 const playTune = (key) => {
-    audio.src = `tunes/${key}.wav`; // Ruta del audio
+    audio.src = `tunes/${key}.wav`; 
     audio.play().catch((error) => console.error('Error al reproducir audio:', error));
 
     const clickedKey = document.querySelector(`[data-key="${key}"]`);
@@ -38,7 +35,6 @@ const playTune = (key) => {
         setTimeout(() => clickedKey.classList.remove("active"), 150);
     }
 };
-
 
 pianoKeys.forEach((key) => {
     allKeys.push(key.dataset.key);
@@ -50,7 +46,6 @@ pianoKeys.forEach((key) => {
     });
 });
 
-// Función para agregar teclas presionadas y comparar
 const agregarTecla = (key) => {
     pressedKeys.push(key);
     console.log(`Teclas presionadas: ${pressedKeys}`);
@@ -58,67 +53,75 @@ const agregarTecla = (key) => {
 };
 
 const compareKeys = () => {
-    if (pressedKeys.length === patronActual.length) {
+    if (teclasHabilitadas && pressedKeys.length === patronActual.length) {
+        console.log("Longitud de pressedKeys coincide con patronActual.");
         const isCorrect = pressedKeys.every((key, index) => key === patronActual[index]);
 
-        if (isCorrect) score += pressedKeys.length;  // Incrementar la puntuación
+        if (isCorrect) {
+            score += pressedKeys.length;
+            console.log("Patrón correcto.");
+            swal({
+                title: "¡Correcto!",
+                text: "Has tocado el patrón correctamente.",
+                icon: "success",
+                timer: 1500,
+                buttons: false
+            }).then(() => {
+                verificarUltimoPatron();
+            });
+        } else {
+            console.log("Patrón incorrecto.");
+            swal({
+                title: "¡Incorrecto!",
+                text: "El patrón no coincide. Pasando al siguiente patrón.",
+                icon: "error",
+                timer: 2000,
+                buttons: false
+            }).then(() => {
+                verificarUltimoPatron();
+            });
+        }
 
-        teclasHabilitadas = false;
-        mostrarModal(isCorrect, () => {
-            if (patronIndex === patronesMusicales.length - 1) {
-                mostrarModalFinal();
-            } else {
-                avanzarPatron();
-            }
-        });
-
-        // Guardar intento en el historial
         guardarIntento(patronActual, pressedKeys, isCorrect);
-        pressedKeys = []; // Reiniciar teclas presionadas
+        pressedKeys = [];
     }
 };
 
-
-const mostrarModal = (isCorrect, callback) => {
-    const modalId = isCorrect ? "alert" : "alert2";
-    let modal = new bootstrap.Modal(document.getElementById(modalId));
-    let msg = document.querySelector(`#${modalId} .modal-body`);
-    msg.innerHTML = isCorrect ? "¡Correcto!" : "¡Incorrecto!";
-    modal.show();
-
-    setTimeout(() => {
-        modal.hide();
-        callback();
-    }, 3000);
+const verificarUltimoPatron = () => {
+    if (patronIndex === patronesMusicales.length - 1) {
+        console.log("Último patrón alcanzado.");
+        flagActiveGame = false;
+        teclasHabilitadas = false;
+        
+        swal({
+            title: "¡Felicidades!",
+            text: "Has completado todos los patrones.",
+            icon: "success",
+            button: "Continuar"
+        }).then(() => {
+            redirigirPagina(); // Redirige después de que el usuario cierre el mensaje
+        });
+    } else {
+        patronIndex++;
+        avanzarPatron();
+    }
 };
-
 
 const avanzarPatron = () => {
-    patronIndex++;
+    teclasHabilitadas = false; // Deshabilitar teclas antes de reproducir el patrón
+    patronActual = patronesMusicales[patronIndex];
+    playSecuencia();
+
+    // Reactivar teclas después de que termine la secuencia
     setTimeout(() => {
-        patronActual = patronesMusicales[patronIndex];
-        console.log(`Siguiente patrón: ${patronActual}`);
         teclasHabilitadas = true;
-        playSecuencia();
-    }, 2000);
+        console.log("Teclas habilitadas para el siguiente patrón.");
+    }, patronActual.length * 1000); // Ajusta el tiempo si la secuencia es más rápida o lenta
 };
-
-
-const mostrarModalFinal = () => {
-    let modal = new bootstrap.Modal(document.getElementById("alert"));
-    let msg = document.querySelector("#alert .modal-body");
-    msg.innerHTML = `¡Felicidades! Has completado todos los patrones. Puntuación final: ${score} puntos.`;
-    modal.show();
-
-    setTimeout(() => {
-        modal.hide();
-        redirigirPagina();
-    }, 3000);
-};
-
 
 const redirigirPagina = () => {
-    window.location.href = "http://localhost/Video-juego/Admin/tables.html";
+    console.log("Redirigiendo a la página final...");
+    window.location.href = "http://localhost/Juego-Arcade-Memory/Video-juego/play.html";
 };
 
 
@@ -127,11 +130,11 @@ const cargarPatronMusical = () => {
     .then(response => {
         console.log("Estado de la respuesta:", response.status);
         if (!response.ok) throw new Error("Error en la carga de patrones musicales");
-        return response.text(); // Cambiar a text para revisar el contenido antes de parsear
+        return response.text(); 
     })
     .then(text => {
         try {
-            const data = JSON.parse(text); // Intentar parsear a JSON
+            const data = JSON.parse(text); 
             console.log("Datos recibidos desde PHP:", data);
             if (data.error) {
                 console.error("Error desde PHP:", data.error);
@@ -152,7 +155,6 @@ const cargarPatronMusical = () => {
     .catch(error => console.error("Error al cargar el patrón musical:", error));
 };
 
-// Función para reproducir la secuencia de notas
 const playSecuencia = () => {
     let index = 0;
     const playNextNote = () => {
@@ -165,10 +167,8 @@ const playSecuencia = () => {
     playNextNote();
 };
 
-// Almacenar el intento en localStorage
 const guardarIntento = (patron, teclasPresionadas, esCorrecto) => {
     let historial = JSON.parse(localStorage.getItem("historialTeclas")) || [];
-
     const intento = {
         patron: patron,
         teclasPresionadas: teclasPresionadas,
@@ -179,13 +179,11 @@ const guardarIntento = (patron, teclasPresionadas, esCorrecto) => {
 
     const secuenciaStr = JSON.stringify(teclasPresionadas);
 
-    // Verificar si la secuencia ya existe en el historial
     const existe = historial.some(entry =>
         JSON.stringify(entry.patron) === JSON.stringify(patron) &&
         JSON.stringify(entry.teclasPresionadas) === secuenciaStr
     );
 
-    // Guardar intento si no existe en el historial
     if (!existe) {
         historial.push(intento);
         localStorage.setItem("historialTeclas", JSON.stringify(historial));
@@ -198,22 +196,18 @@ const guardarIntento = (patron, teclasPresionadas, esCorrecto) => {
 const pressedKey = (e) => {
     if (allKeys.includes(e.key) && flagActiveGame && teclasHabilitadas) {
         playTune(e.key);
-        agregarTecla(e.key); // Almacenar tecla presionada
+        agregarTecla(e.key);
     }
 };
-
 
 keysCheckbox.addEventListener("click", () => {
     pianoKeys.forEach((key) => key.classList.toggle("hide"));
 });
 
-
 volumeSlider.addEventListener("input", (e) => {
     audio.volume = e.target.value;
 });
 
-// Evento de teclado para detectar teclas presionadas
 document.addEventListener("keydown", pressedKey);
 
-// Cargar los patrones musicales al iniciar la página
 window.addEventListener("DOMContentLoaded", cargarPatronMusical);

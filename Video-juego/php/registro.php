@@ -1,8 +1,8 @@
 <?php
-$host = "localhost"; 
-$usuario = "usuario"; // Usuario de la base de datos
-$contraseña = "contraseña"; // Contraseña del usuario
-$nombre_base_datos = "personas"; // Nombre de la base de datos
+$host = "localhost";
+$usuario = "usuario";
+$contraseña = "contraseña";
+$nombre_base_datos = "personas";
 
 // Conectar a la base de datos
 $conn = mysqli_connect($host, $usuario, $contraseña, $nombre_base_datos);
@@ -18,16 +18,12 @@ header('Content-Type: application/json');
 $data = json_decode(file_get_contents("php://input"), true);
 
 if ($data) {
-    // Obtener los datos del formulario
     $nombre = trim($data["nombre"]);
     $apellido = trim($data["apellido"]);
     $email = trim($data["email"]);
-    $telefono = trim($data["telefono"]);
 
-    // Validaciones
     $errores = [];
 
-    // Validar que los campos no estén vacíos
     if (empty($nombre)) {
         $errores[] = "El nombre es obligatorio.";
     }
@@ -39,29 +35,31 @@ if ($data) {
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errores[] = "El formato del correo electrónico no es válido.";
     }
-    if (empty($telefono)) {
-        $errores[] = "El teléfono es obligatorio.";
-    }
 
-    // Si hay errores, devolverlos
     if (!empty($errores)) {
         echo json_encode(["message" => "Errores de validación", "errores" => $errores]);
         exit;
     }
 
-    // Insertar los datos en la base de datos
-    // Nota: Para mayor seguridad, considera usar sentencias preparadas
-    $sql = "INSERT INTO personas (nombre, apellido, email, telefono) VALUES ('$nombre', '$apellido', '$email', '$telefono')";
-    
-    if (mysqli_query($conn, $sql)) {
-        echo json_encode(["message" => "Registro exitoso!"]);
+    // Comprobar si el usuario ya está registrado
+    $sql_check = "SELECT * FROM personas WHERE email = '$email'";
+    $result = mysqli_query($conn, $sql_check);
+
+    if (mysqli_num_rows($result) > 0) {
+        echo json_encode(["message" => "Usuario ya registrado"]);
     } else {
-        echo json_encode(["message" => "Error al registrar: " . mysqli_error($conn)]);
+        // Insertar los datos si el usuario no está registrado
+        $sql = "INSERT INTO personas (nombre, apellido, email) VALUES ('$nombre', '$apellido', '$email')";
+        
+        if (mysqli_query($conn, $sql)) {
+            echo json_encode(["message" => "Registro exitoso!"]);
+        } else {
+            echo json_encode(["message" => "Error al registrar: " . mysqli_error($conn)]);
+        }
     }
 } else {
     echo json_encode(["message" => "Datos no válidos."]);
 }
 
-// Cerrar la conexión
 mysqli_close($conn);
 ?>
