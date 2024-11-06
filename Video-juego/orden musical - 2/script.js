@@ -116,8 +116,7 @@ function comenzarJuego(){
     document.getElementById("contador").innerHTML = 0;
     document.getElementById("paisIngresado").focus();
 
-      swal("Empecemos!", "ESTAS SERAN LAS SIGUIENTES PALABRAS QUE APARECERAN PLATILLOS, XILOFONO, SAXOFON, TAMBOR, TROMPETA, PANDERETA, TRIANGULO, TUBA, CASTAÑUELAS !", "success");
-
+      swal("Empecemos!", "ESTAS SERAN LAS SIGUIENTES PALABRAS QUE APARECERAN PLATILLOS, XILOFONO, SAXOFON, TAMBOR, TROMPETA, PANDERETA, TRIANGULO, TUBA, CASTAÑUELAS !",);
 
 }
 
