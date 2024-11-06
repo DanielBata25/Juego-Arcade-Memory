@@ -528,7 +528,7 @@ body {
 	margin-left: 1650px;
 }
 .tamañosoni {
-  width: 30%;
+  width: 60%;
   height: auto;
   min-width: 40px;
   margin-top: 5px;
@@ -536,6 +536,15 @@ body {
   height: auto;
   object-fit: cover;
 }
+.tamañosonio {
+	width: 50%;
+	height: auto;
+	min-width: 40px;
+	margin-top: 5px;
+	margin-left: 30px;
+	height: auto;
+	object-fit: cover;
+  }
 .posi{
   margin-left: 800px;
   margin-top: 10px;
@@ -579,9 +588,30 @@ body {
   }
 }
 .play-button {
-  width: 70%;
+  width: 40vh;
   height: auto;
   object-fit: cover;
+  margin-left: -20%;
 }
+
+#console {
+    font-family: 'Press Start 2P', cursive; /* Fuente estilo pixelado, ideal para videojuegos */
+    font-size: 18px; /* Tamaño reducido del texto */
+    color: white; /* Color del texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 0, 255, 0.8); /* Sombra para hacer el texto más llamativo */
+    line-height: 1.5; /* Espaciado entre líneas */
+    white-space: normal; /* Permite que el texto se divida en varias líneas */
+    letter-spacing: 1px; /* Espaciado entre las letras */
+    display: inline-block; /* Hace que el texto se vea como un bloque */
+    padding: 10px; /* Espaciado alrededor del texto */
+    margin: 0 auto; /* Centra el texto */
+    text-align: center; /* Alinea el texto en el centro */
+    position: relative; /* Permite un mayor control sobre el posicionamiento */
+    top: 50%; /* Centra verticalmente el texto en la pantalla */
+    transform: translateY(-50%); /* Ajuste para una mejor alineación vertical */
+    max-width: 80%; /* Limita el ancho máximo para que el texto se divida en líneas */
+    word-wrap: break-word; /* Asegura que el texto se ajuste y no se desborde */
+}
+
 
 /*END ESTILOS DE FNDO ESTRELLADO Y NOSE DONDE ESTAN VINCULADOS*/
