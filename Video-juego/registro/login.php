@@ -13,7 +13,7 @@
   <script src="../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
   <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/">
   <link rel="stylesheet" href="../css/registro.css">
-  <link rel="stylesheet" href="../css/fondo_estrellado.css">
+  <link rel="stylesheet" href="../css/styles.css">
 
 
   <link href='../https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
