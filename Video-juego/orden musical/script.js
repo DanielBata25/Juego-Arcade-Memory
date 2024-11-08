@@ -114,5 +114,33 @@ function comenzarJuego() {
     document.getElementById("paisIngresado").focus();
     
 
-    swal("Empecemos!", "ESTAS SERAN LAS SIGUIENTES PALABRAS QUE APARECERAN GUITARRA, TROMPETA, ACORDEON, VIOLIN, PIANO, FLAUTA, CLARINETE, MARACAS, ARPA, BATERIA!", "success");
+    
 }
+
+
+window.addEventListener('load', ()=>{
+
+    swal({
+      title: "Empecemos!",
+      icon: "success",
+      button: "Aceptar",
+      content: {
+          element: "div",
+          attributes: {
+              innerHTML: "<div style='text-align: center;'>ESTAS SERAN LAS SIGUIENTES PALABRAS QUE APARECERAN:<br>" +
+                        "GUITARRA<br>" +
+                        "TROMPETA<br>" +
+                        "ACORDEON<br>" +
+                        "VIOLIN<br>" +
+                        "PIANO<br>" +
+                        "FLAUTA<br>" +
+                        "CLARINETE<br>" +
+                        "MARACAS<br>" +
+                        "ARPA<br>" +
+                        "BATERIA</div>"
+          }
+      }
+  });
+
+  // document.querySelector('.btn-alert').click();
+})
