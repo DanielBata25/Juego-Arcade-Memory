@@ -1,6 +1,6 @@
 let paises = [];
-//arreglo que guarda los paises para jugar
-paises = ["PLATILLOS", "XILOFONO", "SAXOFON", "TAMBOR", "TROMPETA", "PANDERETA", "TRIANGULO", "TUBA", "CASTAÑUELAS"];
+
+paises = ["PLATILLOS", "XILOFONO", "SAXOFON", "TAMBOR", "TROMPETA", "PANDERETA", "TRIANGULO", "TUBA", "CASTAÑUELAS", "BATERIA"];
 //arreglo donde se guradaran los paises desordenados
 let paisesDesordenados=[];
 //variable que guarda la posicion actual
@@ -61,9 +61,6 @@ function mostrarPantallaFinal(){
     document.getElementById("acertadas").innerHTML = cantidadAcertados;
 }
 
-
-
-
 //Funcion que compara el pais ingresado con el pais correcto
 function comparar(){
     var paisOrdanedo = paises[posJuegoActual];
@@ -88,7 +85,7 @@ function move() {
     x= 1;
     let elem = document.getElementById("myBar");
     let width = 1;
-    idInterval = setInterval(frame, 50);
+    idInterval = setInterval(frame, 100);
     function frame() {
       if (width >= 100) {
         clearInterval(idInterval);
@@ -104,8 +101,8 @@ function move() {
   }
 }
 
-function comenzarJuego(){
-    paisesDesordenados=[];
+function comenzarJuego() {
+    paisesDesordenados = [];
     posJuegoActual = 0;
     cantidadAcertados = 0;
     desordenarPaises();
@@ -115,10 +112,37 @@ function comenzarJuego(){
     mostrarNuevoPais();
     document.getElementById("contador").innerHTML = 0;
     document.getElementById("paisIngresado").focus();
+    
 
-      swal("Empecemos!", "ESTAS SERAN LAS SIGUIENTES PALABRAS QUE APARECERAN PLATILLOS, XILOFONO, SAXOFON, TAMBOR, TROMPETA, PANDERETA, TRIANGULO, TUBA, CASTAÑUELAS !",);
-
+    
 }
 
+
+window.addEventListener('load', ()=>{
+
+  swal({
+    title: "Empecemos!",
+    icon: "success",
+    button: "Aceptar",
+    content: {
+        element: "div",
+        attributes: {
+            innerHTML: "<div style='text-align: center;'>ESTAS SERAN LAS SIGUIENTES PALABRAS QUE APARECERAN:<br>" +
+                      "PLATILLLOS<br>" +
+                      "XILOFONO<br>" +
+                      "SAXOFON<br>" +
+                      "TAMBOR<br>" +
+                      "TROMPETA<br>" +
+                      "PANDERETA<br>" +
+                      "TRIANGULO<br>" +
+                      "TUBA<br>" +
+                      "CASTAÑUELAS<br>" +
+                      "BATERIA</div>"
+        }
+    }
+});
+
+// document.querySelector('.btn-alert').click();
+})
 
 
