@@ -3,24 +3,33 @@ include('../conexion/conexion.php');
 include('persona.php');
 
 class Registrar extends Persona {
+    private $conexion;
     private $sqlInsert;
 
-    public function registro() {
-        $conexion = new Conexion();
+    public function __construct() {
+        $this->conexion = new Conexion(); // Inicializa la conexión a la base de datos
+    }
 
-        // Query para insertar los datos en la base de datos
+    public function registro() {
         $this->sqlInsert = "INSERT INTO persona_registro (nombre, email, contrasena) 
                             VALUES (:nombre, :email, :password)";
 
-        // Asignando los valores que se usarán en la consulta
         $valores = [
             ':nombre'   => $this->getNombrePersona(),
             ':email'    => $this->getEmailPersona(),
-            ':password' => $this->getPasswordPersona(), // Ahora guarda la contraseña sin cifrar
+            ':password' => $this->getPasswordPersona(),
         ];
 
-        // Ejecutar la consulta con los valores proporcionados
-        $conexion->ejecutar($this->sqlInsert, $valores);
+        $this->conexion->ejecutar($this->sqlInsert, $valores);
+    }
+
+    public function verificarEmail($email) {
+        $sql = "SELECT COUNT(*) FROM persona_registro WHERE email = :email";
+        $stmt = $this->conexion->getPdo()->prepare($sql);
+        $stmt->execute(['email' => $email]);
+        $count = $stmt->fetchColumn();
+
+        return $count > 0;
     }
 }
 ?>

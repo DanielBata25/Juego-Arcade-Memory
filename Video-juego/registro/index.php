@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,8 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Registro</title>
 
+  
   <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/bootstrap.css">
   <script src="../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
   <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/">
   <link rel="stylesheet" href="../css/registro.css">
   <link rel="stylesheet" href="../css/styles.css">
@@ -70,5 +71,6 @@
   <script src="../sonidoInicio.js"></script>
   <script src="../js/fondo_estrellado.js"></script>
   <script src="../JS_PHP/registro.js"></script> <!-- Vincular registro.js -->
+
 
 </html>

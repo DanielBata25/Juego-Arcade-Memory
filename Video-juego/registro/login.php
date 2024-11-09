@@ -10,6 +10,7 @@
   <title>Inicio Sesion</title>
 
   <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/bootstrap.css">
+  <script src = "../https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script>
   <script src="../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
   <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/">
   <link rel="stylesheet" href="../css/registro.css">

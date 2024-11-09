@@ -18,6 +18,11 @@ class Conexion {
         }
     }
 
+    // Método para obtener el objeto PDO
+    public function getPdo() {
+        return $this->pdo;
+    }
+
     public function ejecutar($sql, $valores) {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($valores);
