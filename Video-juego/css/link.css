@@ -2,28 +2,98 @@
 	margin-top: 200px;
 	border-radius: 150px;
  }
- .container {
-    background-color: transparent;
+ @keyframes pulsarSombra {
+    0% {
+        box-shadow: 0 0 10px rgba(18, 1, 255, 0.6), 0 0 20px rgba(18, 1, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(18, 1, 255, 0.8), 0 0 30px rgba(18, 1, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(18, 1, 255, 0.6), 0 0 20px rgba(18, 1, 255, 0.4);
+    }
+}
+
+@keyframes colorCambio {
+    0% {
+        color: #3204ec;
+    }
+    50% {
+        color: #7200ff;
+    }
+    100% {
+        color: #3204ec;
+    }
+}
+
+@keyframes bordeBrillante {
+    0% {
+        border-color: #0509e9b7;
+        box-shadow: 0 0 5px rgba(18, 1, 255, 0.3);
+    }
+    50% {
+        border-color: #18ffea;
+        box-shadow: 0 0 10px rgba(18, 1, 255, 0.6), 0 0 15px rgba(18, 1, 255, 0.4);
+    }
+    100% {
+        border-color: #0509e9b7;
+        box-shadow: 0 0 5px rgba(18, 1, 255, 0.3);
+    }
+}
+
+.container {
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(18, 1, 255, 0.892);
-    width: 300px;
+    border-radius: 15px;
+    width: 400px;
+    background: linear-gradient(135deg, rgb(247, 0, 0), rgb(236, 203, 189));
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    animation: pulsarSombra 3s infinite ease-in-out;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, rgba(18, 1, 255, 0.8), rgba(0, 255, 246, 0.6));
+    z-index: -1;
+    filter: blur(20px);
 }
 
 .container h2 {	
     text-align: center;
     margin-bottom: 20px;
     color: #3204ec;
-    animation: colorCambio 3s infinite; /* Aplica la animación con duración y repetición */
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: colorCambio 3s infinite ease-in-out; /* Animación de cambio de color */
 }
 
 .container input[type="text"] {
     width: 100%;
     padding: 10px;
     margin: 5px 0 25px 0;
-    border: 1px solid #0509e9b7;
+    border: 2px solid #0509e9b7;
     border-radius: 5px;
+    background-color: #f3f3f3;
+    transition: 0.4s ease;
+    font-size: 1rem;
+    color: #0509e9b7;
+    animation: bordeBrillante 2s infinite ease-in-out; /* Borde brillante animado */
 }
+
+.container input[type="text"]:focus {
+    outline: none;
+    border-color: #18ffea;
+    box-shadow: 0 0 10px rgba(18, 1, 255, 0.8), 0 0 20px rgba(18, 1, 255, 0.6);
+}
+
 
 @keyframes colorCambio {
     0% {

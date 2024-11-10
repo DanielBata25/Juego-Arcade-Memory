@@ -1,5 +1,5 @@
 
-let currentAvatar = 'img/avatarraper.png'; // Avatar inicial
+let currentAvatar = '../img/avatarraper.png'; // Avatar inicial
 let cambiarAvatar = document.getElementById('avatar');
 
 function selectAvatar(avatarSrc) {

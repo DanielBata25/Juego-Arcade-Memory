@@ -21,8 +21,7 @@ class Persona {
     }
 
     public function setPasswordPersona($passwordPersona) {
-        // Almacenando la contraseña sin cifrar (solo para pruebas)
-        $this->passwordPersona = $passwordPersona;
+        $this->passwordPersona = password_hash($passwordPersona, PASSWORD_BCRYPT); // Cifra la contraseña
     }
 
     public function getPasswordPersona() {

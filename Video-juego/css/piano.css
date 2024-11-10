@@ -190,8 +190,31 @@ header .column span {
     font-size: 1.13rem;
     text-align: center;
 }
-.text-center{
-    color: #3fd7ee;
+@keyframes colorCambio {
+    0% {
+        color: rgb(2, 255, 242);
+        text-shadow: 0 0 10px rgba(2, 255, 242, 0.7), 0 0 20px rgba(2, 255, 242, 0.5);
+    }
+    50% {
+        color: rgb(17, 0, 255);
+        text-shadow: 0 0 10px rgba(0, 210, 255, 0.7), 0 0 20px rgba(0, 210, 255, 0.5);
+    }
+    100% {
+        color: rgb(214, 159, 39);
+        text-shadow: 0 0 10px rgba(2, 255, 242, 0.7), 0 0 20px rgba(2, 255, 242, 0.5);
+    }
+}
+
+.text-center {
+    color: rgb(2, 255, 242);
+    text-align: center;
+    margin-top: 20px;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: colorCambio 3s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(2, 255, 242, 0.7), 0 0 20px rgba(2, 255, 242, 0.5);
 }
 .piano-keys .key.hide span {
     display: none;
