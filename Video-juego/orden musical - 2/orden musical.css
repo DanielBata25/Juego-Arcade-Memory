@@ -120,7 +120,7 @@ section{
 
 #pantalla-juego .acertadas{
     margin-top: 30px;
-    color: hsl(290, 31%, 18%);
+    color: hsl(289, 100%, 50%);
     font-size: 50px;
     font-weight: bold;
 }
@@ -139,7 +139,7 @@ section{
 #pantalla-final h3 span{
     display: block;
     font-size: 70px;
-    color: #000000;
+    color: #ff1414;
 }
 #pantalla-final button{
     width: fit-content;
@@ -174,4 +174,8 @@ section{
         margin: 40px auto;
         font-size: 30px;
     }
+}
+
+.palabra-a{
+    color: aqua;
 }
