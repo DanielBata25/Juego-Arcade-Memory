@@ -140,7 +140,7 @@ section{
 #pantalla-final h3 span{
     display: block;
     font-size: 70px;
-    color: #2fe8e8;
+    color: #fff4f4;
 }
 #pantalla-final button{
     width: fit-content;
@@ -178,8 +178,8 @@ section{
 }
 
 .palabra-b{
-    color: aqua;
+    color: rgb(237, 73, 177);
 }
 .palabra{
-    color: #ff0000;
+    color: #c017e7;
 }
