@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,25 +28,12 @@
             <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
         </div>
     </div>
-
-    <div class=" container container-3">
-        <button class="btn btn1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-            aria-controls="offcanvasExample">
-            <img src="img/profile.png" id="avatar" class="perfilll" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-                alt="">
-        </button>
-    </div>
-    
-    <div class="perfill">
-        <label for="perfill">Perfil</label>
-    </div>
-   
     <div class="container-top text-center">
         <div class="container container-1">
             <br><br>
             <img src="img/logomemo2.jpg" class="logo img-fluid" alt="">
         </div>
-        
+
         <br><br>
         <div class="btn-games">
             <a class="btn-5" href="registro/login.php" role="button">Jugar</a>
@@ -53,37 +41,6 @@
             <!--<a class="btn-1" href="tabla posiciones.html" role="button">Puntuacion Alta</a>-->
             <a class="btn-5" href="registro/index.php" role="button">Registrarse</a>
             <a class="btn-5" href="Jugar_multi.html" role="button">Admin</a>
-        </div>
-    </div>
-    
-    <!--canva del perfil-->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-            <h3 class="offcanvas-title" id="offcanvasExampleLabel">Nombre del Usuario</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-tittle">usuario@correo.com</div>
-        <div class="offcanvas-body">
-            <h5 class="offcanvas-titttle">Tu avatar actual:</h5>
-            <img id="selected-avatar" src="img/avatarraper.png" class="avatarraper" alt="">
-            <h5 class="offcanvas-titttle">Elige un nuevo avatar:</h5>
-            <button class="btn btn-2" type="button" onclick="selectAvatar('img/avatarmujer.png')">
-                <img src="img/avatarmujer.png" class="avatarraper" alt="">
-            </button>
-            <button class="btn btn-2" type="button" onclick="selectAvatar('img/avatarraper.png')">
-                <img src="img/avatarraper.png" class="avatarraper" alt="">
-            </button>
-            <button class="btn btn-2" type="button" onclick="selectAvatar('img/avatarpelirojo.png')">
-                <img src="img/avatarpelirojo.png" class="avatarraper" alt="">
-            </button>
-            <div class="dropdown mt-3">
-                <button class="btn btn-3" onclick="saveAvatar()" type="button">
-                    Guardar Avatar
-                </button>
-                <button class="btn btn-4" onclick="" type="button">
-                    Cerrar Sesion
-                </button>
-            </div>
         </div>
     </div>
 
@@ -94,7 +51,7 @@
     <!--END MUSICA-->
 
     <!-- Js Plugins -->
-     <script src="js/perfil.js"></script>
+    <script src="js/perfil.js"></script>
     <script src="bootstrap-5.1.3-dist/js/bootstrap.js"></script>
     <script src="sonidoInicio.js"></script>
     <script src="js/fondo_estrellado.js"></script>

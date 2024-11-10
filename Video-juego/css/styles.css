@@ -112,19 +112,46 @@ body {
 	box-shadow: 0 0 10px rgba(251, 251, 255, 0.892);
 
 }
-
+/*btn-1 omitir*/
 .btn-1 {
-	margin-right: 35px;
-	border-radius: 20px;
-	background-color: rgb(25, 138, 231);
-	padding: 15px 25px;
-	text-decoration: none;
-	text-align: center;
-	color: white;
-	white-space: nowrap;
-	font-size: 1.2rem;
-	transition: .4s ease;
+    margin-right: 10px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgb(25, 138, 231), rgb(45, 80, 200));
+    padding: 15px 25px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 0.4s ease;
+    box-shadow: 0px 4px 10px rgba(25, 138, 231, 0.4), 0px 0px 15px rgba(25, 138, 231, 0.6);
+    position: relative;
+    overflow: hidden;
 }
+
+.btn-1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+    transition: transform 0.4s ease;
+    transform: translateX(-100%);
+}
+
+.btn-1:hover::before {
+    transform: translateX(100%);
+}
+
+.btn-1:hover {
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0px 6px 20px rgba(25, 138, 231, 0.6), 0px 0px 25px rgba(25, 138, 231, 0.8);
+}
+/*btn 1 omitir end*/
 /*RESPONSIVE CONTAINER 2*/
 @media (max-width: 1000px) {
 	.container-2 {
@@ -201,7 +228,7 @@ body {
 }
 .perfill{
 	color: white;
-	margin-left: 1310px;
+	margin-left: 16px;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
   display: inline-block;
@@ -235,25 +262,31 @@ body {
 /*ESTILOS DE COMO JUGAR*/
 @keyframes colorCambio {
     0% {
-        color: rgb(2, 255, 255);
+        color: rgb(2, 255, 242);
         text-shadow: 0 0 10px rgba(2, 255, 242, 0.7), 0 0 20px rgba(2, 255, 242, 0.5);
     }
     50% {
-        color: rgb(0, 118, 253);
+        color: rgb(17, 0, 255);
         text-shadow: 0 0 10px rgba(0, 210, 255, 0.7), 0 0 20px rgba(0, 210, 255, 0.5);
     }
     100% {
-        color: rgb(2, 255, 242);
+        color: rgb(214, 159, 39);
         text-shadow: 0 0 10px rgba(2, 255, 242, 0.7), 0 0 20px rgba(2, 255, 242, 0.5);
     }
 }
 
 .lola {
-	color: rgb(2, 255, 242);
-	align-content: center;
-	margin-top: -10px;
+    color: rgb(2, 255, 242);
+    text-align: center;
+    margin-top: -10px;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: colorCambio 3s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(2, 255, 242, 0.7), 0 0 20px rgba(2, 255, 242, 0.5);
 }
-
+/*END ESTILOS DE COMO JUGAR*/
 .numeros2 img {
 
 	margin: 20px 20px 20px 20px;
@@ -355,33 +388,42 @@ body {
 	}
 }
 
-.tarjeta-1 {
-	width: 50%;
-	height: 414px;
-	/*height: 250px;
-	width: 200px;*/
-	background-color: rgb(62, 178, 189);
-	box-shadow: 16px 14px 20px #030ae48c;
-	border-radius: 10%;
-	position: relative;
-	display: flex;
-	overflow: hidden;
-	justify-content: center;
-	margin: 0 50px;
-	min-width: 250px;
+@keyframes flotar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
+.tarjeta-1 {
+    width: 50%;
+    height: 414px;
+    background-color: rgb(62, 178, 189);
+    box-shadow: 16px 14px 20px #030ae48c;
+    border-radius: 10%;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    margin: 0 50px;
+    min-width: 250px;
+    animation: flotar 3s ease-in-out infinite; /* Añadir animación flotante */
 }
 
 .tarjeta-1::before {
-	content: "";
-	position: absolute;
-	height: 97%;
-	width: 97%;
-	/*height: 300px;
-	width: 300px;*/
-	background-image: conic-gradient(rgb(198, 31, 25) 30deg, transparent 120deg);
-	animation: rotar 2s linear infinite;
+    content: "";
+    position: absolute;
+    height: 97%;
+    width: 97%;
+    background-image: conic-gradient(rgb(198, 31, 25) 30deg, transparent 120deg);
+    animation: rotar 2s linear infinite;
 }
+
 
 @keyframes rotar {
 	from {
@@ -400,7 +442,7 @@ body {
 	width: 97%;
 	/*height: 240px;
 	width: 190px;*/
-	background-color: blue;
+	background-color: rgb(0, 0, 0);
 	border-radius: 10%;
 	box-shadow: inset 16px 14px 20px #0da2d88c;
 	text-align: center;
@@ -440,7 +482,7 @@ body {
 
 
 .numeros1 img {
-	height: 50%;
+	height: 60%;
 	width: 50%;
 }
 
@@ -497,13 +539,6 @@ body {
     left: -50%;
     width: 200%;
     height: 100%;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
-    transition: transform 0.6s ease;
-    transform: translateX(-100%);
-}
-
-.btn-5:hover::before {
-    transform: translateX(100%);
 }
 
 .btn-5:hover {
