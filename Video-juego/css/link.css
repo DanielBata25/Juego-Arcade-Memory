@@ -1,28 +1,44 @@
-
 .espacio {
 	margin-top: 200px;
 	border-radius: 150px;
  }
-.container {
-    background-color:transparent;
+ .container {
+    background-color: transparent;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(18, 1, 255, 0.892);
     width: 300px;
 }
-.container h2 {
+
+.container h2 {	
     text-align: center;
     margin-bottom: 20px;
     color: #3204ec;
+    animation: colorCambio 3s infinite; /* Aplica la animación con duración y repetición */
 }
-.container input[type="text"]{
+
+.container input[type="text"] {
     width: 100%;
     padding: 10px;
-    margin: 5px 0 15px 0;
+    margin: 5px 0 25px 0;
     border: 1px solid #0509e9b7;
     border-radius: 5px;
 }
 
+@keyframes colorCambio {
+    0% {
+        color: rgb(2, 255, 255);
+        text-shadow: 0 0 10px rgba(2, 255, 242, 0.7), 0 0 20px rgba(2, 255, 242, 0.5);
+    }
+    50% {
+        color: rgb(0, 118, 253);
+        text-shadow: 0 0 10px rgba(0, 210, 255, 0.7), 0 0 20px rgba(0, 210, 255, 0.5);
+    }
+    100% {
+        color: rgb(2, 255, 242);
+        text-shadow: 0 0 10px rgba(2, 255, 242, 0.7), 0 0 20px rgba(2, 255, 242, 0.5);
+    }
+}
 
 .btn-1 {
 	align-content: center;
@@ -43,5 +59,3 @@
 		        0 0 30px blue;
 
 }
-
-    

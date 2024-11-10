@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,11 +15,23 @@
     
     <!-- Enlace a tu archivo CSS personalizado -->
     <link rel="stylesheet" href="../css/link.css">
+    <link rel="stylesheet" href="../css/fondodeloffcanv.css">
     <link rel="stylesheet" href="../css/styles.css">
    
 </head>
 
 <body>
+  <div class=" container-3">
+    <button class="btn btn1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample">
+        <img src="../img/profile.png" id="avatar" class="perfilll" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+            alt="">
+    </button>
+</div>
+
+<div class="perfill">
+    <label for="perfill">Perfil</label>
+</div>
 
     <div>
         <div class="space space-1"></div>
@@ -32,16 +45,48 @@
         <form action="#">
           <input type="text" placeholder="Link" required>
         <div class="text-center">
-          <a class="btn-1" href="../Jugar_multi.html" role="button">Ingresar</a>
+          <a class="btn-5" href="../Jugar_multi.html" role="button">Ingresar</a>
         </div>
       
         
       </div>
     </div>
 
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+          <h3 class="offcanvas-title" id="offcanvasExampleLabel">Nombre del Usuario</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-tittle">usuario@correo.com</div>
+      <div class="offcanvas-body">
+          <h5 class="offcanvas-titttle">Tu avatar actual:</h5>
+          <img id="selected-avatar" src="../img/avatarraper.png" class="avatarraper" alt="">
+          <h5 class="offcanvas-titttle">Elige un nuevo avatar:</h5>
+          <button class="btn btn-2" type="button" onclick="selectAvatar('../img/estudianteavatar.png')">
+              <img id="selected-avatar" src="../img/estudianteavatar.png" class="avatarraper" alt="">
+          </button>
+          <button class="btn btn-2" type="button" onclick="selectAvatar('../img/negritoavatar.png')">
+              <img id="selected-avatar" src="../img/negritoavatar.png" class="avatarraper" alt="">
+          </button>
+          <button class="btn btn-2" type="button" onclick="selectAvatar('../img/avatarhembra.png')">
+              <img id="selected-avatar" src="../img/avatarhembra.png" class="avatarraper" alt="">
+          </button>
+          <div class="dropdown mt-3">
+              <button class="btn btn-3" onclick="saveAvatar()" type="button">
+                  Guardar Avatar
+              </button>
+              <button class="btn btn-4" onclick="" type="button">
+                  Cerrar Sesion
+              </button>
+          </div>
+      </div>
+  </div>
+
+
     <!-- Enlace a Bootstrap JS -->
     <script src="../bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/fondo_estrellado.js"></script>
+    <script src="../js/perfil.js"></script>
 
 </body>
 
