@@ -4,10 +4,10 @@ body {
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center;
-	animation: puffIn 1s ease-in-out;  
+	/*animation: puffIn 1s ease-in-out;*/ 
   }
   
-@keyframes puffIn {
+/*@keyframes puffIn {
 	0% {
 		opacity: 0;
 		transform: scale(2);
@@ -16,7 +16,7 @@ body {
 		opacity: 1;
 		transform: scale(1);
 	}
-  }
+  }*/
   /*IMAGEN CON ZOOM/
   .play-button {
 	animation: zoom 2s infinite alternate ease-in-out;

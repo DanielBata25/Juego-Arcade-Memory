@@ -11,16 +11,19 @@ class Registrar extends Persona {
     }
 
     public function registro() {
+        // Consulta de inserción
         $this->sqlInsert = "INSERT INTO persona_registro (nombre, email, contrasena) 
                             VALUES (:nombre, :email, :password)";
 
         $valores = [
             ':nombre'   => $this->getNombrePersona(),
             ':email'    => $this->getEmailPersona(),
-            ':password' => $this->getPasswordPersona(),
+            ':password' => password_hash($this->getPasswordPersona(), PASSWORD_BCRYPT), // Encriptación de la contraseña
         ];
 
-        $this->conexion->ejecutar($this->sqlInsert, $valores);
+        // Ejecutar la consulta
+        $stmt = $this->conexion->getPdo()->prepare($this->sqlInsert);
+        return $stmt->execute($valores); // Retorna true si se ejecutó correctamente, false si no
     }
 
     public function verificarEmail($email) {
