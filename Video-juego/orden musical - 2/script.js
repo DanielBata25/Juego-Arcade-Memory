@@ -127,7 +127,7 @@ window.addEventListener('load', ()=>{
     content: {
         element: "div",
         attributes: {
-            innerHTML: "<div style='text-align: center;'>ESTAS SERAN LAS SIGUIENTES PALABRAS QUE APARECERAN:<br>" +
+            innerHTML: "<div style='text-align: center; '>ESTAS SERAN LAS SIGUIENTES PALABRAS QUE APARECERAN:<br>" +
                       "PLATILLLOS<br>" +
                       "XILOFONO<br>" +
                       "SAXOFON<br>" +
@@ -138,6 +138,7 @@ window.addEventListener('load', ()=>{
                       "TUBA<br>" +
                       "CASTAÑUELAS<br>" +
                       "BATERIA</div>"
+                      
         }
     }
 });
