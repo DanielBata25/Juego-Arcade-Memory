@@ -1,0 +1,71 @@
+body {
+    background-image: url(../img/fondo\ mitico.jpeg);
+	inset: 0;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+   
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#countdown, #message {
+    font-size: 20vw;
+    font-weight: bold;
+    color: rgb(255, 100, 0);
+    text-shadow: 0px 0px 20px(45deg, rgb(255, 100, 0),
+                 0px 0px 40px rgb(255, 0, 0)),
+                 0px 0px 60px  rgb(255, 100, 0);
+    animation: zoom 1s ease forwards;
+    transition: transform 1s ease, opacity 1s ease;
+    text-align: center;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#message {
+    font-size: 10vw; /* Tamaño reducido para el mensaje */
+    opacity: 0;
+    white-space: nowrap;
+}
+
+.show-message {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@media screen and (max-width: 480px) {
+    #countdown, #message {
+        font-size: 18vw; /* Tamaño más pequeño en dispositivos móviles */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #countdown, #message {
+        font-size: 22vw; /* Ajustado para pantallas medianas */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #countdown, #message {
+        font-size: 20vw; /* Tamaño estándar para pantallas grandes */
+    }
+}

@@ -236,8 +236,28 @@ body {
 
 /* -------------------------------------FIN DE PERFIL DE AVATAR --------------------------------------------*/
 .logo {
-	border-radius: 25%;
+    border-radius: 25%;
+    width: 150px; /* Tamaño inicial para pantallas grandes */
+    height: 150px; /* Tamaño inicial para pantallas grandes */
+    object-fit: cover; /* Asegura que la imagen mantenga su aspecto */
 }
+
+/* Para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    .logo {
+        width: 120px; /* Tamaño más pequeño en tablets */
+        height: 120px;
+    }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .logo {
+        width: 100px; /* Tamaño aún más pequeño en móviles */
+        height: 100px;
+    }
+}
+
 
 .logo31 {
 	border-radius: 25%;
@@ -661,8 +681,10 @@ body {
   max-width: 500px;
 }
 .container-2 {
-  width: 10%;
-  max-width: 200px;
+    width: 10%;
+    display: block;
+    max-width: 200px;
+    padding: 20px;
 }
 .container-button{
   width: 15%;
@@ -721,6 +743,50 @@ body {
 }
 
 
+@media (max-width:926px) {
+	#console{
+		top: 30px;
+	}
+	.play-button{
+		position: relative;
+		top: -54px;
+		margin-top: -30%;
+		margin-left: -40%;
+	}
+}
+
+@media (max-width:680px) {
+	.play-button{
+		margin-left: -80%;
+	}
+}
+@media (max-width:600px) {
+	.container-1{
+		margin-top: 100px;
+	}
+	.tamañosonio{
+		min-width: 29px;
+		margin-left: 0px;
+	}
+	.tamañosoni{
+	    min-width: 29px;
+    	margin-left: 0px;
+	}
+}
+@media (max-width:491px) {
+	#console{
+		top: 5px;
+		font-size: 12px;
+	}
+	.play-button{
+		top: -70px;
+	}
+}
+@media (max-width:349px) {
+	#console{
+		font-size: 10px;
+	}
+}
 /*END ESTILOS DE FNDO ESTRELLADO Y NOSE DONDE ESTAN VINCULADOS*/
 /*ESTILOS DE AVATAR*/
 .avatarraper{
@@ -728,3 +794,12 @@ body {
 	height: 70px;
 }
 /*END ESTILOS DE AVATAR*/
+
+.logo2{
+	margin-top: -20%;
+	width: 60%;
+	border-radius: 22%;
+}
+
+
+
