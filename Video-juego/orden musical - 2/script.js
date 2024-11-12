@@ -120,30 +120,27 @@ function comenzarJuego() {
 
 window.addEventListener('load', ()=>{
 
-  swal({
+  Swal.fire({
     title: "Empecemos!",
     icon: "success",
-    button: "Aceptar",
-    content: {
-        element: "div",
-        attributes: {
-            innerHTML: "<div style='text-align: center; '>ESTAS SERAN LAS SIGUIENTES PALABRAS QUE APARECERAN:<br>" +
-                      "PLATILLLOS<br>" +
-                      "XILOFONO<br>" +
-                      "SAXOFON<br>" +
-                      "TAMBOR<br>" +
-                      "TROMPETA<br>" +
-                      "PANDERETA<br>" +
-                      "TRIANGULO<br>" +
-                      "TUBA<br>" +
-                      "CASTAÑUELAS<br>" +
-                      "BATERIA</div>"
-                      
-        }
-    }
+    html: `<div style="text-align: center;">
+                <p>ESTAS SERÁN LAS SIGUIENTES PALABRAS QUE APARECERÁN:</p>
+                <p>PLATILLOS</p>
+                <p>XILOFONO</p>
+                <p>SAXOFON</p>
+                <p>TAMBOR</p>
+                <p>TROMPETA</p>
+                <p>PANDERETA</p>
+                <p>TRIANGULO</p>
+                <p>TUBA</p>  
+                <p>CASTAÑUELAS</p>
+           </div>`,
+    background: '#DB55D2', // Color de fondo personalizado
+    color: '#000000',         // Color del texto
+    confirmButtonText: 'Aceptar'
 });
 
-// document.querySelector('.btn-alert').click();
-})
 
+  // document.querySelector('.btn-alert').click();
+})
 
