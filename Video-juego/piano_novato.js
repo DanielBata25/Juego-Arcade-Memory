@@ -185,15 +185,25 @@ const playSecuencia = () => {
     let index = 0;
     const playNextNote = () => {
         if (index < patronActual.length) {
-            playTune(patronActual[index]);
+            const key = patronActual[index];
+            playTune(key);
+
+            // Resaltar la tecla correspondiente
+            const clickedKey = document.querySelector(`[data-key="${key}"]`);
+            if (clickedKey) {
+                clickedKey.classList.add("active"); // Agregar clase para resaltar
+                setTimeout(() => clickedKey.classList.remove("active"), 150); // Remover clase después de 150ms
+            }
+
             index++;
-            setTimeout(playNextNote, 600);
+            setTimeout(playNextNote, 600); // Reproducir siguiente nota después de 600ms
         } else {
-            habilitarTeclas();
+            habilitarTeclas(); // Habilitar teclas después de que termine la secuencia
         }
     };
     playNextNote();
 };
+
 
 // Guardar el intento en el historial
 const guardarIntento = (patron, teclasPresionadas, esCorrecto) => {

@@ -306,11 +306,17 @@ header .column span {
     margin: 0;
     font-size: 20px;
 }
-
-
 /* Clase que se añadirá al hacer clic para aplicar el zoom */
 .zoom {
 	transform: scale(1.2);
   }
+
+  /* Estilo para resaltar teclas */
+.key.active {
+    background-color: #ff0;  /* Color de fondo amarillo para resaltar */
+    border: 3px solid orangered;  /* Borde rojo */
+    transform: scale(1.0);    /* Le da un efecto de aumento de tamaño */
+}
+
    
   
