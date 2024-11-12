@@ -88,7 +88,7 @@ const agregarTecla = (key) => {
     compareKeys();
 };
 
-// Compara  teclas presionadas con el patrón
+// Compara teclas presionadas con el patrón
 const compareKeys = () => {
     if (teclasHabilitadas && pressedKeys.length === patronActual.length) {
         detenerTemporizador();
@@ -133,6 +133,8 @@ const verificarUltimoPatron = () => {
 // Avanza al siguiente patrón
 const avanzarPatron = () => {
     patronActual = patronesMusicales[patronIndex];
+    
+    // Mostrar el alert antes de cada patrón (incluido el primero)
     mostrarAlert(`Patrón ${patronIndex + 1}`, `Vas a escuchar el patrón ${patronIndex + 1}.`, "info", () => {
         // Establecer un intervalo antes de reproducir el siguiente patrón
         setTimeout(() => {
@@ -161,7 +163,12 @@ const cargarPatronMusical = () => {
             patronesMusicales = data.patronesMusicales;
             if (patronesMusicales.length > 0) {
                 patronActual = patronesMusicales[0];
-                playSecuencia();
+
+                // Mostrar el alert antes de comenzar el primer patrón
+                mostrarAlert(`Patrón 1`, `Vas a escuchar el patrón 1.`, "info", () => {
+                    // Luego de que el usuario vea el alert, iniciar la secuencia del primer patrón
+                    playSecuencia();
+                });
             }
         } catch (e) {
             console.error("Error al parsear JSON:", e, "Respuesta:", text);
