@@ -116,6 +116,9 @@ const verificarUltimoPatron = () => {
         flagActiveGame = false;
         teclasHabilitadas = false;
 
+        // Reiniciar el historial de teclas en localStorage
+        localStorage.setItem("historialTeclas", JSON.stringify([])); // Reinicia el historial
+
         swal({
             title: "¡Felicidades!",
             text: "Has completado todos los patrones.",
@@ -129,7 +132,6 @@ const verificarUltimoPatron = () => {
         avanzarPatron();
     }
 };
-
 // Avanza al siguiente patrón
 const avanzarPatron = () => {
     patronActual = patronesMusicales[patronIndex];
