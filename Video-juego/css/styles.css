@@ -718,7 +718,6 @@ body {
   width: 35vh;
   height: auto;
   object-fit: cover;
-  margin-left: -15%;
   margin-top: -50%;
   /*animation: flotar 3s ease-in-out infinite;*/
 }
