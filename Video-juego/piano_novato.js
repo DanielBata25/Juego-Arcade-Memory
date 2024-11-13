@@ -40,10 +40,10 @@ const habilitarTeclas = () => {
     pianoKeys.forEach((key) => {
         key.classList.remove("disabled");
     });
-    iniciarTemporizador(); // Iniciar el temporizador al habilitar las teclas
+    iniciarTemporizador();
 };
 
-// Función para iniciar el temporizador
+
 const iniciarTemporizador = () => {
     tiempoLimite = setTimeout(() => {
         if (pressedKeys.length < patronActual.length) {
@@ -57,6 +57,8 @@ const iniciarTemporizador = () => {
 
 // Función para detener el temporizador
 const detenerTemporizador = () => clearTimeout(tiempoLimite);
+
+
 
 // Función para reproducir la nota
 const playTune = (key) => {
@@ -152,7 +154,7 @@ const redirigirPagina = () => {
 
 // Cargar patrones musicales desde PHP
 const cargarPatronMusical = () => {
-    fetch("php/conexion.php")
+    fetch("php/conexion1.php")
     .then(response => {
         if (!response.ok) throw new Error("Error en la carga de patrones musicales");
         return response.text();

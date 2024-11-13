@@ -18,7 +18,7 @@ class Registrar extends Persona {
         $valores = [
             ':nombre'   => $this->getNombrePersona(),
             ':email'    => $this->getEmailPersona(),
-            ':password' => password_hash($this->getPasswordPersona(), PASSWORD_BCRYPT), // Encriptación de la contraseña
+            ':password' => $this->getPasswordPersona(), // Guardar sin encriptación
         ];
 
         // Ejecutar la consulta

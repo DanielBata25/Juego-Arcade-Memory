@@ -1,7 +1,7 @@
 <?php
 include('registrar.php');
 
-// Configura el encabezado para que el navegador sepa que se está devolviendo JSON
+
 header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
     $password = $_POST['contrasena'] ?? '';
 
-    // Instancia de la clase Registrar (asegúrate de que esté bien definida en el archivo correspondiente)
+
     $persona = new Registrar();
     $persona->setNombrePersona($nombre);
     $persona->setEmailPersona($email);
