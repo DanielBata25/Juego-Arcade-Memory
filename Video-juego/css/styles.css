@@ -756,7 +756,7 @@ body {
 
 @media (max-width:680px) {
 	.play-button{
-		margin-left: -80%;
+		margin-left: -115%;
 	}
 }
 @media (max-width:600px) {
@@ -795,11 +795,8 @@ body {
 /*END ESTILOS DE AVATAR*/
 
 .logo2{
-	margin-top: 15%;
+	margin-top: 25%;
     width: 60%;
 	height: 60%;
 	border-radius: 22%;
 }
-
-
-
