@@ -15,7 +15,7 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
                 text: data.message,
                 icon: "success"
             }).then(() => {
-                window.location.href = '../../login.php';
+                window.location.href = 'login.php';
             });
         } else {
             swal({

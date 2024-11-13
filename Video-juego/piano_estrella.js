@@ -154,7 +154,7 @@ const redirigirPagina = () => {
 
 // Cargar patrones musicales desde PHP
 const cargarPatronMusical = () => {
-    fetch("php/conexion1.php")
+    fetch("php/conexion2.php")
     .then(response => {
         if (!response.ok) throw new Error("Error en la carga de patrones musicales");
         return response.text();
