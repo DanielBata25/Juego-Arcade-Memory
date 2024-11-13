@@ -136,8 +136,10 @@ window.addEventListener('load', ()=>{
                 <p>ARPA</p>
                 <p>BATERÍA</p>
            </div>`,
+
     background: '#DB55D2', // Color de fondo personalizado
     color: '#000000',         // Color del texto
+
     confirmButtonText: 'Aceptar'
 });
 
