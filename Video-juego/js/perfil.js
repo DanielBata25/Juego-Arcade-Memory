@@ -1,6 +1,6 @@
 
 let currentAvatar = '../img/avatarraper.png'; // Avatar inicial
-let cambiarAvatar = document.getElementById('avatar');
+let cambiarAvatar = document.getElementById('avatar'); 
 
 function selectAvatar(avatarSrc) {
     currentAvatar = avatarSrc; // Actualiza el avatar seleccionado
@@ -14,3 +14,10 @@ function saveAvatar() {
     selectedAvatar.src = currentAvatar; // Guarda el avatar actual
     cambiarAvatar.src = currentAvatar; // Muestra el avatar guardado
 }
+
+const base_path = '/img/iconos/';
+const iconoArchivo = 'estrella.png';  // Este nombre de archivo puede ser obtenido de la base de datos
+const icono_ruta = base_path + iconoArchivo;  // Esto será '/imagenes/iconos/estrella.png'
+
+// Ahora puedes usar 'icono_ruta' para cargar la imagen en una etiqueta <img> en HTML
+document.getElementById('iconoPerfil').src = icono_ruta;

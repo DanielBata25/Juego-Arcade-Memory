@@ -793,6 +793,7 @@ body {
 	width: 60px;
 	height: 70px;
 }
+<<<<<<< Updated upstream
 /*END ESTILOS DE AVATAR*/
 
 .logo2{
@@ -804,3 +805,33 @@ body {
 
 
 
+=======
+
+/*Efecto*/
+.modalmask {
+    position: fixed;
+    font-family: Arial, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalmask:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.rotate {
+    margin: 10% auto;
+    -webkit-transform: scale(-5,-5);
+    transform: scale(-5,-5);
+}
+/*END ESTILOS DE AVATAR*/
+>>>>>>> Stashed changes

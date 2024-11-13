@@ -120,6 +120,10 @@ function comenzarJuego() {
 
 window.addEventListener('load', ()=>{
 
+<<<<<<< Updated upstream
+=======
+  
+>>>>>>> Stashed changes
   Swal.fire({
     title: "Empecemos!",
     icon: "success",
@@ -136,8 +140,13 @@ window.addEventListener('load', ()=>{
                 <p>ARPA</p>
                 <p>BATERÍA</p>
            </div>`,
+<<<<<<< Updated upstream
     background: '#DB55D2', // Color de fondo personalizado
     color: '#000000',         // Color del texto
+=======
+    background: '#800080', // Color de fondo personalizado
+    color: '#333',         // Color del texto
+>>>>>>> Stashed changes
     confirmButtonText: 'Aceptar'
 });
 
