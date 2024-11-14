@@ -1,6 +1,6 @@
 let paises = [];
 
-paises = ["PLATILLOS", "XILOFONO", "SAXOFON", "TAMBOR", "TROMPETA", "PANDERETA", "TRIANGULO", "TUBA", "CASTAÑUELAS", "BATERIA"];
+paises = ["PANDERETA", "TRIANGULO", "TUBA", "CASTAÑUELAS", "BATERIA"];
 //arreglo donde se guradaran los paises desordenados
 let paisesDesordenados=[];
 //variable que guarda la posicion actual
@@ -125,10 +125,6 @@ window.addEventListener('load', ()=>{
     icon: "success",
     html: `<div style="text-align: center;">
                 <p>ESTAS SERÁN LAS SIGUIENTES PALABRAS QUE APARECERÁN:</p>
-                <p>PLATILLOS</p>
-                <p>XILOFONO</p>
-                <p>SAXOFON</p>
-                <p>TAMBOR</p>
                 <p>TROMPETA</p>
                 <p>PANDERETA</p>
                 <p>TRIANGULO</p>

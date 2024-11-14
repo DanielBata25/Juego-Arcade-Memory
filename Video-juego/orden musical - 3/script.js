@@ -1,6 +1,6 @@
 let paises = [];
 
-paises = ["GUITARRA", "TROMPETA", "ACORDEON", "VIOLIN","PIANO"];
+paises = ["PLATILLOS", "XILOFONO", "SAXOFON", "TAMBOR", "TROMPETA",];
 //arreglo donde se guradaran los paises desordenados
 let paisesDesordenados=[];
 //variable que guarda la posicion actual
@@ -125,19 +125,18 @@ window.addEventListener('load', ()=>{
     icon: "success",
     html: `<div style="text-align: center;">
                 <p>ESTAS SERÁN LAS SIGUIENTES PALABRAS QUE APARECERÁN:</p>
-                <p>GUITARRA</p>
+                <p>PLATILLOS</p>
+                <p>XILOFONO</p>
+                <p>SAXOFON</p>
+                <p>TAMBOR</p>
                 <p>TROMPETA</p>
-                <p>ACORDEÓN</p>
-                <p>VIOLÍN</p>
-                <p>PIANO</p>
            </div>`,
-
     background: '#DB55D2', // Color de fondo personalizado
     color: '#000000',         // Color del texto
-
     confirmButtonText: 'Aceptar'
 });
 
 
   // document.querySelector('.btn-alert').click();
 })
+
