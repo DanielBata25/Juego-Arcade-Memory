@@ -183,3 +183,10 @@ section{
 .palabra{
     color: #c017e7;
 }
+
+.redirecionar{
+    margin-top: -55%;
+    width: 5%;
+    height: 5%;
+    margin-right: 130%;
+}

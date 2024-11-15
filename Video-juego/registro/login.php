@@ -66,7 +66,7 @@
         <label for="password">Contraseña:</label>
         <input type="password" id="contrasena" name="contrasena" required><br><br>
 
-        <input type="submit" value="Ingresar">
+        <input type="submit"  value="Ingresar">
     </form>
     <!-- Js Plugins -->
 
