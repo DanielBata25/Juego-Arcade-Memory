@@ -1,6 +1,6 @@
 let paises = [];
 
-paises = ["PANDERETA", "TRIANGULO", "TUBA", "CASTAÑUELAS", "BATERIA"];
+paises = ["PLATILLOS", "XILOFONO", "SAXOFON", "TAMBOR", "TROMPETA",];
 //arreglo donde se guradaran los paises desordenados
 let paisesDesordenados=[];
 //variable que guarda la posicion actual
@@ -85,7 +85,7 @@ function move() {
     x= 1;
     let elem = document.getElementById("myBar");
     let width = 1;
-    idInterval = setInterval(frame, 60);
+    idInterval = setInterval(frame, 50);
     function frame() {
       if (width >= 100) {
         clearInterval(idInterval);
@@ -125,11 +125,11 @@ window.addEventListener('load', ()=>{
     icon: "success",
     html: `<div style="text-align: center;">
                 <p>ESTAS SERÁN LAS SIGUIENTES PALABRAS QUE APARECERÁN:</p>
+                <p>PLATILLOS</p>
+                <p>XILOFONO</p>
+                <p>SAXOFON</p>
+                <p>TAMBOR</p>
                 <p>TROMPETA</p>
-                <p>PANDERETA</p>
-                <p>TRIANGULO</p>
-                <p>TUBA</p>  
-                <p>CASTAÑUELAS</p>
            </div>`,
     background: '#DB55D2', // Color de fondo personalizado
     color: '#000000',         // Color del texto
