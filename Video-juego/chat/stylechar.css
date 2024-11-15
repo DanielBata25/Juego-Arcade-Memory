@@ -5,12 +5,12 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-image: url("img/fondosala-removebg.png");
+	background-repeat: no-repeat;
+	align-items: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
 }
 
 #mensaje{
