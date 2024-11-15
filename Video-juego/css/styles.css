@@ -720,6 +720,7 @@ body {
   object-fit: cover;
   margin-top: -50%;
   /*animation: flotar 3s ease-in-out infinite;*/
+  animation: moverDeLado 2s infinite;
 }
 
 #console {
