@@ -15,7 +15,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
    
-    $stmt = $conn->prepare("SELECT secuencia FROM patrones_musicales2");
+    $stmt = $conn->prepare("SELECT secuencia FROM patrones_musicales");
     $stmt->execute();
 
   

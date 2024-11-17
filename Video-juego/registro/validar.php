@@ -18,7 +18,7 @@ mysqli_stmt_execute($stmt);
 $resultado = mysqli_stmt_get_result($stmt);
 
 if (mysqli_num_rows($resultado) > 0) {
-    header("Location: ../compartir_links/link_Musica.html");
+    header("Location: ../Jugar_multi.html");
     exit(); 
 } else {
     echo "Error de autenticación.";

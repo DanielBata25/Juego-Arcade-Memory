@@ -33,7 +33,7 @@
 
   <div class="container-top">
     <div class="lola">
-      <img src="../img/image1.png" height="200" width="200" alt="">
+      <img src="../img/image1.png" height="180" width="180" alt="">
     </div>
     <div class="container">
       <form id="registroForm" method="post">

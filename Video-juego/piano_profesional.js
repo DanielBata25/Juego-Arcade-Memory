@@ -149,7 +149,7 @@ const avanzarPatron = () => {
 
 // Redirigir a la página final
 const redirigirPagina = () => {
-    window.location.href = "http://localhost/Juego-Arcade-Memory/Video-juego/play.html";
+    window.location.href = "http://localhost/Juego-Arcade-Memory/Video-juego/dificultad/piano.html";
 };
 
 // Cargar patrones musicales desde PHP

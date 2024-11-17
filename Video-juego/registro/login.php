@@ -30,7 +30,7 @@
     <div class="space space-3"></div>
   </div>
 
-  <br>
+  
  
   <div class="container-2">
     <div class="volume-control mt-4">
@@ -43,7 +43,7 @@
 </div>
 
   <div class="lola">
-    <img src="../img/image2.png" height="200" width="200" alt="">
+    <img src="../img/image2.png" height="180" width="180" alt="">
   </div>
   <div>
   
