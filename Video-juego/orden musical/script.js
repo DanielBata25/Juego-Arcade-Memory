@@ -1,110 +1,128 @@
 let paises = [];
-
-paises = ["GUITARRA", "TROMPETA", "ACORDEON", "VIOLIN","PIANO"];
-//arreglo donde se guradaran los paises desordenados
-let paisesDesordenados=[];
-//variable que guarda la posicion actual
+let paisesDesordenados = [];
 let posJuegoActual = 0;
-//variable que guarda la cantidad acertada
 let cantidadAcertados = 0;
+let tiempoRestante = 15;
+let idInterval;
 
-//funcion para desordenar los paises
-function desordenarPaises(){
-    for(var i=0;i<paises.length;i++){
-        //convertimos el pais en un arreglo
+
+fetch('../php/palabras/conexion1.php') 
+  .then(response => response.json())
+  .then(data => {
+    if (data.error) {
+        alert(data.error);
+    } else {
+        paises = data.paises; // Asigna los países recuperados al arreglo `paises`
+        comenzarJuego();
+    }
+  })
+  .catch(error => console.error('Error:', error));
+
+// Función para desordenar los países
+function desordenarPaises() {
+    paisesDesordenados = []; // Limpiar el arreglo antes de llenarlo
+    for (let i = 0; i < paises.length; i++) {
         let pais = paises[i];
         pais = pais.split('');
-    
-        let paisDesordenado;
-    
-        //desordenamos el areglo
-        paisDesordenado = pais.sort(function(){return Math.random() - 0.5});
-    
-        //Convertimos el arreglo a string
-        paisDesordenado = paisDesordenado.toString();
-        paisDesordenado = paisDesordenado.replace(/,/g,"");
-    
-        //Guardamos el pais en el arreglo de paises desordenads
-        paisesDesordenados.push(paisDesordenado);
+        let paisDesordenado = pais.sort(() => Math.random() - 0.5); // Desordenar las letras
+        paisDesordenado = paisDesordenado.join(''); // Convertir el arreglo a string
+        paisesDesordenados.push(paisDesordenado); // Guardar el país desordenado
     }
 }
 
-function mostrarNuevoPais(){
-
-    //controlo si terminaron las palabras
-    if(posJuegoActual >= paises.length){
+// Función para mostrar el siguiente país desordenado
+function mostrarNuevoPais() {
+    if (posJuegoActual >= paisesDesordenados.length) {
         mostrarPantallaFinal();
+        return;
     }
+
     let contenedorPais = document.getElementById("pais");
-    //eliminamos todo lo que tiene el div del pais
-    contenedorPais.innerHTML="";
-
+    contenedorPais.innerHTML = ""; // Limpiar el contenedor
     let pais = paisesDesordenados[posJuegoActual];
-    pais = pais.split('');
+    pais = pais.split(''); // Convertir el país en arreglo de letras
 
-    x=0;
-    clearInterval(idInterval);
-    move();
-    for(i=0;i<pais.length;i++){
-        var div = document.createElement("div");
+    // Mostrar las letras del país
+    for (let i = 0; i < pais.length; i++) {
+        let div = document.createElement("div");
         div.className = "letra";
         div.innerHTML = pais[i];
         contenedorPais.appendChild(div);
     }
 
+    // Reiniciar la barra de progreso
+    iniciarBarraDeTiempo();
 }
 
-function mostrarPantallaFinal(){
+// Función para mostrar la pantalla final
+function mostrarPantallaFinal() {
     clearInterval(idInterval);
     document.getElementById("pantalla-juego").style.display = "none";
     document.getElementById("pantalla-final").style.display = "flex";
     document.getElementById("acertadas").innerHTML = cantidadAcertados;
 }
 
-//Funcion que compara el pais ingresado con el pais correcto
-function comparar(){
-    var paisOrdanedo = paises[posJuegoActual];
-    var paisIngresado = document.getElementById("paisIngresado").value;
+// Función para comparar la palabra ingresada
+function comparar() {
+    let paisOrdenado = paises[posJuegoActual];
+    let paisIngresado = document.getElementById("paisIngresado").value;
     paisIngresado = paisIngresado.toUpperCase();
 
-    if(paisOrdanedo == paisIngresado){
+    if (paisOrdenado === paisIngresado) {
+        guardarResultado(paisIngresado, true);
         posJuegoActual++;
         cantidadAcertados++;
         document.getElementById("contador").innerHTML = cantidadAcertados;
-        paisIngresado = document.getElementById("paisIngresado").value="";
+        document.getElementById("paisIngresado").value = "";
         mostrarNuevoPais();
+    } else if (paisIngresado.length >= paisOrdenado.length) {
+        guardarResultado(paisIngresado, false);
     }
 }
 
-
-
-let x = 0;
-let idInterval;
-function move() {
-  if (x == 0) {
-    x= 1;
-    let elem = document.getElementById("myBar");
-    let width = 1;
-    idInterval = setInterval(frame, 65);
-    function frame() {
-      if (width >= 100) {
-        clearInterval(idInterval);
-        x = 0;
-        posJuegoActual++;
-        paisIngresado = document.getElementById("paisIngresado").value="";
-        mostrarNuevoPais();
-      } else {
-        width++;
-        elem.style.width = width + "%";
-      }
-    }
-  }
+// Función para guardar el resultado en localStorage
+function guardarResultado(paisIngresado, acertado) {
+    let respuestas = JSON.parse(localStorage.getItem('respuestas')) || [];
+    let tiempoUsado = 15 - tiempoRestante; // Calcular el tiempo usado
+    respuestas.push({
+        paisOriginal: paises[posJuegoActual],
+        paisIngresado: paisIngresado,
+        tiempo: tiempoUsado.toFixed(2),
+        acertado: acertado
+    });
+    localStorage.setItem('respuestas', JSON.stringify(respuestas));
 }
 
+// Función para iniciar la barra de tiempo
+function iniciarBarraDeTiempo() {
+    let barra = document.getElementById("myBar");
+    let tiempoTexto = document.getElementById("tiempoRestante");
+    barra.style.width = "100%";
+    tiempoRestante = 15;
+
+    clearInterval(idInterval);
+    idInterval = setInterval(() => {
+        tiempoRestante--;
+        let progreso = (tiempoRestante / 15) * 100;
+        barra.style.width = progreso + "%";
+        tiempoTexto.innerHTML = tiempoRestante + "s";
+
+        if (tiempoRestante <= 0) {
+            clearInterval(idInterval);
+            guardarResultado("", false);
+            posJuegoActual++;
+            mostrarNuevoPais();
+        }
+    }, 1000);
+}
+
+// Función para comenzar el juego
 function comenzarJuego() {
+    localStorage.clear(); // Limpia todo el localStorage al iniciar
     paisesDesordenados = [];
     posJuegoActual = 0;
     cantidadAcertados = 0;
+    tiempoRestante = 60; // Reiniciar el tiempo
     desordenarPaises();
     document.getElementById("pantalla-inicio").style.display = "none";
     document.getElementById("pantalla-juego").style.display = "block";
@@ -112,32 +130,17 @@ function comenzarJuego() {
     mostrarNuevoPais();
     document.getElementById("contador").innerHTML = 0;
     document.getElementById("paisIngresado").focus();
-    
-
-    
+    document.getElementById("tiempoRestante").innerHTML = tiempoRestante + "s"; // Mostrar tiempo inicial
 }
 
 
-window.addEventListener('load', ()=>{
-
-  Swal.fire({
-    title: "Empecemos!",
-    icon: "success",
-    html: `<div style="text-align: center;">
-                <p>ESTAS SERÁN LAS SIGUIENTES PALABRAS QUE APARECERÁN:</p>
-                <p>GUITARRA</p>
-                <p>TROMPETA</p>
-                <p>ACORDEÓN</p>
-                <p>VIOLÍN</p>
-                <p>PIANO</p>
-           </div>`,
-
-    background: '#DB55D2', // Color de fondo personalizado
-    color: '#000000',         // Color del texto
-
-    confirmButtonText: 'Aceptar'
+window.addEventListener('load', () => {
+    Swal.fire({
+        title: "¡Empecemos!",
+        icon: "success",
+        text: "Ordena las palabras correctamente antes de que se acabe el tiempo.",
+        background: '#DB55D2',
+        color: '#000000',
+        confirmButtonText: 'Aceptar'
+    });
 });
-
-
-  // document.querySelector('.btn-alert').click();
-})
