@@ -2,11 +2,11 @@ let paises = [];
 let paisesDesordenados = [];
 let posJuegoActual = 0;
 let cantidadAcertados = 0;
-let tiempoRestante = 60; // Tiempo total por palabra
+let tiempoRestante = 10;
 let idInterval;
 
-// Función para obtener los países desde el PHP
-fetch('../php/palabras/conexion4.php') // Asegúrate de que la ruta al archivo PHP sea correcta
+
+fetch('../php/palabras/conexion4.php') 
   .then(response => response.json())
   .then(data => {
     if (data.error) {
@@ -18,19 +18,19 @@ fetch('../php/palabras/conexion4.php') // Asegúrate de que la ruta al archivo P
   })
   .catch(error => console.error('Error:', error));
 
-// Función para desordenar los países
+
 function desordenarPaises() {
-    paisesDesordenados = []; // Limpiar el arreglo antes de llenarlo
+    paisesDesordenados = []; 
     for (let i = 0; i < paises.length; i++) {
         let pais = paises[i];
         pais = pais.split('');
-        let paisDesordenado = pais.sort(() => Math.random() - 0.5); // Desordenar las letras
+        let paisDesordenado = pais.sort(() => Math.random() - 0.5); 
         paisDesordenado = paisDesordenado.join(''); // Convertir el arreglo a string
-        paisesDesordenados.push(paisDesordenado); // Guardar el país desordenado
+        paisesDesordenados.push(paisDesordenado); 
     }
 }
 
-// Función para mostrar el siguiente país desordenado
+
 function mostrarNuevoPais() {
     if (posJuegoActual >= paisesDesordenados.length) {
         mostrarPantallaFinal();
@@ -54,7 +54,7 @@ function mostrarNuevoPais() {
     iniciarBarraDeTiempo();
 }
 
-// Función para mostrar la pantalla final
+
 function mostrarPantallaFinal() {
     clearInterval(idInterval);
     document.getElementById("pantalla-juego").style.display = "none";
@@ -62,7 +62,7 @@ function mostrarPantallaFinal() {
     document.getElementById("acertadas").innerHTML = cantidadAcertados;
 }
 
-// Función para comparar la palabra ingresada
+
 function comparar() {
     let paisOrdenado = paises[posJuegoActual];
     let paisIngresado = document.getElementById("paisIngresado").value;
@@ -80,10 +80,10 @@ function comparar() {
     }
 }
 
-// Función para guardar el resultado en localStorage
+
 function guardarResultado(paisIngresado, acertado) {
     let respuestas = JSON.parse(localStorage.getItem('respuestas')) || [];
-    let tiempoUsado = 60 - tiempoRestante; // Calcular el tiempo usado
+    let tiempoUsado = 10 - tiempoRestante; // Calcular el tiempo usado
     respuestas.push({
         paisOriginal: paises[posJuegoActual],
         paisIngresado: paisIngresado,
@@ -103,7 +103,7 @@ function iniciarBarraDeTiempo() {
     clearInterval(idInterval);
     idInterval = setInterval(() => {
         tiempoRestante--;
-        let progreso = (tiempoRestante / 60) * 100;
+        let progreso = (tiempoRestante / 10) * 100;
         barra.style.width = progreso + "%";
         tiempoTexto.innerHTML = tiempoRestante + "s";
 

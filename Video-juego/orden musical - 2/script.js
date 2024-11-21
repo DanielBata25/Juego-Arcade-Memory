@@ -12,25 +12,25 @@ fetch('../php/palabras/conexion1.php')
     if (data.error) {
         alert(data.error);
     } else {
-        paises = data.paises; // Asigna los países recuperados al arreglo `paises`
+        paises = data.paises; 
         comenzarJuego();
     }
   })
   .catch(error => console.error('Error:', error));
 
-// Función para desordenar los países
+
 function desordenarPaises() {
-    paisesDesordenados = []; // Limpiar el arreglo antes de llenarlo
+    paisesDesordenados = []; 
     for (let i = 0; i < paises.length; i++) {
         let pais = paises[i];
         pais = pais.split('');
-        let paisDesordenado = pais.sort(() => Math.random() - 0.5); // Desordenar las letras
+        let paisDesordenado = pais.sort(() => Math.random() - 0.5); 
         paisDesordenado = paisDesordenado.join(''); // Convertir el arreglo a string
-        paisesDesordenados.push(paisDesordenado); // Guardar el país desordenado
+        paisesDesordenados.push(paisDesordenado); 
     }
 }
 
-// Función para mostrar el siguiente país desordenado
+
 function mostrarNuevoPais() {
     if (posJuegoActual >= paisesDesordenados.length) {
         mostrarPantallaFinal();
@@ -54,7 +54,7 @@ function mostrarNuevoPais() {
     iniciarBarraDeTiempo();
 }
 
-// Función para mostrar la pantalla final
+
 function mostrarPantallaFinal() {
     clearInterval(idInterval);
     document.getElementById("pantalla-juego").style.display = "none";
@@ -62,7 +62,7 @@ function mostrarPantallaFinal() {
     document.getElementById("acertadas").innerHTML = cantidadAcertados;
 }
 
-// Función para comparar la palabra ingresada
+
 function comparar() {
     let paisOrdenado = paises[posJuegoActual];
     let paisIngresado = document.getElementById("paisIngresado").value;
@@ -80,7 +80,7 @@ function comparar() {
     }
 }
 
-// Función para guardar el resultado en localStorage
+
 function guardarResultado(paisIngresado, acertado) {
     let respuestas = JSON.parse(localStorage.getItem('respuestas')) || [];
     let tiempoUsado = 15 - tiempoRestante; // Calcular el tiempo usado
@@ -116,13 +116,13 @@ function iniciarBarraDeTiempo() {
     }, 1000);
 }
 
-// Función para comenzar el juego
+
 function comenzarJuego() {
     localStorage.clear(); // Limpia todo el localStorage al iniciar
     paisesDesordenados = [];
     posJuegoActual = 0;
     cantidadAcertados = 0;
-    tiempoRestante = 60; // Reiniciar el tiempo
+    tiempoRestante = 15; // Reiniciar el tiempo
     desordenarPaises();
     document.getElementById("pantalla-inicio").style.display = "none";
     document.getElementById("pantalla-juego").style.display = "block";
