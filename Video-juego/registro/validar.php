@@ -5,26 +5,28 @@ $password = $_POST['contrasena'] ?? '';
 $conexion = mysqli_connect("localhost", "root", "", "jugar");
 
 if (!$conexion) {
-    die("Error de conexión: " . mysqli_connect_error());
+    die(json_encode(["status" => "error", "message" => "Error de conexión a la base de datos."]));
 }
 
 $consulta = "SELECT * FROM persona_registro WHERE email = ? AND contrasena = ?";
 $stmt = mysqli_prepare($conexion, $consulta);
 
 mysqli_stmt_bind_param($stmt, "ss", $email, $password);
-
-
 mysqli_stmt_execute($stmt);
 $resultado = mysqli_stmt_get_result($stmt);
 
+$response = [];
+
 if (mysqli_num_rows($resultado) > 0) {
-    header("Location: ../Jugar_multi.html");
-    exit(); 
+    $response = ["status" => "success", "message" => "Inicio de sesión exitoso."];
 } else {
-    echo "Error de autenticación.";
+    $response = ["status" => "error", "message" => "El usuario no se encuentra registrado."];
 }
 
-// Liberar memoria y cerrar la conexión
 mysqli_free_result($resultado);
 mysqli_close($conexion);
+
+// Enviar la respuesta como JSON
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
