@@ -1,0 +1,48 @@
+
+.container span {
+    position: absolute;
+    left: 84vh;
+    margin-top: -26vh;
+    width: 28px;
+    height: 6px;
+    background: #ff2222;
+    border-radius: 8px;
+    transform-origin: 144px;
+    transform: scale(2.2) rotate(calc(var(--i) * (360deg / 50)));
+    animation: blink 3s linear infinite;
+    animation-delay: calc(var(--i) * (3s / 50));
+  }
+  @keyframes blink {
+    0% {
+      background: #def;
+    }
+    25% {
+      background: #de5252;
+    }
+  }
+
+  .carga {
+    position: absolute;
+    left: 86vh;
+    margin-top: -20vh;
+    width: 28px;
+    height: 6px;
+    background: #ff2222;
+    border-radius: 8px;
+    transform-origin: 134px;
+    transform: scale(2.2) rotate(calc(var(--i) * (360deg / 50)));
+    animation: blink 3s linear infinite;
+    animation-delay: calc(var(--i) * (3s / 50));
+  }
+  @keyframes blink {
+    0% {
+      background: #def;
+    }
+    25% {
+      background: #de5252;
+    }
+  }
+  
+
+  
+

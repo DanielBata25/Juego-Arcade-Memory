@@ -18,9 +18,12 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../css/registro.css">
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="registro.css">
 
-  <!-- Boxicons -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <link href='../https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
 </head>
 
 <body>
@@ -40,37 +43,86 @@
     </div>
   </div>
 
-  <div class="lola">
-    <img src="../img/image2.png" height="180" width="180" alt="">
-  </div>
 
-  <div>
-    <!-- Música -->
+  
+    <!--MUSICA-->
     <br>
     <audio id="audio">
       <source src="../audio/Headlands _musica.mp3" type="audio/mpeg">
     </audio>
-    <!-- Fin Música -->
+    <!--END MUSICA-->
+  
+  
+    <div class="container text-center ">
 
-    <div class="container text-center">
-      <!-- Formulario de Inicio de Sesión -->
-      <form id="formulario-login">
-        <label for="email">Correo Electrónico:</label>
+    <form action="validar.php" method="POST">
+    
+    <label for="email" class="letraa">Correo Electrónico:</label>
         <input type="email" id="email" name="email" required><br><br>
 
-        <label for="password">Contraseña:</label>
+        <label for="password" class="letraa">Contraseña:</label>
         <input type="password" id="contrasena" name="contrasena" required><br><br>
 
-        <input type="submit" value="Ingresar">
-      </form>
-    </div>
-  </div>
+        <input type="submit" class="letraa" value="Ingresar">
+    </form>
+    <!-- Js Plugins -->
 
-  <!-- Scripts -->
-  <script src="../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
-  <script src="../js/sonido.js"></script>
-  <script src="../js/fondo_estrellado.js"></script>
-  <script src="inicioSesion.js"></script>
+    <span2 class="carga" style="--i: 0;"></span2>
+    <span2 class="carga" style="--i: 1;"></span2>
+    <span2 class="carga" style="--i: 2;"></span2>
+    <span2 class="carga" style="--i: 3;"></span2>
+    <span2 class="carga" style="--i: 4;"></span2>
+    <span2 class="carga" style="--i: 5;"></span2>
+    <span2 class="carga" style="--i: 6;"></span2>
+    <span2 class="carga" style="--i: 7;"></span2>
+    <span2 class="carga" style="--i: 8;"></span2>
+    <span2 class="carga" style="--i: 9;"></span2>
+    <span2 class="carga" style="--i: 10;"></span2>
+    <span2 class="carga" style="--i: 11;"></span2>
+    <span2 class="carga" style="--i: 12;"></span2>
+    <span2 class="carga" style="--i: 13;"></span2>
+    <span2 class="carga" style="--i: 14;"></span2>
+    <span2 class="carga" style="--i: 15;"></span2>
+    <span2 class="carga" style="--i: 16;"></span2>
+    <span2 class="carga" style="--i: 17;"></span2>
+    <span2 class="carga" style="--i: 18;"></span2>
+    <span2 class="carga" style="--i: 19;"></span2>
+    <span2 class="carga" style="--i: 20;"></span2>
+    <span2 class="carga" style="--i: 21;"></span2>
+    <span2 class="carga" style="--i: 22;"></span2>
+    <span2 class="carga" style="--i: 23;"></span2>
+    <span2 class="carga" style="--i: 24;"></span2>
+    <span2 class="carga" style="--i: 25;"></span2>
+    <span2 class="carga" style="--i: 26;"></span2>
+    <span2 class="carga" style="--i: 27;"></span2>
+    <span2 class="carga" style="--i: 28;"></span2>
+    <span2 class="carga" style="--i: 29;"></span2>
+    <span2 class="carga" style="--i: 30;"></span2>
+    <span2 class="carga" style="--i: 31;"></span2>
+    <span2 class="carga" style="--i: 32;"></span2>
+    <span2 class="carga" style="--i: 33;"></span2>
+    <span2 class="carga" style="--i: 34;"></span2>
+    <span2 class="carga" style="--i: 35;"></span2>
+    <span2 class="carga" style="--i: 36;"></span2>
+    <span2 class="carga" style="--i: 37;"></span2>
+    <span2 class="carga" style="--i: 38;"></span2>
+    <span2 class="carga" style="--i: 39;"></span2>
+    <span2 class="carga" style="--i: 40;"></span2>
+    <span2 class="carga" style="--i: 41;"></span2>
+    <span2 class="carga" style="--i: 42;"></span2>
+    <span2 class="carga" style="--i: 43;"></span2>
+    <span2 class="carga" style="--i: 44;"></span2>
+    <span2 class="carga" style="--i: 45;"></span2>
+    <span2 class="carga" style="--i: 46;"></span2>
+    <span2 class="carga" style="--i: 47;"></span2>
+    <span2 class="carga" style="--i: 48;"></span2>
+    <span2 class="carga"  style="--i: 49;"></span2>
+
+
 </body>
+<script src="../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+<script src="../js/sonido.js"></script>
+<script src="../js/fondo_estrellado.js"></script>
+<script src="inicoSesion.js"></script>
 
 </html>
