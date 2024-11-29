@@ -260,11 +260,7 @@ body {
 
 
 .logo31 {
-	border-radius: 25%;
-	width: 25%;
-	height: 25%;
-}
-.boton:hover {
+	border-radius: 25%; 
 	width: 500;
 	height: 500;
 	background: purple;
