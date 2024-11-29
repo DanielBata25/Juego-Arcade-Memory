@@ -6,22 +6,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const formData = new FormData(formulario);
 
-        // Enviar datos al servidor con fetch
+       
         fetch("validar.php", {
             method: "POST",
             body: formData,
         })
-            .then((response) => response.json()) // Convertir la respuesta a JSON
+            .then((response) => response.json()) 
             .then((data) => {
                 if (data.status === "success") {
-                    // Si es exitoso, redirige
-                    window.location.href = "../Jugar_multi.html";
+                    
+                    Swal.fire({
+                        icon: "success",
+                        title: "Inicio de sesión exitoso",
+                        text: data.message,
+                    }).then(() => {
+                        
+                        window.location.href = "../Jugar_multi.html";
+                    });
                 } else {
-                    // Mostrar alerta si no es exitoso
+                    
                     Swal.fire({
                         icon: "error",
                         title: "Error de autenticación",
                         text: data.message,
+                    }).then(() => {
+                       
+                        window.location.href = "index.php"; 
                     });
                 }
             })
@@ -35,4 +45,3 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     });
 });
-
