@@ -66,12 +66,6 @@
 </form>
 
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 3bf4d714d2631a42f351ef29609c4c25dcc899c5
-
 </body>
 <script src="../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
 <script src="../js/sonido.js"></script>
