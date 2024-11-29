@@ -55,23 +55,27 @@
   
     <div class="container text-center ">
 
-    <form action="validar.php" method="POST">
-    
+    <form id="formulario-login" method="POST">
     <label for="email" class="letraa">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required><br><br>
+    <input type="email" id="email" name="email" required><br><br>
 
-        <label for="password" class="letraa">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena" required><br><br>
+    <label for="password" class="letraa">Contraseña:</label>
+    <input type="password" id="contrasena" name="contrasena" required><br><br>
 
-        <input type="submit" class="letraa" value="Ingresar">
-    </form>
-    <!-- Js Plugins -->
+    <input type="submit" class="letraa" value="Ingresar">
+</form>
 
+
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3bf4d714d2631a42f351ef29609c4c25dcc899c5
 
 </body>
 <script src="../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
 <script src="../js/sonido.js"></script>
 <script src="../js/fondo_estrellado.js"></script>
-<script src="inicoSesion.js"></script>
+<script src="inicioSesion.js"></script>
 
 </html>
