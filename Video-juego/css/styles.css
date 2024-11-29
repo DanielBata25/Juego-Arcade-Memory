@@ -256,15 +256,7 @@ body {
         width: 100px; /* Tamaño aún más pequeño en móviles */
         height: 100px;
     }
-}
-
-
-.logo31 {
-	border-radius: 25%;
-	width: 27%;
-	height: 27%;
-}
-.boton:hover {
+}.boton:hover {
 	width: 500;
 	height: 500;
 	background: purple;
@@ -697,8 +689,8 @@ body {
 }
 .logo {
   border-radius: 25%;
-  width: 75%;
-  height: 75%;
+  width: 45%;
+  height: 45%;
   object-fit: cover;
   min-width: 100px;
   min-height: 100px;
@@ -717,8 +709,7 @@ body {
 .play-button {
   width: 35vh;
   height: auto;
-  margin-top: -50%;
-  margin-left: -12%;
+  margin-left:20%;
   animation: flotar 3s ease-in-out infinite;
 }
 
@@ -749,13 +740,12 @@ body {
 		position: relative;
 		top: -54px;
 		margin-top: -30%;
-		margin-left: -90%;
 	}
 }
 
 @media (max-width:680px) {
 	.play-button{
-		margin-left: -155%;
+		margin-left: -142%;
 	}
 }
 @media (max-width:600px) {
