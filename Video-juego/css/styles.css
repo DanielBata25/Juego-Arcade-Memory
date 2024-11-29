@@ -256,7 +256,15 @@ body {
         width: 100px; /* Tamaño aún más pequeño en móviles */
         height: 100px;
     }
+<<<<<<< HEAD
 }.boton:hover {
+=======
+}
+
+
+.logo31 {
+	border-radius: 25%; 
+>>>>>>> 984a7126563af91d7d74c92974d10f5c1420d717
 	width: 500;
 	height: 500;
 	background: purple;
@@ -856,6 +864,22 @@ body {
 	opacity: 0.7;
   }
 
+  .letraa2 {
+	color: #ec0404;
+	margin-left: auto;
+	text-shadow:
+	-1px -1px 1px #aaa,
+	0px 4px 1px rgba(0, 0, 0, 0.5),
+	4px 4px 5px rgba(0, 0, 0, 0.7),
+	0px 0px 7px rgba(0, 0, 0, 0.4);
+}
+
+.pianorrr {
+	width: 20%;
+	height: 20%;
+	margin-top: -10vh;
+	margin-left: 20vh;
+}
   /* Cambio de color cuando el tiempo termina */
   .timer.completed .progress-bar {
 	background: linear-gradient(135deg, #ff416c, #ff4b2b);

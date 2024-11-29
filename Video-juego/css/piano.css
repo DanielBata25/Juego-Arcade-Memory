@@ -14,8 +14,8 @@
 .mensaje-container2 {
  
     border: 3px solid aqua; 
-    padding: 30px;
-    background-color: gray; 
+    padding: 50px;
+    background-color: rgb(230, 131, 131); 
     border-radius: 17px;
     width: 75px;
     margin: 0; 
@@ -23,15 +23,18 @@
     justify-content: center; /* Centrado horizontal */
     align-items: center; /* Centrado vertical */
     font-weight: bold; 
-    height: 85px; /* Ajusta el alto del contenedor si es necesario */
+    margin-left: -8vh;
+    margin-top: -5vh;
+    height: 45px; /* Ajusta el alto del contenedor si es necesario */
 
 }
 
 .tamaño_betoven2 {
-    max-width: 50%; /* Mantiene la imagen a la mitad de su tamaño original */
+    max-width: 150%; /* Mantiene la imagen a la mitad de su tamaño original */
     border-radius: 10px; /* Bordes redondeados para la imagen */
     height: auto; /* Mantiene la relación de aspecto */
     margin-left:20px;
+    margin-top: -8vh;
 
 }
 
