@@ -290,6 +290,32 @@ body {
 	padding: 0%;
 }
 
+.boton_numeros2 {
+	border-radius: 20px;
+	background-color: rgb(192, 36, 240);
+	padding: 25px 35px;
+	text-decoration: none;
+	color: white;
+	font-weight: 30px;
+	font-size: 20px;
+	transition: .4s ease;
+    margin-top: -60vh;
+	position: relative;
+}
+
+.boton_numeros2:hover {
+	box-shadow: 0 0 10px blue,
+		0 0 30px blue,
+		0 0 30px blue,
+		0 0 30px blue;
+
+}
+
+* {
+	margin: 0%;
+	padding: 0%;
+}
+
 div#general {
 	box-shadow: inset 5px 10px 15px black;
 	border-radius: 30px;

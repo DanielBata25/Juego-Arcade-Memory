@@ -1,21 +1,25 @@
 const express = require('express');
+const http = require('http');
+const socketIo = require('socket.io');
+
 const app = express();
-const http = require('http').createServer(app);
-const io = require('socket.io')(http, {
+const server = http.createServer(app); // Servidor HTTP para videojuego y chat
+const io = socketIo(server, {
     cors: {
-        origin: "*",  // Permite cualquier origen
+        origin: "*",
         methods: ["GET", "POST"]
     }
 });
 
-// Servir archivos estáticos
-app.use(express.static(__dirname));
+// Servir el videojuego desde la ruta /Juego-Arcade-Memory
+app.use('/Juego-Arcade-Memory', express.static(__dirname + '/Juego-Arcade-Memory'));
 
-// Ruta principal
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/indexchat.html');
+// Ruta para la interfaz del chat (opcional)
+app.get('/chat', (req, res) => {
+    res.sendFile(__dirname + '/indexchat.html'); // Ajusta el path si es necesario
 });
 
+// Lógica del chat
 const usuarios = new Map();
 
 io.on('connection', (socket) => {
@@ -45,8 +49,8 @@ io.on('connection', (socket) => {
     });
 });
 
-// Iniciar servidor
-const PORT = process.env.PORT || 3000;
-http.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+// Iniciar el servidor en el puerto 80
+server.listen(80, () => {
+    console.log('Servidor corriendo en http://localhost/Juego-Arcade-Memory/');
+    console.log('Chat disponible en http://localhost/chat (si usas una interfaz)');
 });
