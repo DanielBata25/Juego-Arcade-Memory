@@ -18,7 +18,12 @@ $resultado = mysqli_stmt_get_result($stmt);
 $response = [];
 
 if (mysqli_num_rows($resultado) > 0) {
-    $response = ["status" => "success", "message" => "Inicio de sesión exitoso."];
+    $user = mysqli_fetch_assoc($resultado);  
+    $response = [
+        "status" => "success",
+        "message" => "Inicio de sesión exitoso.",
+        "nombre" => $user['nombre'],  
+    ];
 } else {
     $response = ["status" => "error", "message" => "El usuario no se encuentra registrado."];
 }
@@ -26,7 +31,8 @@ if (mysqli_num_rows($resultado) > 0) {
 mysqli_free_result($resultado);
 mysqli_close($conexion);
 
-// Enviar la respuesta como JSON
+
 header('Content-Type: application/json');
 echo json_encode($response);
 ?>
+

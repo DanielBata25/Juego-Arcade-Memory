@@ -9,13 +9,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Inicio Sesión</title>
 
-  <!-- Bootstrap CSS -->
+
   <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/bootstrap.css">
 
-  <!-- SweetAlert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="../css/registro.css">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="registro.css">
@@ -52,19 +50,21 @@
     </audio>
     <!--END MUSICA-->
   
-  
-    <div class="container text-center ">
 
+<div class="container text-center">
     <form id="formulario-login" method="POST">
-    <label for="email" class="letraa">Correo Electrónico:</label>
-    <input type="email" id="email" name="email" required><br><br>
-
-    <label for="password" class="letraa">Contraseña:</label>
-    <input type="password" id="contrasena" name="contrasena" required><br><br>
-
-    <input type="submit" class="letraa" value="Ingresar">
-</form>
-
+ 
+        <label for="email" class="letraa">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Ingresa tu correo" required>
+        <br><br>
+        
+        <label for="contrasena" class="letraa">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" class="form-control" placeholder="Ingresa tu contraseña" required>
+        <br><br>
+       
+        <input type="submit" class="btn btn-primary letraa" value="Ingresar">
+    </form>
+</div>
 
 </body>
 <script src="../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
