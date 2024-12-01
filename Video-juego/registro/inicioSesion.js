@@ -26,6 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         icon: "error",
                         title: "Error de autenticación",
                         text: data.message,
+                    }).then(() => {
+                        // La redirección ocurre solo después de cerrar el alert
+                        window.location.href = "index.php";
                     });
                 }
             })
