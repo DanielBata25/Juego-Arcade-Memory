@@ -1,45 +1,60 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const formulario = document.querySelector("#formulario-login");
 
-    formulario.addEventListener("submit", function (e) {
-        e.preventDefault();
+function submitLogin(event) {
+    event.preventDefault();  
 
-        const formData = new FormData(formulario);
+    const formulario = event.target;  
+    const formData = new FormData(formulario);  
 
-        fetch("validar.php", {
-            method: "POST",
-            body: formData,
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                if (data.status === "success") {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Inicio de sesión exitoso",
-                        text: `Bienvenido, ${data.nombre}`,
-                    }).then(() => {
-                        // La redirección ocurre solo después de cerrar el alert
-                        window.location.href = "../Jugar_multi.html";
-                    });
-                } else {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Error de autenticación",
-                        text: data.message,
-                    }).then(() => {
-                        // La redirección ocurre solo después de cerrar el alert
-                        window.location.href = "index.php";
-                    });
-                }
-            })
-            .catch((error) => {
-                console.error("Error:", error);
+    fetch("validar.php", {
+        method: "POST",
+        body: formData,  
+    })
+        .then((response) => response.json())  
+        .then((data) => {
+            if (data.status === "success") {
+                
+                localStorage.setItem("usuario", data.nombre);
+
+                
+                Swal.fire({
+                    icon: "success",
+                    title: "Inicio de sesión exitoso",
+                    text: `Bienvenido, ${data.nombre}`,
+                }).then(() => {
+                    window.location.href = "../Jugar_multi.html";  
+                });
+            } else {
+                
                 Swal.fire({
                     icon: "error",
-                    title: "Error",
-                    text: "Hubo un problema al procesar la solicitud.",
+                    title: "Error de autenticación",
+                    text: data.message,
+                }).then(() => {
+                    window.location.href = "index.php";  
                 });
+            }
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Hubo un problema al procesar la solicitud.",
             });
-    });
-});
+        });
+}
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const nombreUsuarioElement = document.getElementById("nombreUsuario");
+
+    if (nombreUsuarioElement) {
+        // Recuperar el nombre del usuario desde localStorage
+        const usuario = localStorage.getItem("usuario");
+
+        if (usuario) {
+            // Establecer el nombre del usuario en el elemento del offcanvas
+            nombreUsuarioElement.textContent = usuario;
+        }
+    }
+});

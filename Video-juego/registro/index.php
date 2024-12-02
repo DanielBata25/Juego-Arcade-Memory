@@ -59,5 +59,6 @@
   <script src="../sonidoInicio.js"></script>
   <script src="../js/fondo_estrellado.js"></script>
   <script src="registro.js"></script> <!-- Vincular archivo -->
+  <script src="inicioSesion.js"></script>
 
 </html>
