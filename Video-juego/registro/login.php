@@ -32,21 +32,23 @@
   </div>
 
   <div class="container-2">
-    <div class="volume-control mt-4">
-      <img src="../img/normal.png" class="tamañosoni" id="playPauseBTN" onclick="playPause()">
-      <div class="volu">
-        <label for="volume">Volumen:</label>
-      </div>
-      <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
-    </div>
-  </div>
+
+<audio id="audio" src="../audio/Headlands _musica.mp3" loop></audio>
+<img id="muteBTN" src="../img/normal.png" class="tamañosoni" alt="Mute" onclick="toggleMute()" />
+
+<div class="volu">
+  <label for="volume">Volumen:</label>
+</div>
+<input type="range" id="volume" min="0" max="1" step="0.1" value="0.5" class="bar-volumen">
+</div>
+
 
 
   
     <!--MUSICA-->
     <br>
-    <audio id="audio">
-      <source src="../audio/Headlands _musica.mp3" type="audio/mpeg">
+    <audio id="audio" autoplay>
+      <source src="audio/Headlands _musica.mp3" type="audio/mpeg">
     </audio>
     <!--END MUSICA-->
   

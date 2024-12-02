@@ -23,17 +23,18 @@
   </div>
 
   <div class="container-2">
-    <div class="volume-control mt-4">
-      <img src="../img/normal.png" class="tamañosoni" id="playPauseBTN" onclick="playPause()">
-      <div class="volu">
-        <label for="volume">Volumen:</label>
-      </div>
-      <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
-    </div>
-  </div>
-  
+
+<audio id="audio" src="../audio/Headlands _musica.mp3" loop></audio>
+<img id="muteBTN" src="../img/normal.png" class="tamañosoni" alt="Mute" onclick="toggleMute()" />
+
+<div class="volu">
+  <label for="volume">Volumen:</label>
+</div>
+<input type="range" id="volume" min="0" max="1" step="0.1" value="0.5" class="bar-volumen">
+</div>
+
    <!--MUSICA-->
-   <audio id="audio">
+   <audio id="audio" autoplay>
     <source src="../audio/Headlands_musica.mp3" type="audio/mpeg">
   </audio>
   <!--END MUSICA-->
@@ -56,7 +57,7 @@
    
   </body>
   <script src="../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
-  <script src="../sonidoInicio.js"></script>
+  <script src="../js/sonido.js"></script>
   <script src="../js/fondo_estrellado.js"></script>
   <script src="registro.js"></script> <!-- Vincular archivo -->
   <script src="inicioSesion.js"></script>

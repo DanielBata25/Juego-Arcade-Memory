@@ -17,5 +17,5 @@ volumeControl.addEventListener('input', () => {
 // Alternar mute
 function toggleMute() {
   audio.muted = !audio.muted; // Cambia entre mute/unmute
-  muteBTN.src = audio.muted ? '../img/mute.png' : '../img/normal.png'; // Cambia la imagen del botón
+  muteBTN.src = audio.muted ? '../../img/mute.png' : '../../img/normal.png'; // Cambia la imagen del botón
 }

@@ -16,6 +16,18 @@
     <div class="space space-2"></div>
     <div class="space space-3"></div>
 
+    <div class="container-2">
+
+        <audio id="audio" src="../audio/Headlands _musica.mp3" loop></audio>
+        <img id="muteBTN" src="../img/normal.png" class="tamañosoni" alt="Mute" onclick="toggleMute()" />
+    
+        <div class="volu">
+          <label for="volume">Volumen:</label>
+        </div>
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5" class="bar-volumen">
+      </div>
+    
+
     <div class="container">
         <img src="../img/logomemo2.jpg" class="logo31" alt="">
         <div class="text">
@@ -35,9 +47,14 @@
         </div>
     </div>
 
+    <audio id="audio" autoplay>
+        <source src="audio/Headlands _musica.mp3" type="audio/mpeg">
+      </audio>
+
     <script src="../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
     <script src="../js/fondo_estrellado.js"></script>
     <script src="../Barras_carga/js/barra_de_carga.js"></script>
+    <script src="../js/sonido.js"></script>
 </body>
 
 </html>
