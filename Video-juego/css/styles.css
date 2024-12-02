@@ -256,17 +256,17 @@ body {
         width: 100px; /* Tamaño aún más pequeño en móviles */
         height: 100px;
     }
-<<<<<<< HEAD
-}.boton:hover {
-=======
+}.boton:hover 
+{
+
 }
 
 
+
 .logo31 {
-	border-radius: 25%; 
->>>>>>> 984a7126563af91d7d74c92974d10f5c1420d717
-	width: 500;
-	height: 500;
+	border-radius: 25%;
+	width: 20%;
+	height: 20%;
 	background: purple;
 	box-shadow: 0 0 10px purple;
 }
@@ -795,8 +795,8 @@ body {
 .logo2{
 	margin-top: 10%;
 	margin-left: 8%;
-    width: 75%;
-	height: 75%;
+    width: 50%;
+	height: 50%;
 	border-radius: 30%;
 
 }
