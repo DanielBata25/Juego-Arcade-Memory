@@ -134,11 +134,22 @@ function comenzarJuego() {
 }
 
 
+
 window.addEventListener('load', () => {
     Swal.fire({
         title: "¡Empecemos!",
         icon: "success",
-        text: "Ordena las palabras correctamente antes de que se acabe el tiempo.",
+        html: `<div style="text-align: center;">
+                  <p>ESTAS SERAN LAS SIGUIENTES PALABRAS QUE APARECERAN</p>
+              
+                  <ul style="list-style: none; padding: 0;">
+                      <li>GUITARRA</li>
+                      <li>TAMBOR</li>
+                      <li>CLARINETE</li>
+                      <li>ORGANO</li>
+                      <li>TROMBON</li>
+                  </ul>
+               </div>`,
         background: '#DB55D2',
         color: '#000000',
         confirmButtonText: 'Aceptar'

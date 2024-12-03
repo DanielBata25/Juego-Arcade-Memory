@@ -15,13 +15,13 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Recuperar los países ordenados desde la base de datos
-    $stmt = $conn->prepare("SELECT pais_original FROM adivinar_pais3 ORDER BY pais_original ASC");
+    $stmt = $conn->prepare("SELECT palabra FROM adivinar_palabras3 ORDER BY palabra ASC");
     $stmt->execute();
     $paises = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
     // Si no hay países, enviar un error
     if (empty($paises)) {
-        echo json_encode(["error" => "No hay países disponibles."]);
+        echo json_encode(["error" => "No hay palabras disponibles."]);
     } else {
         echo json_encode(["paises" => $paises]);
     }

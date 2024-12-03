@@ -6,7 +6,7 @@ let tiempoRestante = 15;
 let idInterval;
 
 
-fetch('../php/palabras/conexion1.php') 
+fetch('../php/palabras/conexion2.php') 
   .then(response => response.json())
   .then(data => {
     if (data.error) {
@@ -138,7 +138,17 @@ window.addEventListener('load', () => {
     Swal.fire({
         title: "¡Empecemos!",
         icon: "success",
-        text: "Ordena las palabras correctamente antes de que se acabe el tiempo.",
+        html: `<div style="text-align: center;">
+                  <p>ESTAS SERAN LAS SIGUIENTES PALABRAS QUE APARECERAN</p>
+              
+                  <ul style="list-style: none; padding: 0;">
+                      <li>PIANO</li>
+                      <li>VIOLA</li>
+                      <li>GAITA</li>
+                      <li>TIPLE</li>
+                      <li>SAXOFON</li>
+                  </ul>
+               </div>`,
         background: '#DB55D2',
         color: '#000000',
         confirmButtonText: 'Aceptar'

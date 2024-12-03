@@ -1,23 +1,52 @@
+// Ruta inicial del avatar por defecto
+let defaultAvatar = '../img/profile.png'; // Imagen predeterminada
 
-let currentAvatar = '../img/avatarraper.png'; // Avatar inicial
-let cambiarAvatar = document.getElementById('avatar'); 
+// Carga del avatar al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    const avatar = document.getElementById("avatar"); // Avatar en el botón de perfil
+    const selectedAvatar = document.getElementById("selected-avatar"); // Avatar en el offcanvas
 
-function selectAvatar(avatarSrc) {
-    currentAvatar = avatarSrc; // Actualiza el avatar seleccionado
-    const selectedAvatar = document.getElementById('selected-avatar');
-    selectedAvatar.src = avatarSrc; // Muestra el avatar seleccionado
+    // Obtener el avatar guardado desde localStorage o usar el predeterminado
+    const savedAvatar = localStorage.getItem("selectedAvatar") || defaultAvatar;
+
+    // Establecer el avatar por defecto o el guardado
+    if (avatar) avatar.src = savedAvatar;
+    if (selectedAvatar) selectedAvatar.src = savedAvatar;
+});
+
+// Selección de un avatar
+function selectAvatar(newAvatar) {
+    const avatar = document.getElementById("avatar"); // Avatar en el botón de perfil
+    const selectedAvatar = document.getElementById("selected-avatar"); // Avatar en el offcanvas
+
+    // Actualizar el avatar en la interfaz
+    if (avatar) avatar.src = newAvatar;
+    if (selectedAvatar) selectedAvatar.src = newAvatar;
+
+    // Guardar el nuevo avatar en localStorage
+    localStorage.setItem("selectedAvatar", newAvatar);
 }
 
+// Guardado del avatar seleccionado
 function saveAvatar() {
-    const selectedAvatar = document.getElementById('selected-avatar');
-    //actualiza el avatar mostrado si se ha guardado
-    selectedAvatar.src = currentAvatar; // Guarda el avatar actual
-    cambiarAvatar.src = currentAvatar; // Muestra el avatar guardado
+    const selectedAvatar = document.getElementById("selected-avatar");
+    if (selectedAvatar) {
+        const avatarSrc = selectedAvatar.src;
+
+        // Guardar el avatar en localStorage
+        localStorage.setItem("selectedAvatar", avatarSrc);
+
+        // Confirmación al usuario
+        Swal.fire({
+            title: "Avatar guardado",
+            text: "Tu avatar ha sido actualizado correctamente.",
+            icon: "success",
+        });
+    } else {
+        Swal.fire({
+            title: "Error",
+            text: "No se seleccionó ningún avatar.",
+            icon: "error",
+        });
+    }
 }
-
-const base_path = '/img/iconos/';
-const iconoArchivo = 'estrella.png';  // Este nombre de archivo puede ser obtenido de la base de datos
-const icono_ruta = base_path + iconoArchivo;  // Esto será '/imagenes/iconos/estrella.png'
-
-// Ahora puedes usar 'icono_ruta' para cargar la imagen en una etiqueta <img> en HTML
-document.getElementById('iconoPerfil').src = icono_ruta;

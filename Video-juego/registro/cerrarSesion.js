@@ -18,10 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 cancelButtonText: "Cancelar",
             }).then((result) => {
                 if (result.isConfirmed) {
-                   
+                    // Eliminar datos del localStorage
                     localStorage.removeItem("usuario");
+                    localStorage.removeItem("selectedAvatar"); // Eliminar el avatar guardado
 
-               
+                    // Mostrar mensaje de confirmación
                     Swal.fire({
                         title: "Sesión cerrada",
                         text: "Has cerrado sesión exitosamente.",
@@ -29,10 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     }).then(() => {
                         console.log("Redirigiendo a index.php...");
                         window.location.href = "http://localhost/Juego-Arcade-Memory/Video-juego/Play.html";
-                      
                     });
                 }
             });
-        }, 1000); 
+        }, 1000);
     });
 });
+

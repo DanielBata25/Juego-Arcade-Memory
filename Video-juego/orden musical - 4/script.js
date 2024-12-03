@@ -138,7 +138,17 @@ window.addEventListener('load', () => {
     Swal.fire({
         title: "¡Empecemos!",
         icon: "success",
-        text: "Ordena las palabras correctamente antes de que se acabe el tiempo.",
+        html: `<div style="text-align: center;">
+                  <p>ESTAS SERAN LAS SIGUIENTES PALABRAS QUE APARECERAN</p>
+              
+                  <ul style="list-style: none; padding: 0;">
+                      <li>TROMPETA</li>
+                      <li>TECLADO</li>
+                      <li>VIOLINETA</li>
+                      <li>BONGOS</li>
+                      <li>MARIMBA</li>
+                  </ul>
+               </div>`,
         background: '#DB55D2',
         color: '#000000',
         confirmButtonText: 'Aceptar'
