@@ -265,10 +265,11 @@ body {
 
 .logo31 {
 	border-radius: 25%;
-	width: 35%;
-	height: 35%;
+	width: 30%;
+	height: 30%;
 	background: purple;
 	box-shadow: 0 0 10px purple;
+	margin-top: -25%;
 }
 
 .icono {
@@ -719,6 +720,7 @@ body {
   height: auto;
   margin-left:20%;
   animation: flotar 3s ease-in-out infinite;
+  margin-top: -25%;
 }
 
 #console {
