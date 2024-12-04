@@ -13,7 +13,7 @@ let allKeys = [],
 let patronesMusicales = [],
     patronActual = [],
     patronIndex = 0,
-    tiempoLimite;
+    tiempoLimite; 
 
 // Inicializar el historial en localStorage si no existe
 if (!localStorage.getItem("historialTeclas")) {
@@ -263,3 +263,6 @@ volumeSlider.addEventListener("input", (e) => {
 
 document.addEventListener("keydown", pressedKey);
 window.addEventListener("DOMContentLoaded", cargarPatronMusical);
+
+
+
