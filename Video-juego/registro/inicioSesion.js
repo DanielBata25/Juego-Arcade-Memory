@@ -1,4 +1,3 @@
-
 function submitLogin(event) {
     event.preventDefault();  
 
