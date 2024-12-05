@@ -1,21 +1,20 @@
 const audio = document.getElementById('audio');
-const muteBTN = document.getElementById('muteBTN');
 const volumeControl = document.getElementById('volume');
 
-// Reproduce automáticamente cuando la página carga
-window.onload = () => {
-  audio.play().catch(error => {
-    console.log("El navegador bloqueó la reproducción automática. Requiere interacción del usuario.");
-  });
-};
+// Configurar el volumen inicial
+audio.volume = volumeControl.value;
 
-// Controlar volumen
+// Evento para ajustar el volumen
 volumeControl.addEventListener('input', () => {
-  audio.volume = volumeControl.value;
+    audio.volume = volumeControl.value;
 });
 
-// Alternar mute
-function toggleMute() {
-  audio.muted = !audio.muted; // Cambia entre mute/unmute
-  muteBTN.src = audio.muted ? '../img/mute.png' : '../img/normal.png'; // Cambia la imagen del botón
+function playPause() {
+    if (audio.paused) {
+        audio.play();
+        document.getElementById('playPauseBTN').src = '../img/normal.png '; // Cambia a imagen de pausa
+    } else {
+        audio.pause();
+        document.getElementById('playPauseBTN').src = '../img/mute.png'; // Cambia a imagen de play
+    }
 }

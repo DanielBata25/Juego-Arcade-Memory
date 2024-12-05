@@ -9,28 +9,25 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+header('Content-Type: application/json'); // Establecer el tipo de contenido como JSON
+
 try {
-   
-    $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-   
     $stmt = $conn->prepare("SELECT secuencia FROM patrones_musicales2");
     $stmt->execute();
 
-  
     $patronesMusicales = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
-   
     if (empty($patronesMusicales)) {
+        http_response_code(404);
         echo json_encode(["error" => "No hay patrones musicales disponibles."]);
     } else {
-        // Devolver los patrones en formato JSON
         echo json_encode(["patronesMusicales" => $patronesMusicales]);
     }
-
 } catch (PDOException $e) {
-    // Mensaje de error en caso de fallo en la conexión o consulta
-    echo json_encode(["error" => "Error de conexión: " . $e->getMessage()]);
+    http_response_code(500); // Error interno del servidor
+    echo json_encode(["error" => "Error al conectarse a la base de datos."]);
 }
 ?>
