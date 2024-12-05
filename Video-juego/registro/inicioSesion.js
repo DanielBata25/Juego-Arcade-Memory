@@ -1,4 +1,3 @@
-
 function submitLogin(event) {
     event.preventDefault();  
 
@@ -12,19 +11,18 @@ function submitLogin(event) {
         .then((response) => response.json())  
         .then((data) => {
             if (data.status === "success") {
-                
+                // Almacenar el nombre de usuario en el localStorage
                 localStorage.setItem("usuario", data.nombre);
 
-                
                 Swal.fire({
                     icon: "success",
                     title: "Inicio de sesión exitoso",
                     text: `Bienvenido, ${data.nombre}`,
                 }).then(() => {
+                    // Redirigir a la página de multijugador
                     window.location.href = "../Jugar_multi.html";  
                 });
             } else {
-                
                 Swal.fire({
                     icon: "error",
                     title: "Error de autenticación",
@@ -43,7 +41,6 @@ function submitLogin(event) {
             });
         });
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
     const nombreUsuarioElement = document.getElementById("nombreUsuario");
