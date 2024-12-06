@@ -36,7 +36,7 @@
     </div>
 
     <div class="numeros text-center">
-        <a class="boton_numeros" href="../" role="button">Empezar Juego</a>
+        <a class="boton_numeros" href="../Guias_juego/musica/Guia musica1.html" role="button">Empezar Juego</a>
     </div>
 
     <div id="chat-container" class="fixed bottom-4 right-4 z-10 w-30">
@@ -69,13 +69,11 @@
     <script src="js/sala.js"></script>
     <script src="../../../bootstrap/js/bootstrap.js"></script>
     <script src="js/avatar.js"></script>
-    <script src="../../../../bootstrap/js/bootstrap.bundle.js"></script>
     <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
     <script src="assets/script.js"></script>
     <script src="assets/lobby.js"></script>
     <script src="/path/to/bootstrap.bundle.js"></script>
-    <script src="userssala.js"></script>
-    <script src="../registro/iniciarSesion.js"></script>
+    <script src="../registro/iniciarSesion.js"></script>     
     
     <script>
         // Recuperar el nombre del usuario desde localStorage
