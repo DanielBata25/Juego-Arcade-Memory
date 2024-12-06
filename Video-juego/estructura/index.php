@@ -18,7 +18,7 @@
                 <h3>Lobby</h3>
             </div>
         </div>
-        
+    
         <div class="contenedor">
             <div class="tarjeta-1">
                 <div class="canal">

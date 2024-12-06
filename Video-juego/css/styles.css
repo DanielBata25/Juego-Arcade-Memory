@@ -903,11 +903,32 @@ body {
 
 
 .modal-body-3{
-	font-size:120%;
-	height:40%;
-	color: #000000;
-	background-color: rgb(14, 232, 236);
+	font-size:130%;
+	height:10%;
+	color: #ffffff;
+	background-color: rgb(111, 131, 218) ;
 	border-radius: 1%;
+	border: 14px solid #f20433; 
+	box-shadow: 20px 20px rgba(255, 4, 4, 0.1); /* Sombra suave */
+	animation: borderAnimation 4s infinite; /* Aplicar la animación */
+
 }	
 
 
+@keyframes borderAnimation {
+    0% {
+        border-color: #0076fc; /* Color inicial */
+    }
+    25% {
+        border-color: #fb0404; /* Color en el primer cuarto */
+    }
+    50% {
+        border-color: #fd6100; /* Color en el medio */
+    }
+    75% {
+        border-color: #ffffff; /* Color en el tercer cuarto */
+    }
+    100% {
+        border-color: #4a90e2; /* Regresar al color inicial */
+    }
+}
