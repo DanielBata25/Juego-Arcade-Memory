@@ -178,22 +178,26 @@ body {
   inset 0 0 10px rgb(44, 166, 227); 
   background-repeat: no-repeat; 
   background-position: center;
+  animation: borderAnimation 4s infinite; /* Aplicar la animación */
 
 }
 
 .modal .btn-close {
   width: 20px;
   height: 20px;
+  animation: borderAnimation 4s infinite; /* Aplicar la animación */
 }
 .modal .btn-close {
   border-radius: 50%;         
   border: 2px solid #555;    
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+  animation: borderAnimation 4s infinite; /* Aplicar la animación */
 }
 .modal .btn-close:hover {
   background-color: #555;
   color: #ffcc00;
   border-color: #ffcc00;
+  animation: borderAnimation 4s infinite; /* Aplicar la animación */
 }
 .modal-header .btn-close {
   border: none; 
@@ -204,7 +208,29 @@ body {
   background-color: transparent;
   border: none;
   transition: background-color 0.3s;
+  animation: borderAnimation 4s infinite; /* Aplicar la animación */
 }
+
+@keyframes borderAnimation {
+    0% {
+        border-color: #0076fc; /* Color inicial */
+    }
+    25% {
+        border-color: #fb0404; /* Color en el primer cuarto */
+    }
+    50% {
+        border-color: #fd6100; /* Color en el medio */
+    }
+    75% {
+        border-color: #ffffff; /* Color en el tercer cuarto */
+    }
+    100% {
+        border-color: #4a90e2; /* Regresar al color inicial */
+    }
+}8
+
+
+
 .menu-title {
     font-family: 'Pirata One', cursive;
     font-weight: bold;
